@@ -1,288 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furniture Now! - About Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        :root { --primary: #1a2332; --accent: #e67e22; }
-        * { -webkit-tap-highlight-color: transparent; }
-        .navbar { background-color: var(--primary) !important; }
-        .navbar-brand, .nav-link { color: #fff !important; }
-        .nav-link:hover { color: var(--accent) !important; }
-        .page-hero {
-            background: linear-gradient(rgba(26,35,50,0.8), rgba(26,35,50,0.8)), url('assets/img/cbd810a4d4fc.jpg') center/cover;
-            padding: 120px 0 60px;
-            color: #fff;
-        }
-        .btn-accent { background-color: var(--accent); color: #fff; border: none; }
-        .btn-accent:hover { background-color: #d35400; color: #fff; }
-        .section-title { color: var(--primary); font-weight: 700; position: relative; display: inline-block; font-size: clamp(1.75rem, 4.5vw, 2.25rem); }
-        .section-title::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--accent); }
-        .value-card { border: none; transition: transform 0.3s; }
-        .value-card:hover { transform: translateY(-5px); }
-        .value-icon { font-size: 2.5rem; color: var(--accent); }
-        footer { background-color: var(--primary); color: #ccc; }
-        footer a { color: var(--accent); text-decoration: none; }
-        footer a:hover { color: #fff; }
-        .stat-box { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: rgba(37, 211, 102, 0.5);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-            transition: background 0.3s ease, transform 0.3s ease;
-            animation: whatsapp-pulse 2s infinite;
-        }
-        .whatsapp-float:hover {
-            background: #25d366;
-            transform: translateY(-4px);
-            animation: none;
-        }
-        @keyframes whatsapp-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
-            70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
-            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-        }
-        @media (max-width: 767.98px) {
-            .navbar-brand { font-size: 1.1rem; }
-            .page-hero { padding: 100px 0 40px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f4efe6">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<title>Our Story — Furniture Now!</title>
+<meta name="description" content="Furniture Now! has been making considered furniture in Mumbai since 2009. Meet the studio, the workshop and the people behind the pieces.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-house-door"></i> Furniture Now!</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body data-page="about" id="top">
 
-    <section class="page-hero">
-        <div class="container text-center px-3">
-            <h1 class="display-4">About Us</h1>
-            <p class="lead">Crafting comfort for Indian homes since 2010</p>
-        </div>
-    </section>
+<div class="grain" aria-hidden="true"></div>
+<div class="bg-stage" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+</div>
+<canvas id="particles" aria-hidden="true"></canvas>
+<div id="progress" aria-hidden="true"></div>
 
-    <section class="py-4 py-md-5">
-        <div class="container py-3 py-md-5">
-            <div class="row align-items-center g-4 g-md-5">
-                <div class="col-12 col-lg-6">
-                    <img src="assets/img/edafc11011d8.jpg" class="img-fluid rounded shadow w-100" alt="Our Workshop" loading="lazy">
-                </div>
-                <div class="col-12 col-lg-6">
-                    <h2 class="section-title mb-4">Our Story</h2>
-                    <p class="lead">Founded in 2010 in Mumbai, Furniture Now! started as a small family workshop with a passion for quality craftsmanship.</p>
-                    <p>Over the years, we have grown into one of India's most trusted furniture brands, serving over 15,000 happy customers across the country. Our commitment to using sustainable Sheesham and Teak wood with innovative designs sets us apart.</p>
-                    <p>We believe every Indian home deserves beautifully crafted furniture without burning a hole in your pocket. That's why we offer premium quality at honest prices.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div id="loader" aria-hidden="true">
+  <span class="loader-mark">FN</span>
+  <span class="loader-word">Furniture Now!</span>
+  <span class="loader-bar"><i></i></span>
+</div>
 
-    <section class="py-4 py-md-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-4 mb-md-5">
-                <h2 class="section-title">Our Journey in Numbers</h2>
-            </div>
-            <div class="row g-3 g-md-4 text-center">
-                <div class="col-6 col-md-3">
-                    <div class="p-3 p-md-4 stat-box h-100">
-                        <h2 class="fw-bold text-primary mb-1"><span class="counter" data-target="500">0</span>+</h2>
-                        <p class="text-muted mb-0">Products</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3 p-md-4 stat-box h-100">
-                        <h2 class="fw-bold text-primary mb-1"><span class="counter" data-target="15000">0</span>+</h2>
-                        <p class="text-muted mb-0">Happy Customers</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3 p-md-4 stat-box h-100">
-                        <h2 class="fw-bold text-primary mb-1"><span class="counter" data-target="50">0</span>+</h2>
-                        <p class="text-muted mb-0">Craftsmen</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3 p-md-4 stat-box h-100">
-                        <h2 class="fw-bold text-primary mb-1"><span class="counter" data-target="16">0</span>+</h2>
-                        <p class="text-muted mb-0">Years</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-4 py-md-5">
-        <div class="container">
-            <div class="text-center mb-4 mb-md-5">
-                <h2 class="section-title">Our Values</h2>
-            </div>
-            <div class="row g-3 g-md-4 mt-3">
-                <div class="col-md-4">
-                    <div class="card value-card text-center p-3 p-md-4 h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <i class="bi bi-tree value-icon mb-3"></i>
-                            <h5>Sustainable Wood</h5>
-                            <p class="text-muted mb-0">We use ethically sourced Sheesham, Teak, and Mango wood from certified forests.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card value-card text-center p-3 p-md-4 h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <i class="bi bi-tools value-icon mb-3"></i>
-                            <h5>Handcrafted</h5>
-                            <p class="text-muted mb-0">Every piece is handcrafted by skilled artisans from Jodhpur and Saharanpur.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card value-card text-center p-3 p-md-4 h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <i class="bi bi-heart value-icon mb-3"></i>
-                            <h5>Customer First</h5>
-                            <p class="text-muted mb-0">Your satisfaction is our priority. We offer transparent pricing and honest service.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-4 py-md-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-4 mb-md-5">
-                <h2 class="section-title">Our Workshop</h2>
-            </div>
-            <div class="row g-3 g-md-4">
-                <div class="col-6 col-md-4">
-                    <img src="assets/img/260dd8cc1127.jpg" class="img-fluid rounded shadow w-100" alt="Workshop" loading="lazy">
-                </div>
-                <div class="col-6 col-md-4">
-                    <img src="assets/img/8c62b5db5807.jpg" class="img-fluid rounded shadow w-100" alt="Showroom" loading="lazy">
-                </div>
-                <div class="col-6 col-md-4">
-                    <img src="assets/img/58a4af446eb3.jpg" class="img-fluid rounded shadow w-100" alt="Showroom" loading="lazy">
-                </div>
-                <div class="col-6 col-md-4">
-                    <img src="assets/img/e04d4f9f41d9.jpg" class="img-fluid rounded shadow w-100" alt="Workshop" loading="lazy">
-                </div>
-                <div class="col-6 col-md-4">
-                    <img src="assets/img/af0e647d322e.jpg" class="img-fluid rounded shadow w-100" alt="Workshop" loading="lazy">
-                </div>
-                <div class="col-6 col-md-4">
-                    <img src="assets/img/ff0a34037c4b.jpg" class="img-fluid rounded shadow w-100" alt="Workshop" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-4 py-md-5" style="background: var(--accent); color: #fff;">
-        <div class="container text-center py-3 py-md-4">
-            <h2 class="mb-3">Join Our Growing Family</h2>
-            <p class="mb-4">Be part of 15,000+ happy customers across India.</p>
-            <a href="contact.html" class="btn btn-light btn-lg px-4 px-md-5">Get in Touch</a>
-        </div>
-    </section>
-
-    <footer class="py-4 py-md-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <h5 class="text-white mb-3"><i class="bi bi-house-door"></i> Furniture Now!</h5>
-                    <p class="mb-0">Your trusted partner for premium furniture since 2010.</p>
-                </div>
-                <div class="col-6 col-md-6 col-lg-2">
-                    <h6 class="text-white mb-3">Quick Links</h6>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a href="index.html">Home</a></li>
-                        <li class="mb-2"><a href="about.html">About</a></li>
-                        <li class="mb-2"><a href="products.html">Products</a></li>
-                        <li class="mb-2"><a href="services.html">Services</a></li>
-                        <li class="mb-2"><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-6 col-lg-3">
-                    <h6 class="text-white mb-3">Contact Info</h6>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><i class="bi bi-geo-alt"></i> Kandivali West, Mumbai, Maharashtra 400067</li>
-                        <li class="mb-2"><i class="bi bi-telephone"></i> +91 99872 79570</li>
-                        <li class="mb-2"><i class="bi bi-envelope"></i> rv2xx699@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-6 col-lg-3">
-                    <h6 class="text-white mb-3">Follow Us</h6>
-                    <div class="d-flex gap-3">
-                        <a href="https://www.linkedin.com/in/rv2----/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
-                        <a href="https://github.com/rv2hex" target="_blank" aria-label="GitHub"><i class="bi bi-github fs-4"></i></a>
-                        <a href="mailto:rv2xx699@gmail.com" aria-label="Email"><i class="bi bi-envelope fs-4"></i></a>
-                        <a href="https://wa.me/919987279570" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-3 my-md-4" style="border-color: #555;">
-            <p class="text-center mb-0 small">&copy; 2026 Furniture Now! All rights reserved.</p>
-            <p class="text-center mb-0 small">Concept site by Rishi Vijay Vishwakarma · <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a> · <a href="https://www.linkedin.com/in/rv2----/">LinkedIn</a></p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/919987279570" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
-        <i class="bi bi-whatsapp"></i>
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Furniture Now! home">
+      <span class="logo-box" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 11V7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5V11"/>
+          <path d="M4 11h16v6H4z"/>
+          <path d="M6 17v3M18 17v3"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="b-name">Furniture Now<span class="bang">!</span></span>
+        <span class="b-tag">Mumbai · Since 2009</span>
+      </span>
     </a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about" class="active">Story</a>
+      <a href="products.html" data-nav="products">Collection</a>
+      <a href="services.html" data-nav="services">Services</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Book a visit <span>↗</span></a>
+    <button class="hamburger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var counters = document.querySelectorAll('.counter');
-            var options = { threshold: 0.4 };
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        var el = entry.target;
-                        var target = parseInt(el.dataset.target, 10);
-                        var duration = 2000;
-                        var start = null;
-                        function step(timestamp) {
-                            if (!start) start = timestamp;
-                            var progress = Math.min((timestamp - start) / duration, 1);
-                            var value = Math.floor(progress * target);
-                            el.textContent = value.toLocaleString('en-IN');
-                            if (progress < 1) requestAnimationFrame(step);
-                        }
-                        requestAnimationFrame(step);
-                        observer.unobserve(el);
-                    }
-                });
-            }, options);
-            counters.forEach(function (c) { observer.observe(c); });
-        });
-    </script>
+<div id="scrim"></div>
+<nav id="drawer" aria-label="Mobile">
+  <p class="drawer-label">Furniture Now!</p>
+  <div class="drawer-links">
+    <a href="index.html" data-nav="home"><i>01</i> Home</a>
+    <a href="about.html" data-nav="about"><i>02</i> Our story</a>
+    <a href="products.html" data-nav="products"><i>03</i> The collection</a>
+    <a href="services.html" data-nav="services"><i>04</i> Services</a>
+    <a href="contact.html" data-nav="contact"><i>05</i> Contact</a>
+  </div>
+  <div class="drawer-foot">
+    Kandivali West, Mumbai 400067<br>
+    +91 99872 79570<br>
+    rv2xx699@gmail.com
+    <a href="contact.html" class="btn btn-light drawer-cta">Book a showroom visit <span>↗</span></a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal"><i></i> Our story · Est. 2009</span>
+      <h1 class="reveal">Built slowly.<br><em>Lived in daily.</em></h1>
+      <p class="page-lede reveal" data-delay="1">We are a Mumbai furniture studio with a workshop, a showroom and a stubborn belief that the things you live with should get better with time.</p>
+      <div class="page-meta reveal" data-delay="2">
+        <span>Kandivali West, Mumbai</span>
+        <span>16 years of making</span>
+        <span>15,000+ homes</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-split">
+      <div class="about-media reveal">
+        <img src="assets/img/9b1f2fa20304.jpg" alt="A calm living room with a grey sofa and soft cushions" loading="lazy">
+      </div>
+      <div class="about-copy">
+        <span class="section-label reveal">01 / The beginning</span>
+        <h2 class="reveal">A small workshop.<br>A <em>long view.</em></h2>
+        <p class="reveal">Furniture Now! began in 2009 with two carpenters, a rented workshop in Kandivali and a first order for a teak dining table. We did not set out to build a brand. We set out to make things properly.</p>
+        <p class="reveal">That first table is still in use. So is the idea behind it: choose honest materials, detail the joints, finish the surfaces by hand and let the piece earn its place in a home.</p>
+        <p class="reveal">Today we work with interior designers, architects and homeowners across Mumbai and beyond. The scale has changed. The standard has not.</p>
+        <a href="products.html" class="text-link reveal">See what we make <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="container">
+      <div class="stat-block reveal">
+        <span class="counter" data-target="15000">0</span><span class="stat-suffix">+</span>
+        <p>Homes furnished</p>
+      </div>
+      <div class="stat-block reveal" data-delay="1">
+        <span class="counter" data-target="16">0</span><span class="stat-suffix">yrs</span>
+        <p>Of making</p>
+      </div>
+      <div class="stat-block reveal" data-delay="2">
+        <span class="counter" data-target="42">0</span><span class="stat-suffix">+</span>
+        <p>Makers &amp; craftspeople</p>
+      </div>
+      <div class="stat-block reveal" data-delay="3">
+        <span class="static-num">4.9</span><span class="stat-suffix">/5</span>
+        <p>Average client rating</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-label reveal">02 / What we believe</span>
+          <h2 class="reveal">Four things we<br><em>won't compromise.</em></h2>
+        </div>
+        <p class="head-copy reveal">A piece of furniture is a small daily relationship. These are the rules we use to make sure it starts and stays good.</p>
+      </div>
+      <div class="values-grid">
+        <article class="value-card reveal">
+          <span class="value-num">01</span>
+          <h3>Material honesty</h3>
+          <p>Real timber, real stone, real linen. We choose materials that age visibly and gracefully, not surfaces that pretend.</p>
+        </article>
+        <article class="value-card reveal" data-delay="1">
+          <span class="value-num">02</span>
+          <h3>Made to be lived in</h3>
+          <p>Comfort is not a compromise. We prototype, sit, test and adjust until a piece works for real rooms and real people.</p>
+        </article>
+        <article class="value-card reveal" data-delay="2">
+          <span class="value-num">03</span>
+          <h3>Repair over replace</h3>
+          <p>We keep frames, hardware and fabric details serviceable. A mark can be restored; a good piece should not be disposable.</p>
+        </article>
+        <article class="value-card reveal" data-delay="3">
+          <span class="value-num">04</span>
+          <h3>Fair craft</h3>
+          <p>Our makers are paid for the skill they bring. Good work takes time, and the price reflects the hands behind it.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-label reveal">03 / How it happens</span>
+          <h2 class="reveal">From a room<br>to a <em>finished piece.</em></h2>
+        </div>
+      </div>
+      <div class="process-grid">
+        <article class="process-step reveal">
+          <span class="step-num">01</span>
+          <h3>Visit</h3>
+          <p>Come to the showroom or send us plans. We look at the space, the light and how you actually use it.</p>
+        </article>
+        <article class="process-step reveal" data-delay="1">
+          <span class="step-num">02</span>
+          <h3>Plan</h3>
+          <p>We agree the proportions, materials and finish, then confirm the lead time and the final quote.</p>
+        </article>
+        <article class="process-step reveal" data-delay="2">
+          <span class="step-num">03</span>
+          <h3>Make</h3>
+          <p>The frame is built, the upholstery is cut and the piece is finished and checked in our Kandivali workshop.</p>
+        </article>
+        <article class="process-step reveal" data-delay="3">
+          <span class="step-num">04</span>
+          <h3>Place</h3>
+          <p>We deliver, assemble and position the piece, take away the packaging and make sure the room feels right.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container workshop-grid">
+      <div class="workshop-media reveal">
+        <img src="assets/img/3d6481a55906.jpg" alt="A hand-finished walnut storage piece in a quiet room" loading="lazy">
+      </div>
+      <div class="workshop-copy">
+        <span class="section-label reveal">04 / The workshop</span>
+        <h2 class="reveal">The part<br>you <em>don't see.</em></h2>
+        <p class="reveal">Behind every finished piece is a workshop that smells of teak, a wall of samples and a team that knows exactly how much sanding a curve needs.</p>
+        <p class="reveal">We keep production small on purpose. It lets us check every joint, match every grain and make the small adjustments that separate a piece of furniture from a product.</p>
+        <ul class="workshop-list reveal">
+          <li>Kiln-dried hardwood frames</li>
+          <li>Hand-cut joinery</li>
+          <li>Water-based finishes</li>
+          <li>Repairable hardware</li>
+          <li>Small-batch upholstery</li>
+          <li>10-year frame warranty</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-block">
+    <div class="container">
+      <blockquote class="reveal">The best furniture <em>disappears</em> into the life around it.</blockquote>
+      <cite class="reveal">— The Furniture Now! studio</cite>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-grid">
+      <div>
+        <span class="section-label">See it in person</span>
+        <h2>Come sit<br>with us.</h2>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-light">Book a visit <span>↗</span></a>
+        <a href="products.html" class="btn btn-outline-light">Browse the collection</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="brand" aria-label="Furniture Now! home">
+        <span class="logo-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 11V7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5V11"/>
+            <path d="M4 11h16v6H4z"/>
+            <path d="M6 17v3M18 17v3"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="b-name">Furniture Now<span class="bang">!</span></span>
+          <span class="b-tag">Mumbai · Since 2009</span>
+        </span>
+      </a>
+      <p>Considered furniture for modern homes. Made in small batches, finished by hand, delivered with care.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="https://www.pinterest.com/" target="_blank" rel="noopener">Pinterest ↗</a>
+        <a href="https://wa.me/919987279570" target="_blank" rel="noopener">WhatsApp ↗</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">Our story</a>
+      <a href="products.html">The collection</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <p>Furniture Now!<br>Link Road, Kandivali West<br>Mumbai 400067</p>
+      <a href="https://maps.google.com/?q=Kandivali+West+Mumbai" target="_blank" rel="noopener">Get directions ↗</a>
+    </div>
+    <div class="footer-col">
+      <h4>Talk</h4>
+      <a href="tel:+919987279570">+91 99872 79570</a>
+      <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a>
+      <p>Mon–Sat, 10:30–19:30<br>Sunday by appointment</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Furniture Now! · All rights reserved</span>
+    <span>Concept site by <a href="https://github.com/rv2hex" target="_blank" rel="noopener">Rishi Vijay Vishwakarma</a></span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<a class="wa-float" id="wa-float" href="https://wa.me/919987279570?text=Hi%20Furniture%20Now%2C%20I%27m%20interested%20in%20a%20piece%20from%20your%20collection." target="_blank" rel="noopener" aria-label="Chat with Furniture Now on WhatsApp">
+  <img src="../../assets/img/whatsapp-white.svg" width="22" height="22" alt="" aria-hidden="true">
+  <span>Chat with us</span>
+</a>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

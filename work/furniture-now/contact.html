@@ -1,261 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furniture Now! - Contact Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        :root { --primary: #1a2332; --accent: #e67e22; }
-        * { -webkit-tap-highlight-color: transparent; }
-        .navbar { background-color: var(--primary) !important; }
-        .navbar-brand, .nav-link { color: #fff !important; }
-        .nav-link:hover { color: var(--accent) !important; }
-        .page-hero {
-            background: linear-gradient(rgba(26,35,50,0.8), rgba(26,35,50,0.8)), url('assets/img/cbd810a4d4fc.jpg') center/cover;
-            padding: 120px 0 60px;
-            color: #fff;
-        }
-        .btn-accent { background-color: var(--accent); color: #fff; border: none; }
-        .btn-accent:hover { background-color: #d35400; color: #fff; }
-        .section-title { color: var(--primary); font-weight: 700; position: relative; display: inline-block; font-size: clamp(1.75rem, 4.5vw, 2.25rem); }
-        .section-title::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--accent); }
-        .contact-info-card { border: none; transition: transform 0.3s; }
-        .contact-info-card:hover { transform: translateY(-3px); }
-        .info-icon { font-size: 1.8rem; color: var(--accent); }
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: rgba(37, 211, 102, 0.5);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-            transition: background 0.3s ease, transform 0.3s ease;
-            animation: whatsapp-pulse 2s infinite;
-        }
-        .whatsapp-float:hover {
-            background: #25d366;
-            transform: translateY(-4px);
-            animation: none;
-        }
-        @keyframes whatsapp-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
-            70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
-            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-        }
-        footer { background-color: var(--primary); color: #ccc; }
-        footer a { color: var(--accent); text-decoration: none; }
-        footer a:hover { color: #fff; }
-        @media (max-width: 767.98px) {
-            .navbar-brand { font-size: 1.1rem; }
-            .page-hero { padding: 100px 0 40px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f4efe6">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<title>Contact — Furniture Now!</title>
+<meta name="description" content="Visit the Furniture Now! showroom in Kandivali West, Mumbai, or start a furniture enquiry with the studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-house-door"></i> Furniture Now!</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body data-page="contact" id="top">
 
-    <section class="page-hero">
-        <div class="container text-center px-3">
-            <h1 class="display-4">Contact Us</h1>
-            <p class="lead">We'd love to hear from you. Reach out anytime!</p>
-        </div>
-    </section>
+<div class="grain" aria-hidden="true"></div>
+<div class="bg-stage" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+</div>
+<canvas id="particles" aria-hidden="true"></canvas>
+<div id="progress" aria-hidden="true"></div>
 
-    <section class="py-4 py-md-5">
-        <div class="container py-3 py-md-5">
-            <div class="row g-3 g-md-4 mb-4 mb-md-5">
-                <div class="col-6 col-md-3">
-                    <div class="card contact-info-card text-center p-3 p-md-4 h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <i class="bi bi-geo-alt info-icon mb-3"></i>
-                            <h6 class="h5">Visit Us</h6>
-                            <p class="text-muted mb-0 small">Kandivali West,<br>Mumbai, Maharashtra 400067</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="card contact-info-card text-center p-3 p-md-4 h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <i class="bi bi-telephone info-icon mb-3"></i>
-                            <h6 class="h5">Call Us</h6>
-                            <p class="text-muted mb-0 small"><a href="tel:+919987279570" class="text-decoration-none">+91 99872 79570</a><br>Mon-Sat: 10AM - 8PM</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="card contact-info-card text-center p-3 p-md-4 h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <i class="bi bi-envelope info-icon mb-3"></i>
-                            <h6 class="h5">Email Us</h6>
-                            <p class="text-muted mb-0 small"><a href="mailto:rv2xx699@gmail.com" class="text-decoration-none" style="font-size:.72rem; white-space:nowrap;">rv2xx699@gmail.com</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="card contact-info-card text-center p-3 p-md-4 h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <i class="bi bi-whatsapp info-icon mb-3"></i>
-                            <h6 class="h5">WhatsApp</h6>
-                            <p class="text-muted mb-0 small"><a href="https://wa.me/919987279570" target="_blank" class="text-decoration-none">+91 99872 79570</a><br>Quick response!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div id="loader" aria-hidden="true">
+  <span class="loader-mark">FN</span>
+  <span class="loader-word">Furniture Now!</span>
+  <span class="loader-bar"><i></i></span>
+</div>
 
-            <div class="row g-4 g-md-5">
-                <div class="col-lg-6">
-                    <h2 class="section-title mb-4">Send Us a Message</h2>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-12 col-md-6">
-                                <label class="form-label">First Name</label>
-                                <input type="text" class="form-control" placeholder="Your name">
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label class="form-label">Last Name</label>
-                                <input type="text" class="form-control" placeholder="Last name">
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" placeholder="Email address">
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label class="form-label">Phone</label>
-                                <input type="tel" class="form-control" placeholder="Phone number">
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label class="form-label">City</label>
-                                <select class="form-select">
-                                    <option selected>Select your city</option>
-                                    <option>Mumbai</option>
-                                    <option>Thane</option>
-                                    <option>Navi Mumbai</option>
-                                    <option>Delhi</option>
-                                    <option>Hyderabad</option>
-                                    <option>Chennai</option>
-                                    <option>Pune</option>
-                                    <option>Kolkata</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label class="form-label">Subject</label>
-                                <select class="form-select">
-                                    <option selected>General Inquiry</option>
-                                    <option>Product Question</option>
-                                    <option>Order Support</option>
-                                    <option>Custom Furniture Request</option>
-                                    <option>Return / Exchange</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Message</label>
-                                <textarea class="form-control" rows="5" placeholder="Tell us how we can help…"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-accent btn-lg w-100 w-md-auto">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="section-title mb-4">Find Us Here</h2>
-                    <div class="rounded overflow-hidden shadow">
-                        <iframe src="https://maps.google.com/maps?q=Kandivali%20West%2C%20Mumbai%2C%20Maharashtra%20400067&z=14&output=embed" width="100%" height="300" style="border:0; min-height: 250px;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                    <div class="mt-4">
-                        <h5>Store Timings</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-clock me-2"></i> Monday - Friday: 10:00 AM - 8:00 PM</li>
-                            <li class="mb-2"><i class="bi bi-clock me-2"></i> Saturday: 10:00 AM - 9:00 PM</li>
-                            <li class="mb-2"><i class="bi bi-clock me-2"></i> Sunday: 11:00 AM - 6:00 PM</li>
-                        </ul>
-                    </div>
-                    <div class="mt-4">
-                        <h5>Follow Us</h5>
-                        <div class="d-flex flex-wrap gap-2">
-                            <a href="https://www.linkedin.com/in/rv2----/" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                            <a href="https://github.com/rv2hex" target="_blank" class="btn btn-outline-dark btn-sm"><i class="bi bi-github"></i> GitHub</a>
-                            <a href="https://wa.me/919987279570" target="_blank" class="btn btn-outline-success btn-sm"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-4 py-md-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <h5 class="text-white mb-3"><i class="bi bi-house-door"></i> Furniture Now!</h5>
-                    <p class="mb-0">Your trusted partner for premium furniture since 2010.</p>
-                </div>
-                <div class="col-6 col-md-6 col-lg-2">
-                    <h6 class="text-white mb-3">Quick Links</h6>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a href="index.html">Home</a></li>
-                        <li class="mb-2"><a href="about.html">About</a></li>
-                        <li class="mb-2"><a href="products.html">Products</a></li>
-                        <li class="mb-2"><a href="services.html">Services</a></li>
-                        <li class="mb-2"><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-6 col-lg-3">
-                    <h6 class="text-white mb-3">Contact Info</h6>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><i class="bi bi-geo-alt"></i> Kandivali West, Mumbai, Maharashtra 400067</li>
-                        <li class="mb-2"><i class="bi bi-telephone"></i> +91 99872 79570</li>
-                        <li class="mb-2"><i class="bi bi-envelope"></i> rv2xx699@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-6 col-lg-3">
-                    <h6 class="text-white mb-3">Follow Us</h6>
-                    <div class="d-flex gap-3">
-                        <a href="https://www.linkedin.com/in/rv2----/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
-                        <a href="https://github.com/rv2hex" target="_blank" aria-label="GitHub"><i class="bi bi-github fs-4"></i></a>
-                        <a href="mailto:rv2xx699@gmail.com" aria-label="Email"><i class="bi bi-envelope fs-4"></i></a>
-                        <a href="https://wa.me/919987279570" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-3 my-md-4" style="border-color: #555;">
-            <p class="text-center mb-0 small">&copy; 2026 Furniture Now! All rights reserved.</p>
-            <p class="text-center mb-0 small">Concept site by Rishi Vijay Vishwakarma · <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a> · <a href="https://www.linkedin.com/in/rv2----/">LinkedIn</a></p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/919987279570" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
-        <i class="bi bi-whatsapp"></i>
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Furniture Now! home">
+      <span class="logo-box" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 11V7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5V11"/>
+          <path d="M4 11h16v6H4z"/>
+          <path d="M6 17v3M18 17v3"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="b-name">Furniture Now<span class="bang">!</span></span>
+        <span class="b-tag">Mumbai · Since 2009</span>
+      </span>
     </a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about">Story</a>
+      <a href="products.html" data-nav="products">Collection</a>
+      <a href="services.html" data-nav="services">Services</a>
+      <a href="contact.html" data-nav="contact" class="active">Contact</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Book a visit <span>↗</span></a>
+    <button class="hamburger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<div id="scrim"></div>
+<nav id="drawer" aria-label="Mobile">
+  <p class="drawer-label">Furniture Now!</p>
+  <div class="drawer-links">
+    <a href="index.html" data-nav="home"><i>01</i> Home</a>
+    <a href="about.html" data-nav="about"><i>02</i> Our story</a>
+    <a href="products.html" data-nav="products"><i>03</i> The collection</a>
+    <a href="services.html" data-nav="services"><i>04</i> Services</a>
+    <a href="contact.html" data-nav="contact"><i>05</i> Contact</a>
+  </div>
+  <div class="drawer-foot">
+    Kandivali West, Mumbai 400067<br>
+    +91 99872 79570<br>
+    rv2xx699@gmail.com
+    <a href="contact.html" class="btn btn-light drawer-cta">Book a showroom visit <span>↗</span></a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal"><i></i> Contact · Mumbai</span>
+      <h1 class="reveal">Let's find<br><em>your piece.</em></h1>
+      <p class="page-lede reveal" data-delay="1">Tell us about the room, the piece or the problem you are trying to solve. We will tell you what is possible, what it costs and how long it will take.</p>
+      <div class="page-meta reveal" data-delay="2">
+        <span>Kandivali West, Mumbai</span>
+        <span>Mon–Sat, 10:30–19:30</span>
+        <span>Reply within one working day</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-form-wrap reveal">
+        <span class="section-label">01 / Send a note</span>
+        <h2>Start a<br>conversation.</h2>
+        <p>Share as much or as little as you like. Photos, measurements and a rough budget help us give you a useful first reply.</p>
+
+        <form id="contact-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone number (optional)</label>
+              <input id="phone" name="phone" type="tel" placeholder="Phone number" autocomplete="tel">
+            </div>
+            <div class="form-field">
+              <label for="interest">What are you looking for?</label>
+              <select id="interest" name="interest">
+                <option value="">Select an option</option>
+                <option value="single">A single piece</option>
+                <option value="room">A full room</option>
+                <option value="consultation">Interior consultation</option>
+                <option value="trade">Trade enquiry</option>
+              </select>
+            </div>
+            <div class="form-field full">
+              <label for="message">Your message</label>
+              <textarea id="message" name="message" placeholder="Tell us about the space or piece you have in mind." required></textarea>
+            </div>
+            <div class="form-field full">
+              <button class="btn btn-solid" type="submit">Send enquiry <span>↗</span></button>
+            </div>
+          </div>
+          <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="contact-details reveal" data-delay="1">
+        <div class="contact-card">
+          <span class="section-label light">The showroom</span>
+          <h3>Come sit with us.</h3>
+          <div class="contact-row"><span>Address</span><b>Link Road, Kandivali West<br>Mumbai 400067</b></div>
+          <div class="contact-row"><span>Phone</span><b><a href="tel:+919987279570">+91 99872 79570</a></b></div>
+          <div class="contact-row"><span>Email</span><b><a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a></b></div>
+          <div class="contact-row"><span>WhatsApp</span><b><a href="https://wa.me/919987279570?text=Hi%20Furniture%20Now%2C%20I%27d%20like%20to%20visit%20the%20showroom." target="_blank" rel="noopener">Message the studio ↗</a></b></div>
+        </div>
+
+        <div class="hours-card">
+          <h3>Showroom hours</h3>
+          <div class="hours-row"><span>Monday–Friday</span><b>10:30–19:30</b></div>
+          <div class="hours-row"><span>Saturday</span><b>10:30–19:30</b></div>
+          <div class="hours-row"><span>Sunday</span><b>By appointment</b></div>
+        </div>
+
+        <div class="map-card">
+          <span class="map-pin" aria-hidden="true">↗</span>
+          <h3>Find the showroom.</h3>
+          <p>We are on Link Road in Kandivali West, a short walk from the metro. Parking is available behind the building.</p>
+          <a href="https://maps.google.com/?q=Kandivali+West+Mumbai" class="text-link" target="_blank" rel="noopener">Get directions <span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-grid">
+      <div>
+        <span class="section-label">Prefer to talk?</span>
+        <h2>We're one<br>message away.</h2>
+      </div>
+      <div class="cta-actions">
+        <a href="https://wa.me/919987279570?text=Hi%20Furniture%20Now%2C%20I%27d%20like%20to%20talk%20about%20a%20piece." class="btn btn-light" target="_blank" rel="noopener">WhatsApp the studio <span>↗</span></a>
+        <a href="tel:+919987279570" class="btn btn-outline-light">Call +91 99872 79570</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="brand" aria-label="Furniture Now! home">
+        <span class="logo-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 11V7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5V11"/>
+            <path d="M4 11h16v6H4z"/>
+            <path d="M6 17v3M18 17v3"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="b-name">Furniture Now<span class="bang">!</span></span>
+          <span class="b-tag">Mumbai · Since 2009</span>
+        </span>
+      </a>
+      <p>Considered furniture for modern homes. Made in small batches, finished by hand, delivered with care.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="https://www.pinterest.com/" target="_blank" rel="noopener">Pinterest ↗</a>
+        <a href="https://wa.me/919987279570" target="_blank" rel="noopener">WhatsApp ↗</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">Our story</a>
+      <a href="products.html">The collection</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <p>Furniture Now!<br>Link Road, Kandivali West<br>Mumbai 400067</p>
+      <a href="https://maps.google.com/?q=Kandivali+West+Mumbai" target="_blank" rel="noopener">Get directions ↗</a>
+    </div>
+    <div class="footer-col">
+      <h4>Talk</h4>
+      <a href="tel:+919987279570">+91 99872 79570</a>
+      <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a>
+      <p>Mon–Sat, 10:30–19:30<br>Sunday by appointment</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Furniture Now! · All rights reserved</span>
+    <span>Concept site by <a href="https://github.com/rv2hex" target="_blank" rel="noopener">Rishi Vijay Vishwakarma</a></span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<a class="wa-float" id="wa-float" href="https://wa.me/919987279570?text=Hi%20Furniture%20Now%2C%20I%27m%20interested%20in%20a%20piece%20from%20your%20collection." target="_blank" rel="noopener" aria-label="Chat with Furniture Now on WhatsApp">
+  <img src="../../assets/img/whatsapp-white.svg" width="22" height="22" alt="" aria-hidden="true">
+  <span>Chat with us</span>
+</a>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

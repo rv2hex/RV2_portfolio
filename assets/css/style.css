@@ -872,7 +872,7 @@ body.is-loaded .hero-stage { opacity: 1; transform: none; }
   cursor: none;
 }
 
-.stack-card[data-project-key="furniture"] { --accent: #e67e22; }
+.stack-card[data-project-key="furniture"] { --accent: #a9663f; }
 .stack-card[data-project-key="casa"] { --accent: #c9a227; }
 .stack-card[data-project-key="modul"] { --accent: #d9b95c; }
 
@@ -1421,8 +1421,8 @@ body.is-loaded .hero-stage { opacity: 1; transform: none; }
   left: -28px;
   bottom: -34px;
   width: clamp(120px, 13vw, 172px);
-  padding: 3px;
-  border-radius: 3px;
+  padding: 4px;
+  border-radius: 18px;
   background: #101010;
   border: 1px solid var(--dot);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65);
@@ -1430,7 +1430,7 @@ body.is-loaded .hero-stage { opacity: 1; transform: none; }
 .phone-screen {
   height: clamp(230px, 33vh, 350px);
   overflow: hidden;
-  border-radius: 1px;
+  border-radius: 18px;
   background: #fff;
 }
 .phone-screen img { width: 100%; height: auto; will-change: transform; }
@@ -3529,8 +3529,8 @@ body.theme-open .theme-panel {
   .project-title { font-size: clamp(3.2rem, 15vw, 4.6rem); }
   .project-cat { font-size: 0.5rem; line-height: 1.7; }
   .browser-screen { height: clamp(250px, 44vh, 380px); }
-  .phone { width: 112px; left: -12px; bottom: -22px; border-radius: 3px; padding: 2px; }
-  .phone-screen { height: 215px; border-radius: 1px; }
+  .phone { width: 112px; left: -12px; bottom: -22px; border-radius: 16px; padding: 3px; }
+  .phone-screen { height: 215px; border-radius: 16px; }
   .visual-caption { font-size: 0.5rem; margin-top: 38px; }
   .project-actions .btn { width: 100%; }
   .specs { gap: 8px; }

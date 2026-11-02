@@ -1,358 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furniture Now! - Products</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        :root { --primary: #1a2332; --accent: #e67e22; }
-        * { -webkit-tap-highlight-color: transparent; }
-        .navbar { background-color: var(--primary) !important; }
-        .navbar-brand, .nav-link { color: #fff !important; }
-        .nav-link:hover { color: var(--accent) !important; }
-        .page-hero {
-            background: linear-gradient(rgba(26,35,50,0.8), rgba(26,35,50,0.8)), url('assets/img/cbd810a4d4fc.jpg') center/cover;
-            padding: 120px 0 60px;
-            color: #fff;
-        }
-        .btn-accent { background-color: var(--accent); color: #fff; border: none; }
-        .btn-accent:hover { background-color: #d35400; color: #fff; }
-        .product-card { transition: transform 0.3s, box-shadow 0.3s; border: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
-        .product-card .img-wrap { height: 220px; overflow: hidden; }
-        .product-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-        .filter-btn { border: 2px solid var(--accent); color: var(--accent); background: transparent; }
-        .filter-btn.active, .filter-btn:hover { background: var(--accent); color: #fff; }
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: rgba(37, 211, 102, 0.5);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-            transition: background 0.3s ease, transform 0.3s ease;
-            animation: whatsapp-pulse 2s infinite;
-        }
-        .whatsapp-float:hover {
-            background: #25d366;
-            transform: translateY(-4px);
-            animation: none;
-        }
-        @keyframes whatsapp-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
-            70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
-            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-        }
-        footer { background-color: var(--primary); color: #ccc; }
-        footer a { color: var(--accent); text-decoration: none; }
-        footer a:hover { color: #fff; }
-        @media (min-width: 768px) {
-            .product-card .img-wrap { height: 280px; }
-        }
-        @media (max-width: 767.98px) {
-            .navbar-brand { font-size: 1.1rem; }
-            .page-hero { padding: 100px 0 40px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f4efe6">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<title>The Collection — Furniture Now!</title>
+<meta name="description" content="Explore the Furniture Now! collection of sofas, dining tables, beds, chairs and workspaces. Considered pieces, hand-finished in Mumbai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-house-door"></i> Furniture Now!</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body data-page="products" id="top">
 
-    <section class="page-hero">
-        <div class="container text-center px-3">
-            <h1 class="display-4">Our Products</h1>
-            <p class="lead">Premium furniture for every corner of your home</p>
-        </div>
-    </section>
+<div class="grain" aria-hidden="true"></div>
+<div class="bg-stage" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+</div>
+<canvas id="particles" aria-hidden="true"></canvas>
+<div id="progress" aria-hidden="true"></div>
 
-    <section class="py-4 py-md-5">
-        <div class="container">
-            <div class="text-center mb-4">
-                <button class="btn filter-btn active me-1 mb-2" data-filter="all">All</button>
-                <button class="btn filter-btn me-1 mb-2" data-filter="living-room">Living Room</button>
-                <button class="btn filter-btn me-1 mb-2" data-filter="bedroom">Bedroom</button>
-                <button class="btn filter-btn me-1 mb-2" data-filter="dining">Dining</button>
-                <button class="btn filter-btn me-1 mb-2" data-filter="office">Office</button>
-            </div>
-            <p id="filter-result" class="text-center text-muted mb-3 small"></p>
+<div id="loader" aria-hidden="true">
+  <span class="loader-mark">FN</span>
+  <span class="loader-word">Furniture Now!</span>
+  <span class="loader-bar"><i></i></span>
+</div>
 
-            <div class="row g-3 g-md-4 mt-3">
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="living-room">
-                        <div class="img-wrap"><img src="assets/img/edafc11011d8.jpg" alt="Modern L-Shape Sofa" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-success mb-2">In Stock</span>
-                            <h6 class="card-title">Modern L-Shape Sofa</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">Premium fabric, seats 5.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;42,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="dining">
-                        <div class="img-wrap"><img src="assets/img/7a2567b7a6c1.jpg" alt="Dining Table" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-success mb-2">In Stock</span>
-                            <h6 class="card-title">Sheesham Dining Set</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">6-seater with chairs.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;58,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="bedroom">
-                        <div class="img-wrap"><img src="assets/img/3d6481a55906.jpg" alt="King Bed" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-warning text-dark mb-2">Limited</span>
-                            <h6 class="card-title">King Size Teak Bed</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">With hydraulic storage.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;38,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="living-room">
-                        <div class="img-wrap"><img src="assets/img/260dd8cc1127.jpg" alt="Luxury Sofa" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-success mb-2">In Stock</span>
-                            <h6 class="card-title">Luxury Fabric Sofa</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">Velvet touch, 3-seater.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;55,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="bedroom">
-                        <div class="img-wrap"><img src="assets/img/e44dc65b62a0.jpg" alt="Queen Bed" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-success mb-2">In Stock</span>
-                            <h6 class="card-title">Queen Bed</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">Contemporary design.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;32,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="dining">
-                        <div class="img-wrap"><img src="assets/img/66a3f9c46070.jpg" alt="Dining Chairs" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-success mb-2">In Stock</span>
-                            <h6 class="card-title">Dining Chairs Set</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">Set of 2 upholstered.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;18,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="bedroom">
-                        <div class="img-wrap"><img src="assets/img/8c62b5db5807.jpg" alt="Bedroom Set" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-success mb-2">In Stock</span>
-                            <h6 class="card-title">Complete Bedroom Set</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">Bed + wardrobe + side.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;89,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="living-room">
-                        <div class="img-wrap"><img src="assets/img/ff0a34037c4b.jpg" alt="Armchair" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-success mb-2">In Stock</span>
-                            <h6 class="card-title">Comfort Armchair</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">Cozy reading chair.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;16,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="living-room">
-                        <div class="img-wrap"><img src="assets/img/af0e647d322e.jpg" alt="Armchair" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-success mb-2">In Stock</span>
-                            <h6 class="card-title">Classic Armchair</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">Timeless design.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;22,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="office">
-                        <div class="img-wrap"><img src="assets/img/e04d4f9f41d9.jpg" alt="Office Desk" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-success mb-2">In Stock</span>
-                            <h6 class="card-title">Office Work Desk</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">Spacious study table.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;19,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="dining">
-                        <div class="img-wrap"><img src="assets/img/80a46152735b.jpg" alt="Accent Chair" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-warning text-dark mb-2">New</span>
-                            <h6 class="card-title">Accent Chair</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">Wooden style chair.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;12,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card product-card h-100" data-category="bedroom">
-                        <div class="img-wrap"><img src="assets/img/cf14eedbb3bd.jpg" alt="Bed Frame" loading="lazy"></div>
-                        <div class="card-body p-2 p-md-3">
-                            <span class="badge bg-success mb-2">In Stock</span>
-                            <h6 class="card-title">Wooden Bed Frame</h6>
-                            <p class="card-text text-muted small d-none d-md-block mb-2">Rustic solid wood.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">&#8377;28,999</span>
-                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-4 py-md-5" style="background: var(--accent); color: #fff;">
-        <div class="container text-center py-3 py-md-4">
-            <h2 class="mb-3">Looking for Something Custom?</h2>
-            <p class="mb-4">We build custom furniture to your exact specifications. Get a free quote today!</p>
-            <a href="contact.html" class="btn btn-light btn-lg px-4 px-md-5">Request Custom Order</a>
-        </div>
-    </section>
-
-    <footer class="py-4 py-md-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <h5 class="text-white mb-3"><i class="bi bi-house-door"></i> Furniture Now!</h5>
-                    <p class="mb-0">Your trusted partner for premium furniture since 2010.</p>
-                </div>
-                <div class="col-6 col-md-6 col-lg-2">
-                    <h6 class="text-white mb-3">Quick Links</h6>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a href="index.html">Home</a></li>
-                        <li class="mb-2"><a href="about.html">About</a></li>
-                        <li class="mb-2"><a href="products.html">Products</a></li>
-                        <li class="mb-2"><a href="services.html">Services</a></li>
-                        <li class="mb-2"><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-6 col-lg-3">
-                    <h6 class="text-white mb-3">Contact Info</h6>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><i class="bi bi-geo-alt"></i> Kandivali West, Mumbai, Maharashtra 400067</li>
-                        <li class="mb-2"><i class="bi bi-telephone"></i> +91 99872 79570</li>
-                        <li class="mb-2"><i class="bi bi-envelope"></i> rv2xx699@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-6 col-lg-3">
-                    <h6 class="text-white mb-3">Follow Us</h6>
-                    <div class="d-flex gap-3">
-                        <a href="https://www.linkedin.com/in/rv2----/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
-                        <a href="https://github.com/rv2hex" target="_blank" aria-label="GitHub"><i class="bi bi-github fs-4"></i></a>
-                        <a href="mailto:rv2xx699@gmail.com" aria-label="Email"><i class="bi bi-envelope fs-4"></i></a>
-                        <a href="https://wa.me/919987279570" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-3 my-md-4" style="border-color: #555;">
-            <p class="text-center mb-0 small">&copy; 2026 Furniture Now! All rights reserved.</p>
-            <p class="text-center mb-0 small">Concept site by Rishi Vijay Vishwakarma · <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a> · <a href="https://www.linkedin.com/in/rv2----/">LinkedIn</a></p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/919987279570" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
-        <i class="bi bi-whatsapp"></i>
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Furniture Now! home">
+      <span class="logo-box" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 11V7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5V11"/>
+          <path d="M4 11h16v6H4z"/>
+          <path d="M6 17v3M18 17v3"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="b-name">Furniture Now<span class="bang">!</span></span>
+        <span class="b-tag">Mumbai · Since 2009</span>
+      </span>
     </a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about">Story</a>
+      <a href="products.html" data-nav="products" class="active">Collection</a>
+      <a href="services.html" data-nav="services">Services</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Book a visit <span>↗</span></a>
+    <button class="hamburger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var buttons = document.querySelectorAll('.filter-btn');
-            var cards = document.querySelectorAll('.product-card[data-category]');
-            var resultText = document.getElementById('filter-result');
+<div id="scrim"></div>
+<nav id="drawer" aria-label="Mobile">
+  <p class="drawer-label">Furniture Now!</p>
+  <div class="drawer-links">
+    <a href="index.html" data-nav="home"><i>01</i> Home</a>
+    <a href="about.html" data-nav="about"><i>02</i> Our story</a>
+    <a href="products.html" data-nav="products"><i>03</i> The collection</a>
+    <a href="services.html" data-nav="services"><i>04</i> Services</a>
+    <a href="contact.html" data-nav="contact"><i>05</i> Contact</a>
+  </div>
+  <div class="drawer-foot">
+    Kandivali West, Mumbai 400067<br>
+    +91 99872 79570<br>
+    rv2xx699@gmail.com
+    <a href="contact.html" class="btn btn-light drawer-cta">Book a showroom visit <span>↗</span></a>
+  </div>
+</nav>
 
-            buttons.forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    buttons.forEach(function (b) { b.classList.remove('active'); });
-                    btn.classList.add('active');
-                    var filter = btn.getAttribute('data-filter');
-                    var visible = 0;
-                    cards.forEach(function (card) {
-                        var cat = card.getAttribute('data-category');
-                        var show = (filter === 'all' || cat === filter);
-                        card.closest('.col-6').classList.toggle('d-none', !show);
-                        if (show) visible++;
-                    });
-                    var names = { 'all': 'All', 'living-room': 'Living Room', 'bedroom': 'Bedroom', 'dining': 'Dining', 'office': 'Office' };
-                    resultText.textContent = visible + ' product' + (visible === 1 ? '' : 's') + ' in ' + names[filter];
-                });
-            });
-        });
-    </script>
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal"><i></i> The collection · 2026</span>
+      <h1 class="reveal">Pieces for<br><em>the everyday.</em></h1>
+      <p class="page-lede reveal" data-delay="1">Sofas, tables, beds and pieces for the corner you actually use. Every item is made in small batches and can be adjusted in size, fabric or finish.</p>
+      <div class="page-meta reveal" data-delay="2">
+        <span>Hand-finished in Mumbai</span>
+        <span>Made to order</span>
+        <span>10-year frame warranty</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:34px;">
+    <div class="container">
+      <div class="shop-head reveal">
+        <div class="chips" role="tablist" aria-label="Filter collection">
+          <button class="chip active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" type="button" data-filter="living" role="tab" aria-selected="false">Living</button>
+          <button class="chip" type="button" data-filter="dining" role="tab" aria-selected="false">Dining</button>
+          <button class="chip" type="button" data-filter="bedroom" role="tab" aria-selected="false">Bedroom</button>
+          <button class="chip" type="button" data-filter="workspace" role="tab" aria-selected="false">Workspace</button>
+        </div>
+        <span class="product-count" id="product-count">12 pieces</span>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+
+        <article class="product-card reveal" data-cat="living" data-cat-label="Living · 3 seater" data-name="The Sunday sofa" data-price="₹68,000" data-img="assets/img/7a2567b7a6c1.jpg" data-desc="A low, deep three-seater in a soft bouclé. Feather-wrapped cushions sit on a solid teak frame, made for long afternoons and longer conversations.">
+          <button class="product-open" type="button" aria-label="View The Sunday sofa">
+            <span class="product-img"><img src="assets/img/7a2567b7a6c1.jpg" alt="The Sunday sofa in a light living room" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Sunday sofa</span><span class="product-cat">Living · 3 seater</span></span>
+              <span class="product-price">₹68,000</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-delay="1" data-cat="living" data-cat-label="Living · 3 seater" data-name="The Tan leather sofa" data-price="₹92,000" data-img="assets/img/af0e647d322e.jpg" data-desc="Full-grain leather with a natural finish. It starts firm, softens with use and keeps a record of every year in the room.">
+          <button class="product-open" type="button" aria-label="View The Tan leather sofa">
+            <span class="product-img"><img src="assets/img/af0e647d322e.jpg" alt="A tan leather sofa in a sunlit room" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Tan leather sofa</span><span class="product-cat">Living · 3 seater</span></span>
+              <span class="product-price">₹92,000</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-delay="2" data-cat="living" data-cat-label="Living · 2 seater" data-name="The Ember sofa" data-price="₹74,000" data-img="assets/img/e44dc65b62a0.jpg" data-desc="A compact two-seater in rust cotton-linen, raised on a slim oak base. Small footprint, generous seat.">
+          <button class="product-open" type="button" aria-label="View The Ember sofa">
+            <span class="product-img"><img src="assets/img/e44dc65b62a0.jpg" alt="A rust orange two-seater sofa against a green wall" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Ember sofa</span><span class="product-cat">Living · 2 seater</span></span>
+              <span class="product-price">₹74,000</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-cat="dining" data-cat-label="Dining · Seats six" data-name="The Oak dining table" data-price="₹56,000" data-img="assets/img/dining-room.jpg" data-desc="Solid oak, hand-planed and finished with a low-sheen oil. The table seats six comfortably and takes a dinner party in its stride.">
+          <button class="product-open" type="button" aria-label="View The Oak dining table">
+            <span class="product-img"><img src="assets/img/dining-room.jpg" alt="A solid wood dining table in a quiet, light-filled room" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Oak dining table</span><span class="product-cat">Dining · Seats six</span></span>
+              <span class="product-price">₹56,000</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-delay="1" data-cat="living" data-cat-label="Living · Storage" data-name="The Walnut console" data-price="₹44,000" data-img="assets/img/3d6481a55906.jpg" data-desc="A slim walnut console with hand-cut joinery and a floating top. Useful in an entryway, behind a sofa or under a window.">
+          <button class="product-open" type="button" aria-label="View The Walnut console">
+            <span class="product-img"><img src="assets/img/3d6481a55906.jpg" alt="A hand-finished walnut storage piece in a quiet room" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Walnut console</span><span class="product-cat">Living · Storage</span></span>
+              <span class="product-price">₹44,000</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-delay="2" data-cat="bedroom" data-cat-label="Bedroom · King" data-name="The Linen bed" data-price="₹78,000" data-img="assets/img/8c62b5db5807.jpg" data-desc="A king bed with a linen-upholstered headboard and a solid wood frame. The low profile keeps the room calm; the headboard makes it comfortable to read late.">
+          <button class="product-open" type="button" aria-label="View The Linen bed">
+            <span class="product-img"><img src="assets/img/8c62b5db5807.jpg" alt="A calm bedroom with a linen upholstered bed" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Linen bed</span><span class="product-cat">Bedroom · King</span></span>
+              <span class="product-price">₹78,000</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-cat="living" data-cat-label="Living · Accent chair" data-name="The Cane chair" data-price="₹24,500" data-img="assets/img/80a46152735b.jpg" data-desc="A hand-woven cane seat on a solid teak frame. Light enough to move around, sturdy enough to become someone's favourite chair.">
+          <button class="product-open" type="button" aria-label="View The Cane chair">
+            <span class="product-img"><img src="assets/img/80a46152735b.jpg" alt="A wooden chair with a woven cane seat" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Cane chair</span><span class="product-cat">Living · Accent chair</span></span>
+              <span class="product-price">₹24,500</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-delay="1" data-cat="dining" data-cat-label="Dining · Pair" data-name="The Sculptor chair" data-price="₹18,500" data-img="assets/img/dddc1f555025.jpg" data-desc="A moulded seat in mustard wool on a powder-coated steel base. Sold as a pair for the dining table or a quiet corner.">
+          <button class="product-open" type="button" aria-label="View The Sculptor chair">
+            <span class="product-img"><img src="assets/img/dddc1f555025.jpg" alt="Two sculptural chairs in mustard and sage" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Sculptor chair</span><span class="product-cat">Dining · Pair</span></span>
+              <span class="product-price">₹18,500</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-delay="2" data-cat="workspace" data-cat-label="Workspace · Desk" data-name="The Studio desk" data-price="₹38,000" data-img="assets/img/ff0a34037c4b.jpg" data-desc="A walnut desk with a cable channel and a single soft-close drawer. Deep enough for a monitor, narrow enough for a real room.">
+          <button class="product-open" type="button" aria-label="View The Studio desk">
+            <span class="product-img"><img src="assets/img/ff0a34037c4b.jpg" alt="A walnut desk with a yellow chair in a bright room" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Studio desk</span><span class="product-cat">Workspace · Desk</span></span>
+              <span class="product-price">₹38,000</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-cat="workspace" data-cat-label="Workspace · Set" data-name="The Reading corner" data-price="₹32,000" data-img="assets/img/e04d4f9f41d9.jpg" data-desc="A compact desk and chair pairing for the corner that has to do two jobs. Made to fit small apartments without looking small.">
+          <button class="product-open" type="button" aria-label="View The Reading corner">
+            <span class="product-img"><img src="assets/img/e04d4f9f41d9.jpg" alt="A bright workspace with a timber desk and soft seating" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Reading corner</span><span class="product-cat">Workspace · Set</span></span>
+              <span class="product-price">₹32,000</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-delay="1" data-cat="living" data-cat-label="Living · Sectional" data-name="The Cloud sectional" data-price="₹1,12,000" data-img="assets/img/cf14eedbb3bd.jpg" data-desc="A deep sectional in stone-grey linen with a chaise. Built on a solid frame, with covers that can be removed and cleaned.">
+          <button class="product-open" type="button" aria-label="View The Cloud sectional">
+            <span class="product-img"><img src="assets/img/cf14eedbb3bd.jpg" alt="A soft grey sectional sofa with a cat resting on it" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Cloud sectional</span><span class="product-cat">Living · Sectional</span></span>
+              <span class="product-price">₹1,12,000</span>
+            </span>
+          </button>
+        </article>
+
+        <article class="product-card reveal" data-delay="2" data-cat="living" data-cat-label="Living · 2 seater" data-name="The Poppy sofa" data-price="₹62,000" data-img="assets/img/09a3264eabee.jpg" data-desc="A two-seater in burnt orange with a feather-blend seat and a low back. The kind of piece that gives a neutral room its pulse.">
+          <button class="product-open" type="button" aria-label="View The Poppy sofa">
+            <span class="product-img"><img src="assets/img/09a3264eabee.jpg" alt="A burnt orange sofa against a deep green wall" loading="lazy"></span>
+            <span class="product-meta">
+              <span class="product-info"><span class="product-title">The Poppy sofa</span><span class="product-cat">Living · 2 seater</span></span>
+              <span class="product-price">₹62,000</span>
+            </span>
+          </button>
+        </article>
+
+      </div>
+
+      <p class="product-note reveal">Prices are indicative and depend on size, fabric and finish. Every piece is made to order; lead times are confirmed at the showroom.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="trade-band reveal">
+        <div>
+          <span class="section-label light">For designers &amp; architects</span>
+          <h2>Trade pricing, samples and a reliable lead time.</h2>
+          <p>We work with interior designers, architects and studios on single pieces and full projects. Ask for the trade sheet, finish samples and a dedicated project contact.</p>
+        </div>
+        <a href="services.html#trade" class="btn btn-light">Explore trade program <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-grid">
+      <div>
+        <span class="section-label">Not sure it will fit?</span>
+        <h2>Bring us<br>the room.</h2>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-light">Book a consultation <span>↗</span></a>
+        <a href="https://wa.me/919987279570?text=Hi%20Furniture%20Now%2C%20I%27d%20like%20help%20choosing%20a%20piece." class="btn btn-outline-light" target="_blank" rel="noopener">WhatsApp us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lb-close" type="button" aria-label="Close product view">×</button>
+  <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+    <div class="lb-media"><img id="lb-img" src="assets/img/7a2567b7a6c1.jpg" alt=""></div>
+    <div class="lb-copy">
+      <span class="lb-cat" id="lb-cat"></span>
+      <h2 id="lb-title">The Sunday sofa</h2>
+      <p id="lb-desc"></p>
+      <p class="lb-price" id="lb-price"></p>
+      <a class="btn btn-solid" href="contact.html">Enquire about this piece <span>↗</span></a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="brand" aria-label="Furniture Now! home">
+        <span class="logo-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 11V7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5V11"/>
+            <path d="M4 11h16v6H4z"/>
+            <path d="M6 17v3M18 17v3"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="b-name">Furniture Now<span class="bang">!</span></span>
+          <span class="b-tag">Mumbai · Since 2009</span>
+        </span>
+      </a>
+      <p>Considered furniture for modern homes. Made in small batches, finished by hand, delivered with care.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="https://www.pinterest.com/" target="_blank" rel="noopener">Pinterest ↗</a>
+        <a href="https://wa.me/919987279570" target="_blank" rel="noopener">WhatsApp ↗</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">Our story</a>
+      <a href="products.html">The collection</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <p>Furniture Now!<br>Link Road, Kandivali West<br>Mumbai 400067</p>
+      <a href="https://maps.google.com/?q=Kandivali+West+Mumbai" target="_blank" rel="noopener">Get directions ↗</a>
+    </div>
+    <div class="footer-col">
+      <h4>Talk</h4>
+      <a href="tel:+919987279570">+91 99872 79570</a>
+      <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a>
+      <p>Mon–Sat, 10:30–19:30<br>Sunday by appointment</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Furniture Now! · All rights reserved</span>
+    <span>Concept site by <a href="https://github.com/rv2hex" target="_blank" rel="noopener">Rishi Vijay Vishwakarma</a></span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<a class="wa-float" id="wa-float" href="https://wa.me/919987279570?text=Hi%20Furniture%20Now%2C%20I%27m%20interested%20in%20a%20piece%20from%20your%20collection." target="_blank" rel="noopener" aria-label="Chat with Furniture Now on WhatsApp">
+  <img src="../../assets/img/whatsapp-white.svg" width="22" height="22" alt="" aria-hidden="true">
+  <span>Chat with us</span>
+</a>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

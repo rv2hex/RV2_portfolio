@@ -47,3 +47,7 @@ All internal links and preview URLs are relative, so the site works from a proje
 - Prices are stored in INR in the HTML and converted in the browser for display only.
 - FX rates are indicative and dated in `assets/js/app.js`. Update the `CURRENCIES` table when needed.
 - `B2B/` is the old reference copy and is **not** part of this deployable folder.
+
+## Asset credits
+
+- Furniture Now! hero footage: “Minimalist room with wooden furniture” by [Mixkit](https://mixkit.co/free-stock-video/minimalist-room-with-wooden-furniture-3091/), used under the [Mixkit Free License](https://mixkit.co/license/#videoFree). The clip has been cropped, colour-graded and looped locally.

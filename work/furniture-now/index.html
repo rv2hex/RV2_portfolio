@@ -1,481 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furniture Now! - Premium Furniture in India</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        :root { --primary: #1a2332; --accent: #e67e22; }
-        * { -webkit-tap-highlight-color: transparent; }
-        .navbar { background-color: var(--primary) !important; }
-        .navbar-brand, .nav-link { color: #fff !important; }
-        .nav-link:hover { color: var(--accent) !important; }
-        .carousel-item { height: 100vh; min-height: 400px; }
-        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
-        .carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26,35,50,0.65); display: flex; align-items: center; justify-content: center; }
-        .carousel-overlay h1 { font-size: clamp(2.5rem, 7vw, 4rem); font-weight: 700; }
-        .carousel-overlay p { font-size: clamp(1.1rem, 3.5vw, 1.4rem); }
-        .btn-accent { background-color: var(--accent); color: #fff; border: none; }
-        .btn-accent:hover { background-color: #d35400; color: #fff; }
-        .section-title { color: var(--primary); font-weight: 700; position: relative; display: inline-block; font-size: clamp(1.75rem, 4.5vw, 2.25rem); }
-        .section-title::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--accent); }
-        .feature-card { border: none; transition: transform 0.3s, box-shadow 0.3s; }
-        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .feature-icon { font-size: 2.5rem; color: var(--accent); }
-        .product-card { border: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
-        .product-card .img-wrap { height: 200px; overflow: hidden; }
-        .product-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-        .cta-section { background: var(--accent); color: #fff; }
-        footer { background-color: var(--primary); color: #ccc; }
-        footer a { color: var(--accent); text-decoration: none; }
-        footer a:hover { color: #fff; }
-        @media (min-width: 768px) {
-            .product-card .img-wrap { height: 250px; }
-        }
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: rgba(37, 211, 102, 0.5);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-            transition: background 0.3s ease, transform 0.3s ease;
-            animation: whatsapp-pulse 2s infinite;
-        }
-        .whatsapp-float:hover {
-            background: #25d366;
-            transform: translateY(-4px);
-            animation: none;
-        }
-        @keyframes whatsapp-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
-            70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
-            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-        }
-        @media (max-width: 767.98px) {
-            .navbar-brand { font-size: 1.1rem; }
-            .carousel-item { height: 70vh; min-height: 380px; }
-            .carousel-caption-buttons .btn { padding: 0.5rem 1.25rem; font-size: 0.95rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f4efe6">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<title>Furniture Now! — Considered furniture for modern homes</title>
+<meta name="description" content="Furniture Now! is a Mumbai furniture studio for considered sofas, dining tables, beds and workspaces. Hand-finished pieces, made to be lived in.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="preload" as="image" href="assets/img/7a2567b7a6c1.jpg">
+<script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-house-door"></i> Furniture Now!</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body data-page="home" id="top">
 
-    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="assets/img/cbd810a4d4fc.jpg" class="d-block w-100" alt="Living Room">
-                <div class="carousel-overlay">
-                    <div class="container text-center text-white px-3">
-                        <h1 class="display-3 mb-3">Welcome to Furniture Now!</h1>
-                        <p class="lead mb-4">Transform your space with premium quality furniture crafted for comfort and style.</p>
-                        <div class="carousel-caption-buttons">
-                            <a href="products.html" class="btn btn-accent btn-lg px-4 px-md-5 me-2 mb-2">Shop Now</a>
-                            <a href="about.html" class="btn btn-outline-light btn-lg px-4 px-md-5 mb-2">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/edafc11011d8.jpg" class="d-block w-100" alt="Sofa Collection">
-                <div class="carousel-overlay">
-                    <div class="container text-center text-white px-3">
-                        <h1 class="display-3 mb-3">Sofa Collection</h1>
-                        <p class="lead mb-4">Premium sofas designed for Indian homes. Comfort meets elegance.</p>
-                        <a href="products.html" class="btn btn-accent btn-lg px-4 px-md-5">Explore Sofas</a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/7a2567b7a6c1.jpg" class="d-block w-100" alt="Dining Sets">
-                <div class="carousel-overlay">
-                    <div class="container text-center text-white px-3">
-                        <h1 class="display-3 mb-3">Dining Room Essentials</h1>
-                        <p class="lead mb-4">Handcrafted dining tables built to last generations.</p>
-                        <a href="products.html" class="btn btn-accent btn-lg px-4 px-md-5">View Collection</a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/09a3264eabee.jpg" class="d-block w-100" alt="Bedroom Furniture">
-                <div class="carousel-overlay">
-                    <div class="container text-center text-white px-3">
-                        <h1 class="display-3 mb-3">Bedroom Collection</h1>
-                        <p class="lead mb-4">Wake up to luxury with our premium bedroom furniture range.</p>
-                        <a href="products.html" class="btn btn-accent btn-lg px-4 px-md-5">Browse Bedrooms</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
+<div class="grain" aria-hidden="true"></div>
+<div class="bg-stage" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+</div>
+<canvas id="particles" aria-hidden="true"></canvas>
+<div id="progress" aria-hidden="true"></div>
 
-    <section class="py-4 py-md-5">
-        <div class="container py-3 py-md-5">
-            <div class="text-center mb-4 mb-md-5">
-                <h2 class="section-title">Why Choose Us</h2>
-            </div>
-            <div class="row g-3 g-md-4 mt-3">
-                <div class="col-md-4">
-                    <div class="card feature-card text-center p-3 p-md-4 h-100">
-                        <div class="card-body">
-                            <i class="bi bi-truck feature-icon mb-3"></i>
-                            <h5>Free Delivery</h5>
-                            <p class="text-muted mb-0">Free shipping on all orders above &#8377;10,000. We deliver PAN India.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card feature-card text-center p-3 p-md-4 h-100">
-                        <div class="card-body">
-                            <i class="bi bi-shield-check feature-icon mb-3"></i>
-                            <h5>5-Year Warranty</h5>
-                            <p class="text-muted mb-0">Every piece comes with a comprehensive 5-year warranty.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card feature-card text-center p-3 p-md-4 h-100">
-                        <div class="card-body">
-                            <i class="bi bi-arrow-return-left feature-icon mb-3"></i>
-                            <h5>Easy Returns</h5>
-                            <p class="text-muted mb-0">30-day hassle-free return policy on all products.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div id="loader" aria-hidden="true">
+  <span class="loader-mark">FN</span>
+  <span class="loader-word">Furniture Now!</span>
+  <span class="loader-bar"><i></i></span>
+</div>
 
-    <section class="py-4 py-md-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-4 mb-md-5">
-                <h2 class="section-title">Shop by Category</h2>
-            </div>
-
-            <div class="text-center mb-4 mb-md-5">
-                <h3 class="h5 text-uppercase fw-bold text-accent mb-3" style="color: var(--accent);"><i class="bi bi-house me-2"></i>Living Room</h3>
-                <div class="row g-3 g-md-4 mt-1">
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/edafc11011d8.jpg" alt="Modern L-Shape Sofa" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Modern L-Shape Sofa</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Premium fabric, seats 5.</p>
-                                <span class="fw-bold text-primary">&#8377;42,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/260dd8cc1127.jpg" alt="Luxury Sofa" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Luxury Fabric Sofa</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Velvet touch, 3-seater.</p>
-                                <span class="fw-bold text-primary">&#8377;55,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/ff0a34037c4b.jpg" alt="Comfort Armchair" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Comfort Armchair</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Cozy accent chair.</p>
-                                <span class="fw-bold text-primary">&#8377;16,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/af0e647d322e.jpg" alt="Classic Armchair" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Classic Armchair</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Timeless design.</p>
-                                <span class="fw-bold text-primary">&#8377;22,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/58a4af446eb3.jpg" alt="Recliner Chair" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Recliner Chair</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Relax and unwind.</p>
-                                <span class="fw-bold text-primary">&#8377;26,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/dddc1f555025.jpg" alt="Sectional Sofa" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Sectional Sofa</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Large family sofa.</p>
-                                <span class="fw-bold text-primary">&#8377;48,999</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mb-4 mb-md-5">
-                <h3 class="h5 text-uppercase fw-bold mb-3" style="color: var(--accent);"><i class="bi bi-moon me-2"></i>Bedroom</h3>
-                <div class="row g-3 g-md-4 mt-1">
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/3d6481a55906.jpg" alt="King Bed Frame" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">King Bed Frame</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Sturdy and stylish.</p>
-                                <span class="fw-bold text-primary">&#8377;24,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/e44dc65b62a0.jpg" alt="Queen Bed" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Queen Bed</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Contemporary design.</p>
-                                <span class="fw-bold text-primary">&#8377;32,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/8c62b5db5807.jpg" alt="Bedroom Set" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Complete Bedroom Set</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Bed + wardrobe + side.</p>
-                                <span class="fw-bold text-primary">&#8377;89,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/cf14eedbb3bd.jpg" alt="Wooden Bed Frame" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Wooden Bed Frame</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Rustic solid wood.</p>
-                                <span class="fw-bold text-primary">&#8377;28,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/e04d4f9f41d9.jpg" alt="Wardrobe" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">3-Door Wardrobe</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Ample storage space.</p>
-                                <span class="fw-bold text-primary">&#8377;36,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/80a46152735b.jpg" alt="Study Chair" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Bedside Study Chair</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Compact &amp; sturdy.</p>
-                                <span class="fw-bold text-primary">&#8377;9,999</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mb-4 mb-md-5">
-                <h3 class="h5 text-uppercase fw-bold mb-3" style="color: var(--accent);"><i class="bi bi-egg-fried me-2"></i>Dining</h3>
-                <div class="row g-3 g-md-4 mt-1">
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/7a2567b7a6c1.jpg" alt="Sheesham Dining Set" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Sheesham Dining Set</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">6-seater with chairs.</p>
-                                <span class="fw-bold text-primary">&#8377;58,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/66a3f9c46070.jpg" alt="Dining Chairs" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Dining Chairs (Set of 2)</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Upholstered comfort.</p>
-                                <span class="fw-bold text-primary">&#8377;18,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/dddc1f555025.jpg" alt="Coffee Table" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Sheesham Coffee Table</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">With lower shelf.</p>
-                                <span class="fw-bold text-primary">&#8377;8,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/05bc0c259cc0.jpg" alt="Bar Stools" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Bar Stools (Set of 2)</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Modern kitchen stools.</p>
-                                <span class="fw-bold text-primary">&#8377;12,999</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mb-4 mb-md-5">
-                <h3 class="h5 text-uppercase fw-bold mb-3" style="color: var(--accent);"><i class="bi bi-laptop me-2"></i>Office</h3>
-                <div class="row g-3 g-md-4 mt-1">
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/e04d4f9f41d9.jpg" alt="Office Work Desk" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Office Work Desk</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Spacious study table.</p>
-                                <span class="fw-bold text-primary">&#8377;19,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/05bc0c259cc0.jpg" alt="Ergonomic Chair" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Ergonomic Office Chair</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Adjustable lumbar support.</p>
-                                <span class="fw-bold text-primary">&#8377;14,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/66a3f9c46070.jpg" alt="Bookshelf" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Tall Bookshelf</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">5-tier storage.</p>
-                                <span class="fw-bold text-primary">&#8377;12,999</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card product-card h-100">
-                            <div class="img-wrap"><img src="assets/img/ff0a34037c4b.jpg" alt="Visitor Chair" loading="lazy"></div>
-                            <div class="card-body p-2 p-md-3">
-                                <h6 class="card-title mb-1">Visitor Chairs (Set of 2)</h6>
-                                <p class="text-muted small mb-2 d-none d-md-block">Comfortable seating.</p>
-                                <span class="fw-bold text-primary">&#8377;8,499</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-4">
-                <a href="products.html" class="btn btn-accent px-4">View All Products</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section py-4 py-md-5">
-        <div class="container text-center py-3 py-md-4">
-            <h2 class="mb-2 mb-md-3">Ready to Transform Your Space?</h2>
-            <p class="mb-3 mb-md-4">Get a free consultation with our interior design experts.</p>
-            <a href="contact.html" class="btn btn-light btn-lg px-4 px-md-5">Get Free Quote</a>
-        </div>
-    </section>
-
-    <footer class="py-4 py-md-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <h5 class="text-white mb-3"><i class="bi bi-house-door"></i> Furniture Now!</h5>
-                    <p class="mb-0">Your trusted partner for premium furniture. We bring comfort and style to Indian homes since 2010.</p>
-                </div>
-                <div class="col-6 col-md-6 col-lg-2">
-                    <h6 class="text-white mb-3">Quick Links</h6>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a href="index.html">Home</a></li>
-                        <li class="mb-2"><a href="about.html">About</a></li>
-                        <li class="mb-2"><a href="products.html">Products</a></li>
-                        <li class="mb-2"><a href="services.html">Services</a></li>
-                        <li class="mb-2"><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-6 col-lg-3">
-                    <h6 class="text-white mb-3">Contact Info</h6>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><i class="bi bi-geo-alt"></i> Kandivali West, Mumbai, Maharashtra 400067</li>
-                        <li class="mb-2"><i class="bi bi-telephone"></i> +91 99872 79570</li>
-                        <li class="mb-2"><i class="bi bi-envelope"></i> rv2xx699@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-6 col-lg-3">
-                    <h6 class="text-white mb-3">Follow Us</h6>
-                    <div class="d-flex gap-3">
-                        <a href="https://www.linkedin.com/in/rv2----/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
-                        <a href="https://github.com/rv2hex" target="_blank" aria-label="GitHub"><i class="bi bi-github fs-4"></i></a>
-                        <a href="mailto:rv2xx699@gmail.com" aria-label="Email"><i class="bi bi-envelope fs-4"></i></a>
-                        <a href="https://wa.me/919987279570" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-3 my-md-4" style="border-color: #555;">
-            <p class="text-center mb-0 small">&copy; 2026 Furniture Now! All rights reserved.</p>
-            <p class="text-center mb-0 small">Concept site by Rishi Vijay Vishwakarma · <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a> · <a href="https://www.linkedin.com/in/rv2----/">LinkedIn</a></p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/919987279570" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
-        <i class="bi bi-whatsapp"></i>
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Furniture Now! home">
+      <span class="logo-box" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 11V7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5V11"/>
+          <path d="M4 11h16v6H4z"/>
+          <path d="M6 17v3M18 17v3"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="b-name">Furniture Now<span class="bang">!</span></span>
+        <span class="b-tag">Mumbai · Since 2009</span>
+      </span>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="index.html" data-nav="home" class="active">Home</a>
+      <a href="about.html" data-nav="about">Story</a>
+      <a href="products.html" data-nav="products">Collection</a>
+      <a href="services.html" data-nav="services">Services</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
+
+    <a href="contact.html" class="nav-cta">Book a visit <span>↗</span></a>
+
+    <button class="hamburger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div id="scrim"></div>
+<nav id="drawer" aria-label="Mobile">
+  <p class="drawer-label">Furniture Now!</p>
+  <div class="drawer-links">
+    <a href="index.html" data-nav="home"><i>01</i> Home</a>
+    <a href="about.html" data-nav="about"><i>02</i> Our story</a>
+    <a href="products.html" data-nav="products"><i>03</i> The collection</a>
+    <a href="services.html" data-nav="services"><i>04</i> Services</a>
+    <a href="contact.html" data-nav="contact"><i>05</i> Contact</a>
+  </div>
+  <div class="drawer-foot">
+    Kandivali West, Mumbai 400067<br>
+    +91 99872 79570<br>
+    rv2xx699@gmail.com
+    <a href="contact.html" class="btn btn-light drawer-cta">Book a showroom visit <span>↗</span></a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow reveal"><i></i> Considered furniture · Mumbai</span>
+        <h1 class="reveal" data-delay="1">Furniture that<br><em><span class="rotator" id="rotator">earns its place.</span></em></h1>
+        <p class="hero-lede reveal" data-delay="2">Sofas you sink into. Tables that gather people. Pieces made in small batches, finished by hand and chosen to stay with you.</p>
+        <div class="cta-row reveal" data-delay="3">
+          <a href="products.html" class="btn btn-solid">Explore the collection <span>↗</span></a>
+          <a href="contact.html" class="btn btn-outline">Book a showroom visit</a>
+        </div>
+        <div class="hero-stats reveal" data-delay="3">
+          <div class="stat">
+            <span class="counter" data-target="15000">0</span><span class="stat-suffix">+</span>
+            <p>Homes furnished</p>
+          </div>
+          <div class="stat">
+            <span class="counter" data-target="16">0</span><span class="stat-suffix">yrs</span>
+            <p>Of making</p>
+          </div>
+          <div class="stat">
+            <span class="static-num">4.9</span><span class="stat-suffix">/5</span>
+            <p>Client rating</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media reveal" data-delay="2">
+        <!-- Footage: Mixkit, free licence. See README.md for credit. -->
+        <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/furniture-hero-poster.jpg" aria-hidden="true" tabindex="-1">
+          <source src="assets/video/furniture-hero.mp4" type="video/mp4">
+        </video>
+        <img class="hero-video-still" src="assets/img/furniture-hero-poster.jpg" alt="A quiet dining room with a solid wood table and hand-finished chairs" loading="lazy">
+        <div class="hero-tag">
+          <span class="mono">The dining collection</span>
+          <p>Made for<br>long lunches.</p>
+          <a href="products.html#dining">See the pieces <span>↗</span></a>
+        </div>
+        <span class="media-index">Film · 00:15</span>
+      </div>
+    </div>
+    <div class="scroll-hint"><span>Scroll</span><span class="mouse"></span></div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Solid teak</span><span>Hand-finished</span><span>Made in small batches</span><span>10-year frame warranty</span><span>Free delivery in Mumbai</span><span>Trade program</span>
+      <span>Solid teak</span><span>Hand-finished</span><span>Made in small batches</span><span>10-year frame warranty</span><span>Free delivery in Mumbai</span><span>Trade program</span>
+    </div>
+  </div>
+
+  <!-- ============ COLLECTIONS ============ -->
+  <section class="section collections" id="collections">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-label reveal">01 / The collection</span>
+          <h2 class="reveal">Pieces that <em>settle in.</em></h2>
+        </div>
+        <a href="products.html" class="text-link reveal">View all pieces <span>↗</span></a>
+      </div>
+
+      <div class="collection-grid">
+        <a href="products.html#living" class="collection-card reveal">
+          <img src="assets/img/7a2567b7a6c1.jpg" alt="The Sunday sofa in a light living room" loading="lazy">
+          <span class="collection-copy">
+            <span>
+              <span class="mono">Living · 3 seater</span>
+              <h3>The Sunday sofa</h3>
+            </span>
+            <span class="collection-arrow">↗</span>
+          </span>
+        </a>
+
+        <a href="products.html#dining" class="collection-card reveal" data-delay="1">
+          <img src="assets/img/dining-room.jpg" alt="A solid wood dining table in a quiet, light-filled room" loading="lazy">
+          <span class="collection-copy">
+            <span>
+              <span class="mono">Dining · Solid oak</span>
+              <h3>The Oak table</h3>
+            </span>
+            <span class="collection-arrow">↗</span>
+          </span>
+        </a>
+
+        <a href="products.html#bedroom" class="collection-card reveal">
+          <img src="assets/img/8c62b5db5807.jpg" alt="A calm bedroom with a linen upholstered bed" loading="lazy">
+          <span class="collection-copy">
+            <span>
+              <span class="mono">Bedroom · King</span>
+              <h3>The Linen bed</h3>
+            </span>
+            <span class="collection-arrow">↗</span>
+          </span>
+        </a>
+
+        <a href="products.html#workspace" class="collection-card reveal" data-delay="1">
+          <img src="assets/img/e04d4f9f41d9.jpg" alt="A bright workspace with a timber desk and soft seating" loading="lazy">
+          <span class="collection-copy">
+            <span>
+              <span class="mono">Workspace · Walnut</span>
+              <h3>The Studio desk</h3>
+            </span>
+            <span class="collection-arrow">↗</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STORY ============ -->
+  <section class="story">
+    <div class="container story-grid">
+      <div class="story-media reveal">
+        <img src="assets/img/09a3264eabee.jpg" alt="A burnt orange sofa against a deep green wall" loading="lazy">
+        <span class="story-media-tag">The workshop · Mumbai</span>
+      </div>
+      <div class="story-copy">
+        <span class="section-label light reveal">02 / Our point of view</span>
+        <h2 class="reveal">Good furniture is a <em>quiet luxury.</em></h2>
+        <p class="reveal">We started in 2009 with a small workshop, a stack of timber and a simple idea: make furniture that feels as good on the tenth year as it did on the first day.</p>
+        <p class="reveal">Today, every piece is still drawn, prototyped and finished by people who care about the grain, the joint and the way a room feels when you walk into it.</p>
+        <a href="about.html" class="btn btn-light reveal">Read our story <span>↗</span></a>
+        <div class="story-stats reveal">
+          <div class="story-stat">
+            <span class="counter" data-target="15000">0</span><span class="stat-suffix">+</span>
+            <p>Homes</p>
+          </div>
+          <div class="story-stat">
+            <span class="counter" data-target="16">0</span><span class="stat-suffix">yrs</span>
+            <p>Making</p>
+          </div>
+          <div class="story-stat">
+            <span class="counter" data-target="42">0</span><span class="stat-suffix">+</span>
+            <p>Makers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section services-preview" id="services-preview">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-label reveal">03 / How we help</span>
+          <h2 class="reveal">From first sketch<br>to <em>final cushion.</em></h2>
+        </div>
+        <p class="head-copy reveal">A showroom visit, a measured plan and a team that handles the making, delivery and assembly. One point of contact, start to finish.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <span class="service-num">01</span>
+          <h3>Design consultation</h3>
+          <p>Bring your room, your plans or just a feeling. We help with layout, scale, fabric and the pieces that will do the most work.</p>
+          <a href="services.html" class="card-link">Explore <span>↗</span></a>
+        </article>
+        <article class="service-card reveal" data-delay="1">
+          <span class="service-num">02</span>
+          <h3>Made to measure</h3>
+          <p>Different room, different proportions. We adjust dimensions, finishes and upholstery so a piece belongs exactly where it lands.</p>
+          <a href="services.html" class="card-link">Explore <span>↗</span></a>
+        </article>
+        <article class="service-card reveal" data-delay="2">
+          <span class="service-num">03</span>
+          <h3>Delivery &amp; assembly</h3>
+          <p>Careful delivery, on-site assembly and packaging removed. We leave the room ready to live in, not ready for a tip run.</p>
+          <a href="services.html" class="card-link">Explore <span>↗</span></a>
+        </article>
+        <article class="service-card reveal" data-delay="3">
+          <span class="service-num">04</span>
+          <h3>Trade program</h3>
+          <p>For interior designers and architects: trade pricing, samples, lead-time support and a dedicated line for project enquiries.</p>
+          <a href="services.html" class="card-link">Explore <span>↗</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section testimonials">
+    <div class="container testimonial-shell">
+      <div class="testimonial-side reveal">
+        <span class="section-label">04 / In their words</span>
+        <div class="rating">4.9<span>/ 5</span></div>
+        <p>From first visit to final delivery, here is what living with Furniture Now! feels like.</p>
+      </div>
+
+      <div class="reveal">
+        <div class="t-slider">
+          <div class="t-track" id="t-track">
+            <figure class="t-slide">
+              <blockquote class="t-quote">The sofa changed the whole room. It is the first thing everyone asks about when they walk in.</blockquote>
+              <figcaption class="t-person">
+                <span class="t-avatar">AM</span>
+                <span><b>Aditi Mehta</b><span>Bandra · The Sunday sofa</span></span>
+              </figcaption>
+            </figure>
+            <figure class="t-slide">
+              <blockquote class="t-quote">They measured, listened and came back with something that actually fits the way we live.</blockquote>
+              <figcaption class="t-person">
+                <span class="t-avatar">RK</span>
+                <span><b>Rohan Kapoor</b><span>Powai · Full living room</span></span>
+              </figcaption>
+            </figure>
+            <figure class="t-slide">
+              <blockquote class="t-quote">Three years in, the dining table has aged beautifully. That is the difference between furniture and a purchase.</blockquote>
+              <figcaption class="t-person">
+                <span class="t-avatar">SN</span>
+                <span><b>Sara Nair</b><span>Koramangala · The Oak table</span></span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="t-controls" role="tablist" aria-label="Testimonials">
+          <button class="t-dot active" type="button" data-slide="0" aria-label="Show testimonial one" aria-selected="true"></button>
+          <button class="t-dot" type="button" data-slide="1" aria-label="Show testimonial two" aria-selected="false"></button>
+          <button class="t-dot" type="button" data-slide="2" aria-label="Show testimonial three" aria-selected="false"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <div class="container cta-grid">
+      <div>
+        <span class="section-label">Visit the showroom</span>
+        <h2>Come sit<br>with us.</h2>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-light">Book a visit <span>↗</span></a>
+        <a href="https://wa.me/919987279570?text=Hi%20Furniture%20Now%2C%20I%27d%20like%20to%20visit%20the%20showroom." class="btn btn-outline-light" target="_blank" rel="noopener">WhatsApp us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="brand" aria-label="Furniture Now! home">
+        <span class="logo-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 11V7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5V11"/>
+            <path d="M4 11h16v6H4z"/>
+            <path d="M6 17v3M18 17v3"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="b-name">Furniture Now<span class="bang">!</span></span>
+          <span class="b-tag">Mumbai · Since 2009</span>
+        </span>
+      </a>
+      <p>Considered furniture for modern homes. Made in small batches, finished by hand, delivered with care.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="https://www.pinterest.com/" target="_blank" rel="noopener">Pinterest ↗</a>
+        <a href="https://wa.me/919987279570" target="_blank" rel="noopener">WhatsApp ↗</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">Our story</a>
+      <a href="products.html">The collection</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <p>Furniture Now!<br>Link Road, Kandivali West<br>Mumbai 400067</p>
+      <a href="https://maps.google.com/?q=Kandivali+West+Mumbai" target="_blank" rel="noopener">Get directions ↗</a>
+    </div>
+    <div class="footer-col">
+      <h4>Talk</h4>
+      <a href="tel:+919987279570">+91 99872 79570</a>
+      <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a>
+      <p>Mon–Sat, 10:30–19:30<br>Sunday by appointment</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Furniture Now! · All rights reserved</span>
+    <span>Concept site by <a href="https://github.com/rv2hex" target="_blank" rel="noopener">Rishi Vijay Vishwakarma</a></span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<a class="wa-float" id="wa-float" href="https://wa.me/919987279570?text=Hi%20Furniture%20Now%2C%20I%27m%20interested%20in%20a%20piece%20from%20your%20collection." target="_blank" rel="noopener" aria-label="Chat with Furniture Now on WhatsApp">
+  <img src="../../assets/img/whatsapp-white.svg" width="22" height="22" alt="" aria-hidden="true">
+  <span>Chat with us</span>
+</a>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

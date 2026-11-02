@@ -419,7 +419,13 @@
   /* ---------- Active nav ---------- */
   var navLinks = $$(".desk-nav a");
   var navSections = navLinks.map(function (a) {
-    return document.querySelector(a.getAttribute("href"));
+    var href = a.getAttribute("href") || "";
+    if (href.charAt(0) !== "#" || href.length < 2) return null;
+    try {
+      return document.querySelector(href);
+    } catch (error) {
+      return null;
+    }
   }).filter(Boolean);
 
   if ("IntersectionObserver" in window && navSections.length) {
@@ -476,7 +482,7 @@
       index: "03",
       title: "Furniture Now!",
       site: "work/furniture-now/",
-      accent: "#e67e22",
+      accent: "#a9663f",
       pages: [
         { label: "Home", path: "index.html" },
         { label: "About", path: "about.html" },
