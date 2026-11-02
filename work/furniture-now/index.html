@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Now! - Premium Furniture in India</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root { --primary: #1a2332; --accent: #e67e22; }
+        * { -webkit-tap-highlight-color: transparent; }
+        .navbar { background-color: var(--primary) !important; }
+        .navbar-brand, .nav-link { color: #fff !important; }
+        .nav-link:hover { color: var(--accent) !important; }
+        .carousel-item { height: 100vh; min-height: 400px; }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+        .carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26,35,50,0.65); display: flex; align-items: center; justify-content: center; }
+        .carousel-overlay h1 { font-size: clamp(2.5rem, 7vw, 4rem); font-weight: 700; }
+        .carousel-overlay p { font-size: clamp(1.1rem, 3.5vw, 1.4rem); }
+        .btn-accent { background-color: var(--accent); color: #fff; border: none; }
+        .btn-accent:hover { background-color: #d35400; color: #fff; }
+        .section-title { color: var(--primary); font-weight: 700; position: relative; display: inline-block; font-size: clamp(1.75rem, 4.5vw, 2.25rem); }
+        .section-title::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--accent); }
+        .feature-card { border: none; transition: transform 0.3s, box-shadow 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .feature-icon { font-size: 2.5rem; color: var(--accent); }
+        .product-card { border: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+        .product-card .img-wrap { height: 200px; overflow: hidden; }
+        .product-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+        .cta-section { background: var(--accent); color: #fff; }
+        footer { background-color: var(--primary); color: #ccc; }
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { color: #fff; }
+        @media (min-width: 768px) {
+            .product-card .img-wrap { height: 250px; }
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(37, 211, 102, 0.5);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: background 0.3s ease, transform 0.3s ease;
+            animation: whatsapp-pulse 2s infinite;
+        }
+        .whatsapp-float:hover {
+            background: #25d366;
+            transform: translateY(-4px);
+            animation: none;
+        }
+        @keyframes whatsapp-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
+            70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+        @media (max-width: 767.98px) {
+            .navbar-brand { font-size: 1.1rem; }
+            .carousel-item { height: 70vh; min-height: 380px; }
+            .carousel-caption-buttons .btn { padding: 0.5rem 1.25rem; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-house-door"></i> Furniture Now!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/img/cbd810a4d4fc.jpg" class="d-block w-100" alt="Living Room">
+                <div class="carousel-overlay">
+                    <div class="container text-center text-white px-3">
+                        <h1 class="display-3 mb-3">Welcome to Furniture Now!</h1>
+                        <p class="lead mb-4">Transform your space with premium quality furniture crafted for comfort and style.</p>
+                        <div class="carousel-caption-buttons">
+                            <a href="products.html" class="btn btn-accent btn-lg px-4 px-md-5 me-2 mb-2">Shop Now</a>
+                            <a href="about.html" class="btn btn-outline-light btn-lg px-4 px-md-5 mb-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/edafc11011d8.jpg" class="d-block w-100" alt="Sofa Collection">
+                <div class="carousel-overlay">
+                    <div class="container text-center text-white px-3">
+                        <h1 class="display-3 mb-3">Sofa Collection</h1>
+                        <p class="lead mb-4">Premium sofas designed for Indian homes. Comfort meets elegance.</p>
+                        <a href="products.html" class="btn btn-accent btn-lg px-4 px-md-5">Explore Sofas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/7a2567b7a6c1.jpg" class="d-block w-100" alt="Dining Sets">
+                <div class="carousel-overlay">
+                    <div class="container text-center text-white px-3">
+                        <h1 class="display-3 mb-3">Dining Room Essentials</h1>
+                        <p class="lead mb-4">Handcrafted dining tables built to last generations.</p>
+                        <a href="products.html" class="btn btn-accent btn-lg px-4 px-md-5">View Collection</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/09a3264eabee.jpg" class="d-block w-100" alt="Bedroom Furniture">
+                <div class="carousel-overlay">
+                    <div class="container text-center text-white px-3">
+                        <h1 class="display-3 mb-3">Bedroom Collection</h1>
+                        <p class="lead mb-4">Wake up to luxury with our premium bedroom furniture range.</p>
+                        <a href="products.html" class="btn btn-accent btn-lg px-4 px-md-5">Browse Bedrooms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <section class="py-4 py-md-5">
+        <div class="container py-3 py-md-5">
+            <div class="text-center mb-4 mb-md-5">
+                <h2 class="section-title">Why Choose Us</h2>
+            </div>
+            <div class="row g-3 g-md-4 mt-3">
+                <div class="col-md-4">
+                    <div class="card feature-card text-center p-3 p-md-4 h-100">
+                        <div class="card-body">
+                            <i class="bi bi-truck feature-icon mb-3"></i>
+                            <h5>Free Delivery</h5>
+                            <p class="text-muted mb-0">Free shipping on all orders above &#8377;10,000. We deliver PAN India.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card text-center p-3 p-md-4 h-100">
+                        <div class="card-body">
+                            <i class="bi bi-shield-check feature-icon mb-3"></i>
+                            <h5>5-Year Warranty</h5>
+                            <p class="text-muted mb-0">Every piece comes with a comprehensive 5-year warranty.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card text-center p-3 p-md-4 h-100">
+                        <div class="card-body">
+                            <i class="bi bi-arrow-return-left feature-icon mb-3"></i>
+                            <h5>Easy Returns</h5>
+                            <p class="text-muted mb-0">30-day hassle-free return policy on all products.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4 mb-md-5">
+                <h2 class="section-title">Shop by Category</h2>
+            </div>
+
+            <div class="text-center mb-4 mb-md-5">
+                <h3 class="h5 text-uppercase fw-bold text-accent mb-3" style="color: var(--accent);"><i class="bi bi-house me-2"></i>Living Room</h3>
+                <div class="row g-3 g-md-4 mt-1">
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/edafc11011d8.jpg" alt="Modern L-Shape Sofa" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Modern L-Shape Sofa</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Premium fabric, seats 5.</p>
+                                <span class="fw-bold text-primary">&#8377;42,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/260dd8cc1127.jpg" alt="Luxury Sofa" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Luxury Fabric Sofa</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Velvet touch, 3-seater.</p>
+                                <span class="fw-bold text-primary">&#8377;55,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/ff0a34037c4b.jpg" alt="Comfort Armchair" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Comfort Armchair</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Cozy accent chair.</p>
+                                <span class="fw-bold text-primary">&#8377;16,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/af0e647d322e.jpg" alt="Classic Armchair" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Classic Armchair</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Timeless design.</p>
+                                <span class="fw-bold text-primary">&#8377;22,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/58a4af446eb3.jpg" alt="Recliner Chair" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Recliner Chair</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Relax and unwind.</p>
+                                <span class="fw-bold text-primary">&#8377;26,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/dddc1f555025.jpg" alt="Sectional Sofa" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Sectional Sofa</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Large family sofa.</p>
+                                <span class="fw-bold text-primary">&#8377;48,999</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-4 mb-md-5">
+                <h3 class="h5 text-uppercase fw-bold mb-3" style="color: var(--accent);"><i class="bi bi-moon me-2"></i>Bedroom</h3>
+                <div class="row g-3 g-md-4 mt-1">
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/3d6481a55906.jpg" alt="King Bed Frame" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">King Bed Frame</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Sturdy and stylish.</p>
+                                <span class="fw-bold text-primary">&#8377;24,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/e44dc65b62a0.jpg" alt="Queen Bed" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Queen Bed</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Contemporary design.</p>
+                                <span class="fw-bold text-primary">&#8377;32,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/8c62b5db5807.jpg" alt="Bedroom Set" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Complete Bedroom Set</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Bed + wardrobe + side.</p>
+                                <span class="fw-bold text-primary">&#8377;89,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/cf14eedbb3bd.jpg" alt="Wooden Bed Frame" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Wooden Bed Frame</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Rustic solid wood.</p>
+                                <span class="fw-bold text-primary">&#8377;28,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/e04d4f9f41d9.jpg" alt="Wardrobe" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">3-Door Wardrobe</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Ample storage space.</p>
+                                <span class="fw-bold text-primary">&#8377;36,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/80a46152735b.jpg" alt="Study Chair" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Bedside Study Chair</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Compact &amp; sturdy.</p>
+                                <span class="fw-bold text-primary">&#8377;9,999</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-4 mb-md-5">
+                <h3 class="h5 text-uppercase fw-bold mb-3" style="color: var(--accent);"><i class="bi bi-egg-fried me-2"></i>Dining</h3>
+                <div class="row g-3 g-md-4 mt-1">
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/7a2567b7a6c1.jpg" alt="Sheesham Dining Set" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Sheesham Dining Set</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">6-seater with chairs.</p>
+                                <span class="fw-bold text-primary">&#8377;58,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/66a3f9c46070.jpg" alt="Dining Chairs" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Dining Chairs (Set of 2)</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Upholstered comfort.</p>
+                                <span class="fw-bold text-primary">&#8377;18,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/dddc1f555025.jpg" alt="Coffee Table" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Sheesham Coffee Table</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">With lower shelf.</p>
+                                <span class="fw-bold text-primary">&#8377;8,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/05bc0c259cc0.jpg" alt="Bar Stools" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Bar Stools (Set of 2)</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Modern kitchen stools.</p>
+                                <span class="fw-bold text-primary">&#8377;12,999</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-4 mb-md-5">
+                <h3 class="h5 text-uppercase fw-bold mb-3" style="color: var(--accent);"><i class="bi bi-laptop me-2"></i>Office</h3>
+                <div class="row g-3 g-md-4 mt-1">
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/e04d4f9f41d9.jpg" alt="Office Work Desk" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Office Work Desk</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Spacious study table.</p>
+                                <span class="fw-bold text-primary">&#8377;19,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/05bc0c259cc0.jpg" alt="Ergonomic Chair" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Ergonomic Office Chair</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Adjustable lumbar support.</p>
+                                <span class="fw-bold text-primary">&#8377;14,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/66a3f9c46070.jpg" alt="Bookshelf" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Tall Bookshelf</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">5-tier storage.</p>
+                                <span class="fw-bold text-primary">&#8377;12,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card product-card h-100">
+                            <div class="img-wrap"><img src="assets/img/ff0a34037c4b.jpg" alt="Visitor Chair" loading="lazy"></div>
+                            <div class="card-body p-2 p-md-3">
+                                <h6 class="card-title mb-1">Visitor Chairs (Set of 2)</h6>
+                                <p class="text-muted small mb-2 d-none d-md-block">Comfortable seating.</p>
+                                <span class="fw-bold text-primary">&#8377;8,499</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="products.html" class="btn btn-accent px-4">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section py-4 py-md-5">
+        <div class="container text-center py-3 py-md-4">
+            <h2 class="mb-2 mb-md-3">Ready to Transform Your Space?</h2>
+            <p class="mb-3 mb-md-4">Get a free consultation with our interior design experts.</p>
+            <a href="contact.html" class="btn btn-light btn-lg px-4 px-md-5">Get Free Quote</a>
+        </div>
+    </section>
+
+    <footer class="py-4 py-md-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <h5 class="text-white mb-3"><i class="bi bi-house-door"></i> Furniture Now!</h5>
+                    <p class="mb-0">Your trusted partner for premium furniture. We bring comfort and style to Indian homes since 2010.</p>
+                </div>
+                <div class="col-6 col-md-6 col-lg-2">
+                    <h6 class="text-white mb-3">Quick Links</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="about.html">About</a></li>
+                        <li class="mb-2"><a href="products.html">Products</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <h6 class="text-white mb-3">Contact Info</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="bi bi-geo-alt"></i> Kandivali West, Mumbai, Maharashtra 400067</li>
+                        <li class="mb-2"><i class="bi bi-telephone"></i> +91 99872 79570</li>
+                        <li class="mb-2"><i class="bi bi-envelope"></i> rv2xx699@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <h6 class="text-white mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.linkedin.com/in/rv2----/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="https://github.com/rv2hex" target="_blank" aria-label="GitHub"><i class="bi bi-github fs-4"></i></a>
+                        <a href="mailto:rv2xx699@gmail.com" aria-label="Email"><i class="bi bi-envelope fs-4"></i></a>
+                        <a href="https://wa.me/919987279570" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3 my-md-4" style="border-color: #555;">
+            <p class="text-center mb-0 small">&copy; 2026 Furniture Now! All rights reserved.</p>
+            <p class="text-center mb-0 small">Concept site by Rishi Vijay Vishwakarma · <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a> · <a href="https://www.linkedin.com/in/rv2----/">LinkedIn</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919987279570" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

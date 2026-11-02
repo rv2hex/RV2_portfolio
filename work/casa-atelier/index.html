@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2b1a0e">
+<title>Casa Atelier — Residential Interior Designers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="home">
+
+<div class="grain"></div>
+<div class="bg-stage">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="orb orb-d"></div>
+</div>
+<canvas id="particles"></canvas>
+<div id="progress"></div>
+
+<div id="loader">
+    <div class="loader-mark"></div>
+    <div class="loader-word">Casa Atelier</div>
+</div>
+
+<header id="header">
+    <div class="header-inner">
+        <a href="index.html" class="brand">
+            <span class="logo-box">C</span>
+            <span>
+                <span class="b-name">Casa Atelier</span><br>
+                <span class="b-tag">Residential Designers</span>
+            </span>
+        </a>
+        <nav class="desktop-nav">
+            <a href="index.html" data-nav="home">Home</a>
+            <a href="about.html" data-nav="about">Studio</a>
+            <a href="designers.html" data-nav="designers">Our Work</a>
+            <a href="pricing.html" data-nav="pricing">Pricing</a>
+            <a href="contact.html" data-nav="contact">Contact</a>
+        </nav>
+        <button class="hamburger" id="burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<div id="scrim"></div>
+<nav id="drawer">
+    <div class="nav-links">
+        <a href="index.html" data-nav="home"><i>◆</i> Home</a>
+        <a href="about.html" data-nav="about"><i>◆</i> The Studio</a>
+        <a href="designers.html" data-nav="designers"><i>◆</i> Our Work</a>
+        <a href="pricing.html" data-nav="pricing"><i>◆</i> Pricing</a>
+        <a href="contact.html" data-nav="contact"><i>◆</i> Contact</a>
+    </div>
+    <div class="drawer-foot">
+        Kandivali West, Mumbai 400067<br>
+        +91 99872 79570 · rv2xx699@gmail.com
+    </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <span class="eyebrow reveal">Mumbai · Est. 2012</span>
+        <h1 class="reveal">We design homes you <span class="type" id="typewriter"></span></h1>
+        <p class="sub reveal" data-delay="1">Casa Atelier is a boutique residential design studio crafting warm, soulful interiors for modern Indian homes — from concept to turnkey.</p>
+        <div class="cta-row reveal" data-delay="2">
+            <a href="pricing.html" class="btn btn-gold">View Pricing Packages</a>
+            <a href="contact.html" class="btn btn-ghost">Book a Consultation</a>
+        </div>
+        <div class="hero-stats reveal" data-delay="3">
+            <div class="stat"><div class="num"><span class="counter" data-target="320">0</span><em>+</em></div><div class="lbl">Homes Designed</div></div>
+            <div class="stat"><div class="num"><span class="counter" data-target="14">0</span><em> yrs</em></div><div class="lbl">Of Craft</div></div>
+            <div class="stat"><div class="num"><span class="counter" data-target="98">0</span><em>%</em></div><div class="lbl">Happy Clients</div></div>
+            <div class="stat"><div class="num"><span class="counter" data-target="24">0</span><em>+</em></div><div class="lbl">Awards</div></div>
+        </div>
+    </div>
+    <div class="scroll-hint"><span>Scroll</span><span class="mouse"></span></div>
+</section>
+
+<!-- ============ ABOUT PREVIEW ============ -->
+<section id="about" class="dark-band">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-img reveal">
+                <img src="assets/img/2407ffc6fdc1.jpg" alt="Studio space" loading="lazy">
+                <div class="floating-badge">14+ Years of Craft</div>
+            </div>
+            <div class="about-text reveal" data-delay="1">
+                <div class="sec-eyebrow">The Studio</div>
+                <h2 class="sec-title">A design-led studio for life at home</h2>
+                <p>Founded in 2012 in Mumbai, Casa Atelier began as a two-person studio with a single belief — a home should tell your story. Today we lead a senior team of interior designers, architects and craftsmen who turn every brief into a living, breathing space.</p>
+                <ul class="feature-list">
+                    <li>End-to-end turnkey delivery — design to decor to move-in</li>
+                    <li>Ethically sourced teak, sheesham &amp; local Indian craft</li>
+                    <li>Dedicated project manager for every home</li>
+                    <li>Transparent, milestone-based pricing with no hidden costs</li>
+                </ul>
+                <a href="about.html" class="btn btn-primary">More About the Studio</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ WORK PREVIEW ============ -->
+<section id="work-preview">
+    <div class="container">
+        <div class="sec-head">
+            <div class="sec-eyebrow reveal">Our Work</div>
+            <h2 class="sec-title reveal">Recent <em>transformations</em></h2>
+            <p class="sec-sub reveal">A glimpse of the homes we have designed across Mumbai.</p>
+        </div>
+        <div class="masonry">
+            <div class="p-item reveal">
+                <img src="assets/img/89cece012d03.jpg" alt="Modern living room" loading="lazy">
+                <div class="cap"><h4>Jade Villa</h4><span>Living · Mumbai</span></div>
+            </div>
+            <div class="p-item tall reveal" data-delay="1">
+                <img src="assets/img/a8762e436822.jpg" alt="Bedroom design" loading="lazy">
+                <div class="cap"><h4>Oak Residence</h4><span>Bedroom · Powai</span></div>
+            </div>
+            <div class="p-item reveal" data-delay="2">
+                <img src="assets/img/13b370f15617.jpg" alt="Kitchen design" loading="lazy">
+                <div class="cap"><h4>Clove House</h4><span>Kitchen · Bandra</span></div>
+            </div>
+            <div class="p-item reveal">
+                <img src="assets/img/6a59ae554ac4.jpg" alt="Living space" loading="lazy">
+                <div class="cap"><h4>Terracotta Court</h4><span>Living · Koramangala</span></div>
+            </div>
+        </div>
+        <div class="cta-row" style="justify-content:center; margin-top:40px;">
+            <a href="designers.html" class="btn btn-primary">View Full Portfolio</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SERVICES PREVIEW ============ -->
+<section id="services" style="padding-top:0;">
+    <div class="container">
+        <div class="sec-head">
+            <div class="sec-eyebrow reveal">What We Do</div>
+            <h2 class="sec-title reveal">Full-service <em>studio</em></h2>
+            <p class="sec-sub reveal">One team, every skill — so your home stays coherent from the first sketch to the last cushion.</p>
+        </div>
+        <div class="svc-grid">
+            <div class="svc-card reveal">
+                <div class="svc-icon">⌂</div>
+                <h3>Full Home Design</h3>
+                <p>Complete spatial planning, moodboards and 3D renders for every room in your home.</p>
+                <span class="more">Explore</span>
+            </div>
+            <div class="svc-card reveal" data-delay="1">
+                <div class="svc-icon">✎</div>
+                <h3>Turnkey Execution</h3>
+                <p>Civil, electrical, painting and finishing — managed end-to-end by a dedicated project manager.</p>
+                <span class="more">Explore</span>
+            </div>
+            <div class="svc-card reveal" data-delay="2">
+                <div class="svc-icon">◎</div>
+                <h3>Lighting &amp; Styling</h3>
+                <p>Layered lighting and final styling — art, plants, textiles — the finishing layer of soul.</p>
+                <span class="more">Explore</span>
+            </div>
+        </div>
+        <div class="cta-row" style="justify-content:center; margin-top:40px;">
+            <a href="pricing.html" class="btn btn-gold">See All Services &amp; Pricing</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PRICING PREVIEW ============ -->
+<section id="pricing" class="price-band">
+    <div class="container">
+        <div class="sec-head">
+            <div class="sec-eyebrow reveal">Investment</div>
+            <h2 class="sec-title reveal">Simple, <em>transparent</em> packages</h2>
+            <p class="sec-sub reveal">Choose the level of involvement that fits your home. Every package includes our design discovery session.</p>
+        </div>
+
+        <div class="price-grid">
+            <div class="price-card reveal">
+                <div class="price-tier">Tier 01</div>
+                <h3>Design Only</h3>
+                <div class="price-amount"><span class="cur">₹</span><span class="amt">2.9</span><span class="per"> lakh</span></div>
+                <p class="price-desc">For clients who want a complete design blueprint and will execute with their own contractors.</p>
+                <ul class="price-feats">
+                    <li>Full home 2D &amp; 3D design package</li>
+                    <li>Material &amp; colour moodboards</li>
+                    <li>Furniture layout plans</li>
+                    <li>2 design revision rounds</li>
+                    <li>Buyer-ready BOQ &amp; estimate</li>
+                </ul>
+                <a href="contact.html" class="btn btn-ghost">Choose Design Only</a>
+            </div>
+
+            <div class="price-card popular reveal" data-delay="1">
+                <div class="popular-flag">★ Most Popular</div>
+                <div class="price-tier">Tier 02</div>
+                <h3>Signature</h3>
+                <div class="price-amount"><span class="cur">₹</span><span class="amt">9.9</span><span class="per"> lakh</span></div>
+                <p class="price-desc">Full design plus our team managing material, furniture and site — the complete studio experience.</p>
+                <ul class="price-feats">
+                    <li>Everything in Design Only</li>
+                    <li>Unlimited design revisions</li>
+                    <li>Custom furniture &amp; built-ins</li>
+                    <li>Dedicated project manager</li>
+                    <li>Material sourcing at trade prices</li>
+                    <li>2D/3D + lighting &amp; decor plan</li>
+                </ul>
+                <a href="contact.html" class="btn btn-gold">Choose Signature</a>
+            </div>
+
+            <div class="price-card reveal" data-delay="2">
+                <div class="price-tier">Tier 03</div>
+                <h3>Bespoke Turnkey</h3>
+                <div class="price-amount"><span class="cur">₹</span><span class="amt">24.9</span><span class="per"> lakh</span></div>
+                <p class="price-desc">Hand us the keys. White-glove, design-and-build for larger homes with no effort required from you.</p>
+                <ul class="price-feats">
+                    <li>Everything in Signature</li>
+                    <li>End-to-end turnkey construction</li>
+                    <li>Civil, electrical &amp; plumbing</li>
+                    <li>Bespoke millwork &amp; joinery</li>
+                    <li>Art curation &amp; styling</li>
+                    <li>5-year workmanship warranty</li>
+                </ul>
+                <a href="contact.html" class="btn btn-ghost">Choose Turnkey</a>
+            </div>
+        </div>
+
+        <p class="price-note reveal">All packages are for homes up to 3,000 sq.ft. Larger homes &amp; villas are quoted separately. 100% refundable booking amount. 0% EMI available.</p>
+    </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials">
+    <div class="container">
+        <div class="sec-head">
+            <div class="sec-eyebrow reveal">Client Love</div>
+            <h2 class="sec-title reveal">Homes, <em>handed over</em> happy</h2>
+        </div>
+        <div class="t-slider reveal">
+            <div class="t-track" id="t-track">
+                <div class="t-slide">
+                    <div class="t-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Casa Atelier turned our bare flat into a warm, light-filled home. They understood exactly what we couldn't articulate. Worth every rupee."</p>
+                        <div class="who">
+                            <span class="mono">SR</span>
+                            <div><div class="nm">Sneha Reddy</div><div class="pr">Signature Package · Bandra</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t-slide">
+                    <div class="t-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"The team managed everything — civil work, furniture, lighting. We moved in on schedule, under budget, and it looks like a magazine."</p>
+                        <div class="who">
+                            <span class="mono">AM</span>
+                            <div><div class="nm">Arjun Mehta</div><div class="pr">Bespoke Turnkey · Powai</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t-slide">
+                    <div class="t-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"We only bought the design package and executed ourselves. The BOQ was so detailed our contractor just followed it. Brilliant."</p>
+                        <div class="who">
+                            <span class="mono">KI</span>
+                            <div><div class="nm">Kavita Iyer</div><div class="pr">Design Only · Andheri Layout</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="t-dots reveal">
+            <button class="active" data-slide="0" aria-label="Slide 1"></button>
+            <button data-slide="1" aria-label="Slide 2"></button>
+            <button data-slide="2" aria-label="Slide 3"></button>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section style="padding-top:0;">
+    <div class="container">
+        <div class="cta-band reveal">
+            <h2>Ready to transform your space?</h2>
+            <p>Book a free 45-minute consultation — in-home or over a video call.</p>
+            <a href="contact.html" class="btn btn-gold">Book a Consultation</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="foot-grid">
+        <div>
+            <h4>Casa Atelier</h4>
+            <p>A boutique residential design studio in Mumbai, crafting warm, soulful homes across India since 2012.</p>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/rv2----/" target="_blank" aria-label="LinkedIn">in</a>
+                <a href="https://github.com/rv2hex" target="_blank" aria-label="GitHub">gh</a>
+                <a href="https://wa.me/919987279570" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+                <a href="mailto:rv2xx699@gmail.com" aria-label="Email">✉</a>
+            </div>
+        </div>
+        <div>
+            <h4>Explore</h4>
+            <a href="about.html" class="fl">The Studio</a>
+            <a href="designers.html" class="fl">Our Work</a>
+            <a href="pricing.html" class="fl">Services &amp; Pricing</a>
+            <a href="contact.html" class="fl">Contact</a>
+        </div>
+        <div>
+            <h4>Get in Touch</h4>
+            <a href="tel:+919987279570" class="fl">+91 99872 79570</a>
+            <a href="mailto:rv2xx699@gmail.com" class="fl">rv2xx699@gmail.com</a>
+            <a href="https://wa.me/919987279570" target="_blank" class="fl">WhatsApp us</a>
+        </div>
+    </div>
+    <p class="copy">© 2026 Casa Atelier · Residential Interior Designers · Mumbai, India</p>
+    <p class="copy">Concept site by Rishi Vijay Vishwakarma · <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a> · <a href="https://www.linkedin.com/in/rv2----/">LinkedIn</a></p>
+</footer>
+
+<nav id="bottom-nav">
+    <a href="index.html" data-nav="home"><span class="ic">⌂</span>Home</a>
+    <a href="about.html" data-nav="about"><span class="ic">◉</span>Studio</a>
+    <a href="designers.html" data-nav="designers"><span class="ic">▦</span>Work</a>
+    <a href="pricing.html" data-nav="pricing"><span class="ic">₹</span>Pricing</a>
+    <a href="contact.html" data-nav="contact"><span class="ic">✉</span>Contact</a>
+</nav>
+
+<a href="https://wa.me/919987279570" id="whatsapp" target="_blank" aria-label="Chat on WhatsApp"><svg viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

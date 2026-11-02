@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0f">
+<title>MODUL — Design Your Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="design">
+
+<div class="grain"></div>
+<div class="bg-stage">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+</div>
+<canvas id="particles"></canvas>
+<div id="progress"></div>
+
+<div id="loader">
+    <div class="loader-brand">
+        <span class="lb">M</span>
+        <span class="bt">MODUL</span>
+    </div>
+    <div class="loader-bar"><i></i></div>
+    <div class="loader-pct">0%</div>
+</div>
+
+<header id="header">
+    <div class="header-inner">
+        <a href="index.html" class="brand">
+            <span class="logo-box">M</span>
+            <span>
+                <span class="b-name">MODUL</span><br>
+                <span class="b-tag">Modular Kitchens</span>
+            </span>
+        </a>
+        <nav class="desktop-nav">
+            <a href="index.html" data-nav="home">Home</a>
+            <a href="about.html" data-nav="about">Studio</a>
+            <a href="design.html" data-nav="design">Design Studio</a>
+            <a href="catalog.html" data-nav="catalog">Catalog</a>
+            <a href="pricing.html" data-nav="pricing">Pricing</a>
+            <a href="contact.html" data-nav="contact">Contact</a>
+        </nav>
+        <button class="hamburger" id="burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<div id="scrim"></div>
+<nav id="drawer">
+    <div class="nav-links">
+        <a href="index.html" data-nav="home"><i>◆</i> Home</a>
+        <a href="about.html" data-nav="about"><i>◆</i> The Studio</a>
+        <a href="design.html" data-nav="design"><i>◆</i> Design Studio</a>
+        <a href="catalog.html" data-nav="catalog"><i>◆</i> Catalog</a>
+        <a href="pricing.html" data-nav="pricing"><i>◆</i> Pricing</a>
+        <a href="contact.html" data-nav="contact"><i>◆</i> Contact</a>
+    </div>
+    <div class="drawer-cta">
+        <a href="design.html" class="btn btn-gold" style="width:100%;">Design Your Kitchen</a>
+    </div>
+    <div class="drawer-foot">
+        Kandivali West, Mumbai 400067<br>
+        +91 99872 79570 · rv2xx699@gmail.com
+    </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+    <div class="bg">
+        <img src="assets/img/a235c5db9a32.jpg" alt="Modular kitchen">
+    </div>
+    <div class="container">
+        <span class="eyebrow reveal">Design Studio</span>
+        <h1 class="reveal">Design your <span class="gold">kitchen</span></h1>
+        <p class="lead reveal" data-delay="1">Configure a layout, size, finish and countertop. Watch the estimate update in real time — then save it and our team will refine the details.</p>
+        <p class="crumb reveal" data-delay="2"><a href="index.html">Home</a> &nbsp;/&nbsp; Design Studio</p>
+    </div>
+</section>
+
+<!-- ============ CONFIGURATOR ============ -->
+<section id="config" style="padding-top:40px;">
+    <div class="container">
+        <div class="config reveal">
+            <div class="config-top">
+                <div class="floorplan">
+                    <h3>Floor Plan</h3>
+                    <div class="fp-box">
+                        <svg viewBox="0 0 360 220" role="img" aria-label="Kitchen floor plan">
+                            <g class="fp-group" data-layout="straight">
+                                <rect class="fp-shape" x="20" y="75" width="300" height="80" rx="8"/>
+                                <rect class="fp-unit" x="28" y="82" width="66" height="38" rx="5"/>
+                                <rect class="fp-unit" x="100" y="82" width="66" height="38" rx="5"/>
+                                <rect class="fp-unit" x="172" y="82" width="66" height="38" rx="5"/>
+                                <rect class="fp-unit" x="244" y="82" width="66" height="38" rx="5"/>
+                            </g>
+                            <g class="fp-group" data-layout="l" style="display:none;">
+                                <rect class="fp-shape" x="20" y="115" width="210" height="70" rx="8"/>
+                                <rect class="fp-shape" x="230" y="45" width="70" height="140" rx="8"/>
+                                <rect class="fp-unit" x="28" y="122" width="62" height="34" rx="5"/>
+                                <rect class="fp-unit" x="96" y="122" width="62" height="34" rx="5"/>
+                                <rect class="fp-unit" x="238" y="53" width="54" height="60" rx="5"/>
+                            </g>
+                            <g class="fp-group" data-layout="u" style="display:none;">
+                                <path class="fp-shape" d="M48,45 H282 Q290,45 290,53 V177 Q290,185 282,185 H228 Q220,185 220,177 V123 Q220,115 212,115 H118 Q110,115 110,123 V177 Q110,185 102,185 H48 Q40,185 40,177 V53 Q40,45 48,45 Z"/>
+                                <rect class="fp-unit" x="48" y="53" width="54" height="54" rx="5"/>
+                                <rect class="fp-unit" x="118" y="53" width="44" height="54" rx="5"/>
+                                <rect class="fp-unit" x="170" y="53" width="44" height="54" rx="5"/>
+                                <rect class="fp-unit" x="228" y="53" width="54" height="54" rx="5"/>
+                                <rect class="fp-unit" x="48" y="123" width="54" height="54" rx="5"/>
+                                <rect class="fp-unit" x="228" y="123" width="54" height="54" rx="5"/>
+                            </g>
+                            <g class="fp-group" data-layout="peninsula" style="display:none;">
+                                <rect class="fp-shape" x="20" y="105" width="210" height="70" rx="8"/>
+                                <rect class="fp-shape" x="170" y="105" width="80" height="90" rx="8"/>
+                                <rect class="fp-unit" x="28" y="112" width="62" height="34" rx="5"/>
+                                <rect class="fp-unit" x="96" y="112" width="62" height="34" rx="5"/>
+                                <rect class="fp-unit" x="178" y="150" width="64" height="36" rx="5"/>
+                            </g>
+                            <g class="fp-group" data-layout="island" style="display:none;">
+                                <rect class="fp-shape" x="20" y="90" width="210" height="70" rx="8"/>
+                                <rect class="fp-shape" x="285" y="70" width="60" height="90" rx="8"/>
+                                <rect class="fp-unit" x="28" y="97" width="62" height="34" rx="5"/>
+                                <rect class="fp-unit" x="96" y="97" width="62" height="34" rx="5"/>
+                                <rect class="fp-unit" x="291" y="78" width="48" height="40" rx="5"/>
+                            </g>
+                        </svg>
+                        <span class="fp-label" id="fpLabel">Straight</span>
+                    </div>
+                    <div class="cfg-group" style="margin-top:22px;">
+                        <div class="cfg-label">Run Length <span class="cur" id="lenLabel">10 ft</span></div>
+                        <input type="range" id="lenRange" min="6" max="16" step="1" value="10">
+                    </div>
+                </div>
+                <div class="estimate">
+                    <h3>Your Estimate</h3>
+                    <div class="est-rows" id="cfgRows"></div>
+                    <div class="est-total">
+                        <span class="lbl">Estimated Total</span>
+                        <span class="amt" id="cfgTotal">₹165,000</span>
+                    </div>
+                    <div class="est-emi" id="cfgEmi"></div>
+                    <div class="cta-row" style="gap:10px;">
+                        <a href="catalog.html" class="btn btn-ghost" style="flex:1;">Refine in Catalog</a>
+                        <button class="btn btn-gold" id="saveQuote" style="flex:1;">Save &amp; Get Quote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="config-controls">
+                <div class="cfg-group" data-key="layout">
+                    <div class="cfg-label">Layout <span class="cur"></span></div>
+                    <div class="cfg-opts">
+                        <button class="cfg-opt active" data-value="straight" data-price="0">Straight</button>
+                        <button class="cfg-opt" data-value="l" data-price="0">L-Shape</button>
+                        <button class="cfg-opt" data-value="u" data-price="0">U-Shape</button>
+                        <button class="cfg-opt" data-value="peninsula" data-price="0">Peninsula</button>
+                        <button class="cfg-opt" data-value="island" data-price="0">Island</button>
+                    </div>
+                </div>
+
+                <div class="cfg-group" data-key="finish">
+                    <div class="cfg-label">Cabinet Finish <span class="cur"></span></div>
+                    <div class="cfg-opts">
+                        <button class="cfg-opt active" data-value="matte" data-price="0">Matte Laminate</button>
+                        <button class="cfg-opt" data-value="glossy" data-price="15000">Glossy Laminate</button>
+                        <button class="cfg-opt" data-value="pu" data-price="30000">PU Finish</button>
+                        <button class="cfg-opt" data-value="acrylic" data-price="45000">Acrylic</button>
+                        <button class="cfg-opt" data-value="veneer" data-price="60000">Wood Veneer</button>
+                    </div>
+                </div>
+
+                <div class="cfg-group" data-key="counter">
+                    <div class="cfg-label">Countertop <span class="cur"></span></div>
+                    <div class="cfg-opts">
+                        <button class="cfg-opt active" data-value="laminate" data-price="0">Laminate</button>
+                        <button class="cfg-opt" data-value="quartz" data-price="35000">Quartz</button>
+                        <button class="cfg-opt" data-value="granite" data-price="45000">Granite</button>
+                        <button class="cfg-opt" data-value="marble" data-price="75000">Marble</button>
+                    </div>
+                </div>
+
+                <div class="cfg-group" data-key="appliances">
+                    <div class="cfg-label">Appliances <span class="cur"></span></div>
+                    <div class="cfg-opts">
+                        <button class="cfg-opt active" data-value="none" data-price="0">None</button>
+                        <button class="cfg-opt" data-value="basic" data-price="120000">Basic Pack</button>
+                        <button class="cfg-opt" data-value="smart" data-price="240000">Smart Pack</button>
+                    </div>
+                </div>
+
+                <div class="cfg-group" data-key="handles">
+                    <div class="cfg-label">Handles <span class="cur"></span></div>
+                    <div class="cfg-opts">
+                        <button class="cfg-opt active" data-value="standard" data-price="0">Standard</button>
+                        <button class="cfg-opt" data-value="finger" data-price="12000">Finger Pull</button>
+                        <button class="cfg-opt" data-value="luxury" data-price="25000">Luxury Brass</button>
+                    </div>
+                </div>
+
+                <div class="cfg-group" data-key="extras" data-multi="true">
+                    <div class="cfg-label">Extras <span class="cur"></span></div>
+                    <div class="cfg-opts">
+                        <button class="cfg-opt active" data-value="none" data-price="0">None</button>
+                        <button class="cfg-opt" data-value="pantry" data-price="28000">Pull-out Pantry</button>
+                        <button class="cfg-opt" data-value="loft" data-price="18000">Loft Storage</button>
+                        <button class="cfg-opt" data-value="baking" data-price="15000">Baking Drawer</button>
+                        <button class="cfg-opt" data-value="bin" data-price="8000">Built-in Bins</button>
+                        <button class="cfg-opt" data-value="charge" data-price="9000">Charging Dock</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="price-note reveal" style="max-width:760px; margin:26px auto 0;">This is a transparent estimate. Your final quote is confirmed after a free site survey — installation, cutouts, sink and hob fitting are included.</p>
+    </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section id="how" style="padding-top:0;">
+    <div class="container">
+        <div class="sec-head">
+            <div class="sec-eyebrow reveal">What Happens Next</div>
+            <h2 class="sec-title reveal">From quote to <em>cooking</em></h2>
+        </div>
+        <div class="steps">
+            <div class="step-card reveal">
+                <div class="n">01</div>
+                <h4>Free Site Survey</h4>
+                <p>We measure your space, confirm the layout and refine the estimate.</p>
+                <span class="arr">→</span>
+            </div>
+            <div class="step-card reveal" data-delay="1">
+                <div class="n">02</div>
+                <h4>3D Design Approval</h4>
+                <p>Photorealistic renders and an itemised BOQ shared for your sign-off.</p>
+                <span class="arr">→</span>
+            </div>
+            <div class="step-card reveal" data-delay="2">
+                <div class="n">03</div>
+                <h4>Plant Manufacture</h4>
+                <p>Your modules are precision-cut in our Mumbai plant in 10–14 days.</p>
+                <span class="arr">→</span>
+            </div>
+            <div class="step-card reveal" data-delay="3">
+                <div class="n">04</div>
+                <h4>Install &amp; Handover</h4>
+                <p>Certified installers assemble on site — most kitchens in under 7 days.</p>
+                <span class="arr">→</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="foot-grid">
+        <div>
+            <h4>MODUL</h4>
+            <p>Mumbai's modular kitchen specialists — engineered cabinets, European hardware and honest pricing since 2013.</p>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/rv2----/" target="_blank" aria-label="LinkedIn">in</a>
+                <a href="https://github.com/rv2hex" target="_blank" aria-label="GitHub">gh</a>
+                <a href="https://wa.me/919987279570" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+                <a href="mailto:rv2xx699@gmail.com" aria-label="Email">✉</a>
+            </div>
+        </div>
+        <div>
+            <h4>Explore</h4>
+            <a href="about.html" class="fl">The Studio</a>
+            <a href="design.html" class="fl">Design Studio</a>
+            <a href="catalog.html" class="fl">Catalog</a>
+            <a href="pricing.html" class="fl">Pricing</a>
+        </div>
+        <div>
+            <h4>Get in Touch</h4>
+            <a href="tel:+919987279570" class="fl">+91 99872 79570</a>
+            <a href="mailto:rv2xx699@gmail.com" class="fl">rv2xx699@gmail.com</a>
+            <a href="https://wa.me/919987279570" target="_blank" class="fl">WhatsApp us</a>
+        </div>
+    </div>
+    <p class="copy">© 2026 MODUL Modular Kitchens · Mumbai, India</p>
+    <p class="copy">Concept site by Rishi Vijay Vishwakarma · <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a> · <a href="https://www.linkedin.com/in/rv2----/">LinkedIn</a></p>
+</footer>
+
+<nav id="bottom-nav">
+    <a href="index.html" data-nav="home"><span class="ic">⌂</span>Home</a>
+    <a href="design.html" data-nav="design"><span class="ic">⚒</span>Design</a>
+    <a href="catalog.html" data-nav="catalog"><span class="ic">▦</span>Catalog</a>
+    <a href="pricing.html" data-nav="pricing"><span class="ic">₹</span>Pricing</a>
+    <a href="contact.html" data-nav="contact"><span class="ic">✉</span>Contact</a>
+</nav>
+
+<a href="https://wa.me/919987279570" id="whatsapp" target="_blank" aria-label="Chat on WhatsApp"><svg viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

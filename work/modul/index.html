@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0f">
+<title>MODUL — Modular Kitchen Specialists</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="home">
+
+<div class="grain"></div>
+<div class="bg-stage">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+</div>
+<canvas id="particles"></canvas>
+<div id="progress"></div>
+
+<div id="loader">
+    <div class="loader-brand">
+        <span class="lb">M</span>
+        <span class="bt">MODUL</span>
+    </div>
+    <div class="loader-bar"><i></i></div>
+    <div class="loader-pct">0%</div>
+</div>
+
+<header id="header">
+    <div class="header-inner">
+        <a href="index.html" class="brand">
+            <span class="logo-box">M</span>
+            <span>
+                <span class="b-name">MODUL</span><br>
+                <span class="b-tag">Modular Kitchens</span>
+            </span>
+        </a>
+        <nav class="desktop-nav">
+            <a href="index.html" data-nav="home">Home</a>
+            <a href="about.html" data-nav="about">Studio</a>
+            <a href="design.html" data-nav="design">Design Studio</a>
+            <a href="catalog.html" data-nav="catalog">Catalog</a>
+            <a href="pricing.html" data-nav="pricing">Pricing</a>
+            <a href="contact.html" data-nav="contact">Contact</a>
+        </nav>
+        <button class="hamburger" id="burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<div id="scrim"></div>
+<nav id="drawer">
+    <div class="nav-links">
+        <a href="index.html" data-nav="home"><i>◆</i> Home</a>
+        <a href="about.html" data-nav="about"><i>◆</i> The Studio</a>
+        <a href="design.html" data-nav="design"><i>◆</i> Design Studio</a>
+        <a href="catalog.html" data-nav="catalog"><i>◆</i> Catalog</a>
+        <a href="pricing.html" data-nav="pricing"><i>◆</i> Pricing</a>
+        <a href="contact.html" data-nav="contact"><i>◆</i> Contact</a>
+    </div>
+    <div class="drawer-cta">
+        <a href="design.html" class="btn btn-gold" style="width:100%;">Design Your Kitchen</a>
+    </div>
+    <div class="drawer-foot">
+        Kandivali West, Mumbai 400067<br>
+        +91 99872 79570 · rv2xx699@gmail.com
+    </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+    <div class="hero-bg">
+        <img src="assets/img/dcbe2f1f0430.jpg" alt="Modern modular kitchen" id="heroImg">
+    </div>
+    <div class="hero-inner">
+        <span class="eyebrow reveal">Modular Kitchen Specialists · Est. 2013</span>
+        <h1 class="reveal">Engineered kitchens.<br><span class="gold">Crafted spaces.</span></h1>
+        <p class="sub reveal" data-delay="1">Precision-built modular kitchens with marine-grade ply, European hardware and a 5-year warranty — designed, delivered and installed by one team.</p>
+        <div class="cta-row reveal" data-delay="2">
+            <a href="design.html" class="btn btn-gold">Design Your Kitchen</a>
+            <a href="catalog.html" class="btn btn-outline">Explore Catalog</a>
+        </div>
+        <div class="hero-meta reveal" data-delay="3">
+            <div class="hm"><div class="num"><span class="counter" data-target="2400">0</span><em>+</em></div><div class="lbl">Kitchens Built</div></div>
+            <div class="hm"><div class="num"><span class="counter" data-target="18">0</span><em> yrs</em></div><div class="lbl">Craftsmanship</div></div>
+            <div class="hm"><div class="num"><span class="counter" data-target="97">0</span><em>%</em></div><div class="lbl">On-time Install</div></div>
+        </div>
+    </div>
+    <div class="scroll-hint"><span>Scroll</span><span class="mouse"></span></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+        <span>Soft-Close Hardware</span><span>Hettich &amp; Blum</span><span>BWR Marine-Grade Ply</span><span>5-Year Warranty</span><span>Free Site Survey</span><span>0% EMI</span><span>2,400+ Kitchens</span>
+        <span>Soft-Close Hardware</span><span>Hettich &amp; Blum</span><span>BWR Marine-Grade Ply</span><span>5-Year Warranty</span><span>Free Site Survey</span><span>0% EMI</span><span>2,400+ Kitchens</span>
+    </div>
+</div>
+
+<!-- ============ FEATURES ============ -->
+<section id="features">
+    <div class="container">
+        <div class="sec-head">
+            <div class="sec-eyebrow reveal">Why MODUL</div>
+            <h2 class="sec-title reveal">Precision in <em>every detail</em></h2>
+            <p class="sec-sub reveal">Every kitchen is engineered in our Mumbai plant and assembled in your home by certified installers.</p>
+        </div>
+        <div class="grid-3">
+            <div class="feat-card tilt reveal">
+                <div class="f-icon">◧</div>
+                <h3>Marine-Grade Ply</h3>
+                <p>BWR grade, anti-bacterial laminate and waterproofed edges for the humidity of Indian kitchens.</p>
+            </div>
+            <div class="feat-card tilt reveal" data-delay="1">
+                <div class="f-icon">⚙</div>
+                <h3>European Hardware</h3>
+                <p>Hettich and Blum soft-close runners and hinges rated for 100,000+ cycles.</p>
+            </div>
+            <div class="feat-card tilt reveal" data-delay="2">
+                <div class="f-icon">◫</div>
+                <h3>Smart Storage</h3>
+                <p>Pull-outs, pantry towers and corner solutions that use every centimetre.</p>
+            </div>
+            <div class="feat-card tilt reveal">
+                <div class="f-icon">✱</div>
+                <h3>3D-Before-Build</h3>
+                <p>Photorealistic 3D renders approved before a single panel is cut.</p>
+            </div>
+            <div class="feat-card tilt reveal" data-delay="1">
+                <div class="f-icon">⇅</div>
+                <h3>7-Day Install</h3>
+                <p>Plant-finished, ready-to-assemble modules mean most kitchens install within a week.</p>
+            </div>
+            <div class="feat-card tilt reveal" data-delay="2">
+                <div class="f-icon">✓</div>
+                <h3>5-Year Warranty</h3>
+                <p>Comprehensive warranty on structure, finish and hardware — with free annual service.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONFIGURATOR PREVIEW ============ -->
+<section id="design-preview" style="padding-top:0;">
+    <div class="container">
+        <div class="cta-band reveal">
+            <div class="sec-eyebrow" style="position:relative; z-index:1;">Design Studio</div>
+            <h2>Configure your kitchen, <em>live</em></h2>
+            <p>Pick a layout, size, finish and countertop — see the estimate update instantly. Then save it and we'll take it from there.</p>
+            <a href="design.html" class="btn btn-gold">Open the Configurator</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section id="transform" style="padding-top:0;">
+    <div class="container">
+        <div class="sec-head">
+            <div class="sec-eyebrow reveal">Real Transformations</div>
+            <h2 class="sec-title reveal">Drag to see the <em>difference</em></h2>
+            <p class="sec-sub reveal">A 1990s kitchen, re-engineered into a MODUL walk-in pantry kitchen in 6 days.</p>
+        </div>
+        <div class="ba reveal" id="ba" aria-label="Before and after comparison">
+            <img src="assets/img/a26c0b69375b.jpg" alt="Before" class="bot">
+            <img src="assets/img/f82810115dfa.jpg" alt="After" class="top">
+            <div class="handle"></div>
+            <span class="tag-b">Before</span>
+            <span class="tag-a">After · MODUL</span>
+        </div>
+    </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section id="stats" style="padding-top:0;">
+    <div class="container">
+        <div class="grid-4">
+            <div class="step-card reveal text-center">
+                <div class="n" style="-webkit-text-stroke:0; color:var(--gold);"><span class="counter" data-target="2400">0</span>+</div>
+                <h4>Kitchens Delivered</h4>
+                <p>Across 14 cities in India</p>
+            </div>
+            <div class="step-card reveal text-center" data-delay="1">
+                <div class="n" style="-webkit-text-stroke:0; color:var(--gold);"><span class="counter" data-target="120">0</span>+</div>
+                <h4>Designs &amp; Finishes</h4>
+                <p>From matte to acrylic</p>
+            </div>
+            <div class="step-card reveal text-center" data-delay="2">
+                <div class="n" style="-webkit-text-stroke:0; color:var(--gold);"><span class="counter" data-target="7">0</span> days</div>
+                <h4>Avg. Install Time</h4>
+                <p>Plant-finished modules</p>
+            </div>
+            <div class="step-card reveal text-center" data-delay="3">
+                <div class="n" style="-webkit-text-stroke:0; color:var(--gold);"><span class="counter" data-target="15">0</span> yrs</div>
+                <h4>Hardware Life</h4>
+                <p>100k-cycle soft-close</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" style="padding-top:0;">
+    <div class="container">
+        <div class="sec-head">
+            <div class="sec-eyebrow reveal">Client Love</div>
+            <h2 class="sec-title reveal">2,400+ happy <em>home cooks</em></h2>
+        </div>
+        <div class="t-slider reveal">
+            <div class="t-track" id="t-track">
+                <div class="t-slide">
+                    <div class="t-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"The 3D render looked exactly like the final kitchen. Soft-close everything, zero smell, and installed in five days flat."</p>
+                        <div class="who"><span class="mono">SR</span><div><div class="nm">Sneha Reddy</div><div class="pr">L-Shape · Bandra</div></div></div>
+                    </div>
+                </div>
+                <div class="t-slide">
+                    <div class="t-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"After two poor contractors, MODUL was a relief. Marine-grade ply, itemised bill, and the pantry tower is a game-changer."</p>
+                        <div class="who"><span class="mono">AM</span><div><div class="nm">Arjun Mehta</div><div class="pr">U-Shape · Powai</div></div></div>
+                    </div>
+                </div>
+                <div class="t-slide">
+                    <div class="t-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"We used the online configurator, saved a quote, and their team matched it exactly. Transparent from day one."</p>
+                        <div class="who"><span class="mono">KI</span><div><div class="nm">Kavita Iyer</div><div class="pr">Peninsula · Andheri West</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="t-dots reveal">
+            <button class="active" data-slide="0" aria-label="Slide 1"></button>
+            <button data-slide="1" aria-label="Slide 2"></button>
+            <button data-slide="2" aria-label="Slide 3"></button>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section style="padding-top:0;">
+    <div class="container">
+        <div class="cta-band reveal">
+            <h2>Book a free site survey</h2>
+            <p>We measure, you choose. Get an exact quote within 48 hours.</p>
+            <a href="contact.html" class="btn btn-gold">Book Free Survey</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="foot-grid">
+        <div>
+            <h4>MODUL</h4>
+            <p>Mumbai's modular kitchen specialists — engineered cabinets, European hardware and honest pricing since 2013.</p>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/rv2----/" target="_blank" aria-label="LinkedIn">in</a>
+                <a href="https://github.com/rv2hex" target="_blank" aria-label="GitHub">gh</a>
+                <a href="https://wa.me/919987279570" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+                <a href="mailto:rv2xx699@gmail.com" aria-label="Email">✉</a>
+            </div>
+        </div>
+        <div>
+            <h4>Explore</h4>
+            <a href="about.html" class="fl">The Studio</a>
+            <a href="design.html" class="fl">Design Studio</a>
+            <a href="catalog.html" class="fl">Catalog</a>
+            <a href="pricing.html" class="fl">Pricing</a>
+        </div>
+        <div>
+            <h4>Get in Touch</h4>
+            <a href="tel:+919987279570" class="fl">+91 99872 79570</a>
+            <a href="mailto:rv2xx699@gmail.com" class="fl">rv2xx699@gmail.com</a>
+            <a href="https://wa.me/919987279570" target="_blank" class="fl">WhatsApp us</a>
+        </div>
+    </div>
+    <p class="copy">© 2026 MODUL Modular Kitchens · Mumbai, India</p>
+    <p class="copy">Concept site by Rishi Vijay Vishwakarma · <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a> · <a href="https://www.linkedin.com/in/rv2----/">LinkedIn</a></p>
+</footer>
+
+<nav id="bottom-nav">
+    <a href="index.html" data-nav="home"><span class="ic">⌂</span>Home</a>
+    <a href="design.html" data-nav="design"><span class="ic">⚒</span>Design</a>
+    <a href="catalog.html" data-nav="catalog"><span class="ic">▦</span>Catalog</a>
+    <a href="pricing.html" data-nav="pricing"><span class="ic">₹</span>Pricing</a>
+    <a href="contact.html" data-nav="contact"><span class="ic">✉</span>Contact</a>
+</nav>
+
+<a href="https://wa.me/919987279570" id="whatsapp" target="_blank" aria-label="Chat on WhatsApp"><svg viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

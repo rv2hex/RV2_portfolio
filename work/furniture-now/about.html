@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Now! - About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root { --primary: #1a2332; --accent: #e67e22; }
+        * { -webkit-tap-highlight-color: transparent; }
+        .navbar { background-color: var(--primary) !important; }
+        .navbar-brand, .nav-link { color: #fff !important; }
+        .nav-link:hover { color: var(--accent) !important; }
+        .page-hero {
+            background: linear-gradient(rgba(26,35,50,0.8), rgba(26,35,50,0.8)), url('assets/img/cbd810a4d4fc.jpg') center/cover;
+            padding: 120px 0 60px;
+            color: #fff;
+        }
+        .btn-accent { background-color: var(--accent); color: #fff; border: none; }
+        .btn-accent:hover { background-color: #d35400; color: #fff; }
+        .section-title { color: var(--primary); font-weight: 700; position: relative; display: inline-block; font-size: clamp(1.75rem, 4.5vw, 2.25rem); }
+        .section-title::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--accent); }
+        .value-card { border: none; transition: transform 0.3s; }
+        .value-card:hover { transform: translateY(-5px); }
+        .value-icon { font-size: 2.5rem; color: var(--accent); }
+        footer { background-color: var(--primary); color: #ccc; }
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { color: #fff; }
+        .stat-box { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(37, 211, 102, 0.5);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: background 0.3s ease, transform 0.3s ease;
+            animation: whatsapp-pulse 2s infinite;
+        }
+        .whatsapp-float:hover {
+            background: #25d366;
+            transform: translateY(-4px);
+            animation: none;
+        }
+        @keyframes whatsapp-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
+            70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+        @media (max-width: 767.98px) {
+            .navbar-brand { font-size: 1.1rem; }
+            .page-hero { padding: 100px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-house-door"></i> Furniture Now!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container text-center px-3">
+            <h1 class="display-4">About Us</h1>
+            <p class="lead">Crafting comfort for Indian homes since 2010</p>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5">
+        <div class="container py-3 py-md-5">
+            <div class="row align-items-center g-4 g-md-5">
+                <div class="col-12 col-lg-6">
+                    <img src="assets/img/edafc11011d8.jpg" class="img-fluid rounded shadow w-100" alt="Our Workshop" loading="lazy">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2 class="section-title mb-4">Our Story</h2>
+                    <p class="lead">Founded in 2010 in Mumbai, Furniture Now! started as a small family workshop with a passion for quality craftsmanship.</p>
+                    <p>Over the years, we have grown into one of India's most trusted furniture brands, serving over 15,000 happy customers across the country. Our commitment to using sustainable Sheesham and Teak wood with innovative designs sets us apart.</p>
+                    <p>We believe every Indian home deserves beautifully crafted furniture without burning a hole in your pocket. That's why we offer premium quality at honest prices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4 mb-md-5">
+                <h2 class="section-title">Our Journey in Numbers</h2>
+            </div>
+            <div class="row g-3 g-md-4 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="p-3 p-md-4 stat-box h-100">
+                        <h2 class="fw-bold text-primary mb-1"><span class="counter" data-target="500">0</span>+</h2>
+                        <p class="text-muted mb-0">Products</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 p-md-4 stat-box h-100">
+                        <h2 class="fw-bold text-primary mb-1"><span class="counter" data-target="15000">0</span>+</h2>
+                        <p class="text-muted mb-0">Happy Customers</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 p-md-4 stat-box h-100">
+                        <h2 class="fw-bold text-primary mb-1"><span class="counter" data-target="50">0</span>+</h2>
+                        <p class="text-muted mb-0">Craftsmen</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 p-md-4 stat-box h-100">
+                        <h2 class="fw-bold text-primary mb-1"><span class="counter" data-target="16">0</span>+</h2>
+                        <p class="text-muted mb-0">Years</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5">
+        <div class="container">
+            <div class="text-center mb-4 mb-md-5">
+                <h2 class="section-title">Our Values</h2>
+            </div>
+            <div class="row g-3 g-md-4 mt-3">
+                <div class="col-md-4">
+                    <div class="card value-card text-center p-3 p-md-4 h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-tree value-icon mb-3"></i>
+                            <h5>Sustainable Wood</h5>
+                            <p class="text-muted mb-0">We use ethically sourced Sheesham, Teak, and Mango wood from certified forests.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card value-card text-center p-3 p-md-4 h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-tools value-icon mb-3"></i>
+                            <h5>Handcrafted</h5>
+                            <p class="text-muted mb-0">Every piece is handcrafted by skilled artisans from Jodhpur and Saharanpur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card value-card text-center p-3 p-md-4 h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-heart value-icon mb-3"></i>
+                            <h5>Customer First</h5>
+                            <p class="text-muted mb-0">Your satisfaction is our priority. We offer transparent pricing and honest service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4 mb-md-5">
+                <h2 class="section-title">Our Workshop</h2>
+            </div>
+            <div class="row g-3 g-md-4">
+                <div class="col-6 col-md-4">
+                    <img src="assets/img/260dd8cc1127.jpg" class="img-fluid rounded shadow w-100" alt="Workshop" loading="lazy">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="assets/img/8c62b5db5807.jpg" class="img-fluid rounded shadow w-100" alt="Showroom" loading="lazy">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="assets/img/58a4af446eb3.jpg" class="img-fluid rounded shadow w-100" alt="Showroom" loading="lazy">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="assets/img/e04d4f9f41d9.jpg" class="img-fluid rounded shadow w-100" alt="Workshop" loading="lazy">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="assets/img/af0e647d322e.jpg" class="img-fluid rounded shadow w-100" alt="Workshop" loading="lazy">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="assets/img/ff0a34037c4b.jpg" class="img-fluid rounded shadow w-100" alt="Workshop" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5" style="background: var(--accent); color: #fff;">
+        <div class="container text-center py-3 py-md-4">
+            <h2 class="mb-3">Join Our Growing Family</h2>
+            <p class="mb-4">Be part of 15,000+ happy customers across India.</p>
+            <a href="contact.html" class="btn btn-light btn-lg px-4 px-md-5">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer class="py-4 py-md-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <h5 class="text-white mb-3"><i class="bi bi-house-door"></i> Furniture Now!</h5>
+                    <p class="mb-0">Your trusted partner for premium furniture since 2010.</p>
+                </div>
+                <div class="col-6 col-md-6 col-lg-2">
+                    <h6 class="text-white mb-3">Quick Links</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="about.html">About</a></li>
+                        <li class="mb-2"><a href="products.html">Products</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <h6 class="text-white mb-3">Contact Info</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="bi bi-geo-alt"></i> Kandivali West, Mumbai, Maharashtra 400067</li>
+                        <li class="mb-2"><i class="bi bi-telephone"></i> +91 99872 79570</li>
+                        <li class="mb-2"><i class="bi bi-envelope"></i> rv2xx699@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <h6 class="text-white mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.linkedin.com/in/rv2----/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="https://github.com/rv2hex" target="_blank" aria-label="GitHub"><i class="bi bi-github fs-4"></i></a>
+                        <a href="mailto:rv2xx699@gmail.com" aria-label="Email"><i class="bi bi-envelope fs-4"></i></a>
+                        <a href="https://wa.me/919987279570" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3 my-md-4" style="border-color: #555;">
+            <p class="text-center mb-0 small">&copy; 2026 Furniture Now! All rights reserved.</p>
+            <p class="text-center mb-0 small">Concept site by Rishi Vijay Vishwakarma · <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a> · <a href="https://www.linkedin.com/in/rv2----/">LinkedIn</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919987279570" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var counters = document.querySelectorAll('.counter');
+            var options = { threshold: 0.4 };
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        var el = entry.target;
+                        var target = parseInt(el.dataset.target, 10);
+                        var duration = 2000;
+                        var start = null;
+                        function step(timestamp) {
+                            if (!start) start = timestamp;
+                            var progress = Math.min((timestamp - start) / duration, 1);
+                            var value = Math.floor(progress * target);
+                            el.textContent = value.toLocaleString('en-IN');
+                            if (progress < 1) requestAnimationFrame(step);
+                        }
+                        requestAnimationFrame(step);
+                        observer.unobserve(el);
+                    }
+                });
+            }, options);
+            counters.forEach(function (c) { observer.observe(c); });
+        });
+    </script>
+</body>
+</html>

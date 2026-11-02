@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Now! - Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root { --primary: #1a2332; --accent: #e67e22; }
+        * { -webkit-tap-highlight-color: transparent; }
+        .navbar { background-color: var(--primary) !important; }
+        .navbar-brand, .nav-link { color: #fff !important; }
+        .nav-link:hover { color: var(--accent) !important; }
+        .page-hero {
+            background: linear-gradient(rgba(26,35,50,0.8), rgba(26,35,50,0.8)), url('assets/img/cbd810a4d4fc.jpg') center/cover;
+            padding: 120px 0 60px;
+            color: #fff;
+        }
+        .btn-accent { background-color: var(--accent); color: #fff; border: none; }
+        .btn-accent:hover { background-color: #d35400; color: #fff; }
+        .product-card { transition: transform 0.3s, box-shadow 0.3s; border: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+        .product-card .img-wrap { height: 220px; overflow: hidden; }
+        .product-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+        .filter-btn { border: 2px solid var(--accent); color: var(--accent); background: transparent; }
+        .filter-btn.active, .filter-btn:hover { background: var(--accent); color: #fff; }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(37, 211, 102, 0.5);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: background 0.3s ease, transform 0.3s ease;
+            animation: whatsapp-pulse 2s infinite;
+        }
+        .whatsapp-float:hover {
+            background: #25d366;
+            transform: translateY(-4px);
+            animation: none;
+        }
+        @keyframes whatsapp-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
+            70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+        footer { background-color: var(--primary); color: #ccc; }
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { color: #fff; }
+        @media (min-width: 768px) {
+            .product-card .img-wrap { height: 280px; }
+        }
+        @media (max-width: 767.98px) {
+            .navbar-brand { font-size: 1.1rem; }
+            .page-hero { padding: 100px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-house-door"></i> Furniture Now!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container text-center px-3">
+            <h1 class="display-4">Our Products</h1>
+            <p class="lead">Premium furniture for every corner of your home</p>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <button class="btn filter-btn active me-1 mb-2" data-filter="all">All</button>
+                <button class="btn filter-btn me-1 mb-2" data-filter="living-room">Living Room</button>
+                <button class="btn filter-btn me-1 mb-2" data-filter="bedroom">Bedroom</button>
+                <button class="btn filter-btn me-1 mb-2" data-filter="dining">Dining</button>
+                <button class="btn filter-btn me-1 mb-2" data-filter="office">Office</button>
+            </div>
+            <p id="filter-result" class="text-center text-muted mb-3 small"></p>
+
+            <div class="row g-3 g-md-4 mt-3">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="living-room">
+                        <div class="img-wrap"><img src="assets/img/edafc11011d8.jpg" alt="Modern L-Shape Sofa" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-success mb-2">In Stock</span>
+                            <h6 class="card-title">Modern L-Shape Sofa</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">Premium fabric, seats 5.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;42,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="dining">
+                        <div class="img-wrap"><img src="assets/img/7a2567b7a6c1.jpg" alt="Dining Table" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-success mb-2">In Stock</span>
+                            <h6 class="card-title">Sheesham Dining Set</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">6-seater with chairs.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;58,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="bedroom">
+                        <div class="img-wrap"><img src="assets/img/3d6481a55906.jpg" alt="King Bed" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-warning text-dark mb-2">Limited</span>
+                            <h6 class="card-title">King Size Teak Bed</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">With hydraulic storage.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;38,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="living-room">
+                        <div class="img-wrap"><img src="assets/img/260dd8cc1127.jpg" alt="Luxury Sofa" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-success mb-2">In Stock</span>
+                            <h6 class="card-title">Luxury Fabric Sofa</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">Velvet touch, 3-seater.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;55,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="bedroom">
+                        <div class="img-wrap"><img src="assets/img/e44dc65b62a0.jpg" alt="Queen Bed" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-success mb-2">In Stock</span>
+                            <h6 class="card-title">Queen Bed</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">Contemporary design.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;32,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="dining">
+                        <div class="img-wrap"><img src="assets/img/66a3f9c46070.jpg" alt="Dining Chairs" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-success mb-2">In Stock</span>
+                            <h6 class="card-title">Dining Chairs Set</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">Set of 2 upholstered.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;18,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="bedroom">
+                        <div class="img-wrap"><img src="assets/img/8c62b5db5807.jpg" alt="Bedroom Set" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-success mb-2">In Stock</span>
+                            <h6 class="card-title">Complete Bedroom Set</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">Bed + wardrobe + side.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;89,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="living-room">
+                        <div class="img-wrap"><img src="assets/img/ff0a34037c4b.jpg" alt="Armchair" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-success mb-2">In Stock</span>
+                            <h6 class="card-title">Comfort Armchair</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">Cozy reading chair.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;16,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="living-room">
+                        <div class="img-wrap"><img src="assets/img/af0e647d322e.jpg" alt="Armchair" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-success mb-2">In Stock</span>
+                            <h6 class="card-title">Classic Armchair</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">Timeless design.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;22,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="office">
+                        <div class="img-wrap"><img src="assets/img/e04d4f9f41d9.jpg" alt="Office Desk" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-success mb-2">In Stock</span>
+                            <h6 class="card-title">Office Work Desk</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">Spacious study table.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;19,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="dining">
+                        <div class="img-wrap"><img src="assets/img/80a46152735b.jpg" alt="Accent Chair" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-warning text-dark mb-2">New</span>
+                            <h6 class="card-title">Accent Chair</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">Wooden style chair.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;12,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-card h-100" data-category="bedroom">
+                        <div class="img-wrap"><img src="assets/img/cf14eedbb3bd.jpg" alt="Bed Frame" loading="lazy"></div>
+                        <div class="card-body p-2 p-md-3">
+                            <span class="badge bg-success mb-2">In Stock</span>
+                            <h6 class="card-title">Wooden Bed Frame</h6>
+                            <p class="card-text text-muted small d-none d-md-block mb-2">Rustic solid wood.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">&#8377;28,999</span>
+                                <a href="contact.html" class="btn btn-accent btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 py-md-5" style="background: var(--accent); color: #fff;">
+        <div class="container text-center py-3 py-md-4">
+            <h2 class="mb-3">Looking for Something Custom?</h2>
+            <p class="mb-4">We build custom furniture to your exact specifications. Get a free quote today!</p>
+            <a href="contact.html" class="btn btn-light btn-lg px-4 px-md-5">Request Custom Order</a>
+        </div>
+    </section>
+
+    <footer class="py-4 py-md-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <h5 class="text-white mb-3"><i class="bi bi-house-door"></i> Furniture Now!</h5>
+                    <p class="mb-0">Your trusted partner for premium furniture since 2010.</p>
+                </div>
+                <div class="col-6 col-md-6 col-lg-2">
+                    <h6 class="text-white mb-3">Quick Links</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="about.html">About</a></li>
+                        <li class="mb-2"><a href="products.html">Products</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <h6 class="text-white mb-3">Contact Info</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="bi bi-geo-alt"></i> Kandivali West, Mumbai, Maharashtra 400067</li>
+                        <li class="mb-2"><i class="bi bi-telephone"></i> +91 99872 79570</li>
+                        <li class="mb-2"><i class="bi bi-envelope"></i> rv2xx699@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <h6 class="text-white mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.linkedin.com/in/rv2----/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="https://github.com/rv2hex" target="_blank" aria-label="GitHub"><i class="bi bi-github fs-4"></i></a>
+                        <a href="mailto:rv2xx699@gmail.com" aria-label="Email"><i class="bi bi-envelope fs-4"></i></a>
+                        <a href="https://wa.me/919987279570" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3 my-md-4" style="border-color: #555;">
+            <p class="text-center mb-0 small">&copy; 2026 Furniture Now! All rights reserved.</p>
+            <p class="text-center mb-0 small">Concept site by Rishi Vijay Vishwakarma · <a href="mailto:rv2xx699@gmail.com">rv2xx699@gmail.com</a> · <a href="https://www.linkedin.com/in/rv2----/">LinkedIn</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919987279570" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var buttons = document.querySelectorAll('.filter-btn');
+            var cards = document.querySelectorAll('.product-card[data-category]');
+            var resultText = document.getElementById('filter-result');
+
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    buttons.forEach(function (b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    var filter = btn.getAttribute('data-filter');
+                    var visible = 0;
+                    cards.forEach(function (card) {
+                        var cat = card.getAttribute('data-category');
+                        var show = (filter === 'all' || cat === filter);
+                        card.closest('.col-6').classList.toggle('d-none', !show);
+                        if (show) visible++;
+                    });
+                    var names = { 'all': 'All', 'living-room': 'Living Room', 'bedroom': 'Bedroom', 'dining': 'Dining', 'office': 'Office' };
+                    resultText.textContent = visible + ' product' + (visible === 1 ? '' : 's') + ' in ' + names[filter];
+                });
+            });
+        });
+    </script>
+</body>
+</html>

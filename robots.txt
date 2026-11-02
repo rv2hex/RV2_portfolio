@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rv2hex.github.io/MOCK-sites/sitemap.xml
