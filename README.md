@@ -20,15 +20,15 @@ Then open `http://localhost:8000/`.
 
 ## Deploy to GitHub Pages
 
-1. Create a repository on GitHub (for example `MOCK-sites`).
+1. Use the GitHub repository `rv2hex/RV2_portfolio`.
 2. From this folder:
    ```bash
-   git remote add origin https://github.com/rv2hex/MOCK-sites.git
+   git remote add origin https://github.com/rv2hex/RV2_portfolio.git
    git push -u origin main
    ```
 3. In the repository, open **Settings → Pages**.
 4. Set **Source** to **Deploy from a branch**, branch **main**, folder **/ (root)**.
-5. Save. The site will publish at `https://rv2hex.github.io/MOCK-sites/`.
+5. Save. The site will publish at `https://rv2hex.github.io/RV2_portfolio/`.
 
 All internal links and preview URLs are relative, so the site works from a project subpath.
 

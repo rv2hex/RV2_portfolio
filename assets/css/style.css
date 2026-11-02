@@ -1422,15 +1422,16 @@ body.is-loaded .hero-stage { opacity: 1; transform: none; }
   bottom: -34px;
   width: clamp(120px, 13vw, 172px);
   padding: 4px;
-  border-radius: 18px;
+  border-radius: 12px;
   background: #101010;
   border: 1px solid var(--dot);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65);
 }
 .phone-screen {
-  height: clamp(230px, 33vh, 350px);
+  height: auto;
+  aspect-ratio: 9 / 19.5;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 12px;
   background: #fff;
 }
 .phone-screen img { width: 100%; height: auto; will-change: transform; }
@@ -3529,8 +3530,8 @@ body.theme-open .theme-panel {
   .project-title { font-size: clamp(3.2rem, 15vw, 4.6rem); }
   .project-cat { font-size: 0.5rem; line-height: 1.7; }
   .browser-screen { height: clamp(250px, 44vh, 380px); }
-  .phone { width: 112px; left: -12px; bottom: -22px; border-radius: 16px; padding: 3px; }
-  .phone-screen { height: 215px; border-radius: 16px; }
+  .phone { width: 112px; left: -12px; bottom: -22px; border-radius: 10px; padding: 3px; }
+  .phone-screen { border-radius: 10px; }
   .visual-caption { font-size: 0.5rem; margin-top: 38px; }
   .project-actions .btn { width: 100%; }
   .specs { gap: 8px; }

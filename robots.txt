@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rv2hex.github.io/MOCK-sites/sitemap.xml
+Sitemap: https://rv2hex.github.io/RV2_portfolio/sitemap.xml
