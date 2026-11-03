@@ -2840,6 +2840,29 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 }
 .pricing-note { margin-top: 18px; color: var(--muted); font-size: 0.5rem; line-height: 1.7; }
 
+.launch-note {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--red);
+  border-radius: var(--r-card);
+  background: var(--surface);
+  color: var(--bone);
+  font-size: 0.72rem;
+  line-height: 1.65;
+}
+.launch-note strong { color: var(--red); font-weight: 600; }
+.launch-inline { color: var(--red); }
+.contact-price .launch-inline { color: var(--on-accent); opacity: 0.9; }
+.price-launch {
+  margin-top: 8px;
+  color: var(--red);
+  font-size: 0.52rem;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
 .currency-picker {
   display: flex;
   flex-direction: column;
