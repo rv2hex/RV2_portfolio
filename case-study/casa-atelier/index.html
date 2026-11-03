@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Casa Atelier — Case Study | RV2</title>
-<meta name="description" content="How we built a boutique interior design studio site with typewriter hero, animated counters, filterable gallery, and transparent pricing — delivered in 7 days.">
+<meta name="description" content="How I built this self-initiated concept for a boutique interior studio — typewriter hero, animated counters, filterable gallery, and transparent pricing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -62,22 +62,23 @@
 <main>
   <section class="case-hero">
     <div class="wrap">
-      <p class="eyebrow">Case Study</p>
+      <p class="eyebrow">Concept Case Study</p>
       <h1>Casa Atelier<br><em>Interiors that breathe</em></h1>
       <div class="case-meta">
-        <div><strong>Timeline:</strong> 7 days</div>
+        <div><strong>Build time:</strong> 7 days</div>
         <div><strong>Pages:</strong> 5</div>
         <div><strong>Stack:</strong> HTML, CSS, JS, Custom Design System</div>
-        <div><strong>Role:</strong> Design & Development</div>
+        <div><strong>Role:</strong> Design &amp; Development</div>
+        <div><strong>Type:</strong> Self-initiated concept · fictional brand</div>
       </div>
     </div>
   </section>
 
   <section class="case-section">
     <div class="wrap">
-      <h2>Problem</h2>
+      <h2>The concept brief</h2>
       <p style="max-width: 760px; color: var(--muted); line-height: 1.8; font-size: 1.1rem;">
-        Casa Atelier's previous site was a PDF portfolio masquerading as a website — beautiful images, zero interaction. No filtering, no pricing transparency, no way to book a consultation without email ping-pong. They needed a site that felt as considered as their interiors: calm, generous, and instantly trustworthy.
+        This is a self-initiated concept for a fictional residential interior studio. The brief: replace a static PDF portfolio with a calm, editorial site that filters projects, explains pricing openly and books consultations without email ping-pong.
       </p>
     </div>
   </section>
@@ -92,11 +93,11 @@
         </article>
         <article class="case-card">
           <h3>Animated Counters</h3>
-          <p>Four metrics (320+ homes, 14 years, 50+ artisans, 24 awards) count up on scroll via IntersectionObserver. No library, 2KB JS.</p>
+          <p>Four metrics (320+ homes, 14 years, 98% happy clients, 24 awards) count up on scroll via IntersectionObserver. No library, 2KB JS.</p>
         </article>
         <article class="case-card">
           <h3>Filterable Gallery</h3>
-          <p>CSS-only isotope-style filter (Living/Bedroom/Kitchen) with lightbox. Zero dependencies, works offline, 60fps on mobile.</p>
+          <p>Vanilla-JS isotope-style filter (Living/Bedroom/Kitchen) with lightbox. Zero dependencies, works offline, 60fps on mobile.</p>
         </article>
         <article class="case-card">
           <h3>Transparent Pricing</h3>
@@ -108,12 +109,12 @@
 
   <section class="case-section">
     <div class="wrap">
-      <h2>Results</h2>
+      <h2>What this concept demonstrates</h2>
       <div class="results">
-        <div class="result"><div class="num">3×</div><div class="lbl">Consultation requests</div></div>
+        <div class="result"><div class="num">05</div><div class="lbl">Pages</div></div>
+        <div class="result"><div class="num">03</div><div class="lbl">Pricing tiers</div></div>
+        <div class="result"><div class="num">00</div><div class="lbl">Frameworks</div></div>
         <div class="result"><div class="num">100%</div><div class="lbl">Custom code</div></div>
-        <div class="result"><div class="num">96</div><div class="lbl">Lighthouse</div></div>
-        <div class="result"><div class="num">7</div><div class="lbl">Days delivery</div></div>
       </div>
     </div>
   </section>
@@ -134,7 +135,7 @@
 
 <footer class="site-footer">
   <div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding-block:40px;">
-    <p style="color:var(--muted);font-family:var(--mono);font-size:.75rem;">RV2 — Luxury websites from ₹15,000</p>
+    <p style="color:var(--muted);font-family:var(--mono);font-size:.75rem;">RV2 — Animated websites from ₹10,000</p>
     <p style="color:var(--muted);font-family:var(--mono);font-size:.75rem;">Mumbai, India</p>
   </div>
 </footer>
@@ -146,7 +147,7 @@
 
 <script src="../../assets/js/app.js"></script>
 <script>
-(function(){var wa=document.getElementById('wa-float');if(!wa)return;var shown=false;function show(){if(shown)return;wa.style.display='flex';requestAnimationFrame(function(){wa.classList.add('visible');});shown=true;}setTimeout(show,30000);window.addEventListener('scroll',function onScroll(){var pct=(window.scrollY+window.innerHeight)/document.documentElement.scrollHeight;if(pct>0.5){show();window.removeEventListener('scroll',onScroll);}},{passive:true});})();
+(function(){var wa=document.getElementById('wa-float');if(!wa)return;var shown=false;function show(){if(shown)return;wa.style.display='flex';requestAnimationFrame(function(){wa.classList.add('visible');});shown=true;}setTimeout(show,8000);window.addEventListener('scroll',function onScroll(){var pct=(window.scrollY+window.innerHeight)/document.documentElement.scrollHeight;if(pct>0.35){show();window.removeEventListener('scroll',onScroll);}},{passive:true});})();
 </script>
 </body>
 </html>

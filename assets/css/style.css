@@ -1556,6 +1556,19 @@ body.is-loaded .hero-stage { opacity: 1; transform: none; }
   margin-top: 32px;
 }
 
+.case-link {
+  align-self: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.3s;
+}
+.case-link:hover { color: var(--red); }
+
 /* ---------- Capabilities ---------- */
 .cap-head {
   display: grid;
