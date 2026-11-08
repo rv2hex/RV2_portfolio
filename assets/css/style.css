@@ -1129,7 +1129,7 @@ body.is-loaded .hero-stage { opacity: 1; transform: none; }
   border-top: 1px solid var(--line);
 }
 .stat {
-  padding: 26px 26px 0 0;
+  padding: 26px 26px;
   border-right: 1px solid var(--line);
 }
 .stat:last-child { border-right: 0; }
