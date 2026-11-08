@@ -1901,7 +1901,7 @@ body.is-loaded .hero-stage { opacity: 1; transform: none; }
 
 .step {
   position: relative;
-  padding: 30px 26px 44px 0;
+  padding: 30px 26px 44px;
   border-right: 1px solid var(--line);
 }
 .step:last-child { border-right: 0; }
