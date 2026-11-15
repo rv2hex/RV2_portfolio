@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-accent="terracotta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Free Website Audit — Instant Score | RV2</title>
+<meta name="description" content="Free website audit: answer six questions and get an instant score, the issues costing you enquiries, and the one fix worth doing first. Built by a Mumbai web designer.">
+<meta name="theme-color" content="#f5efe6">
+<meta name="author" content="Rishi Vijay Vishwakarma">
+<link rel="canonical" href="https://rv2hex.github.io/RV2_portfolio/website-audit/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Website Audit — Instant Score">
+<meta property="og:description" content="Six questions, an instant score, and the one fix worth doing first.">
+<meta property="og:url" content="https://rv2hex.github.io/RV2_portfolio/website-audit/">
+<meta property="og:image" content="https://rv2hex.github.io/RV2_portfolio/assets/img/og.jpg?v=20261102">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Website Audit — Instant Score">
+<meta name="twitter:description" content="Six questions, an instant score, and the one fix worth doing first.">
+
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Free Website Audit",
+  "description": "Answer six questions and get an instant website score with the fixes worth doing first.",
+  "url": "https://rv2hex.github.io/RV2_portfolio/website-audit/",
+  "isPartOf": { "@type": "WebSite", "name": "RV2", "url": "https://rv2hex.github.io/RV2_portfolio/" },
+  "about": "Website quality assessment for small businesses"
+}
+</script>
+
+<style>
+  .aud-hero { padding: 140px var(--pad) 40px; }
+  .eyebrow { font-family: var(--mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; color: var(--red); margin-bottom: 18px; }
+  .aud-hero h1 { font-family: var(--serif); font-weight: 400; line-height: 1.04; font-size: clamp(2.5rem, 6vw, 4.4rem); margin-bottom: 18px; max-width: 15ch; }
+  .aud-hero h1 em { font-style: italic; color: var(--red); }
+  .aud-lead { max-width: 700px; color: var(--muted); font-size: 1.08rem; line-height: 1.8; }
+  .aud-wrap { padding: 30px var(--pad) 80px; }
+  .aud-panel { max-width: 860px; border: 1px solid var(--line); background: var(--surface-2); padding: clamp(24px, 4vw, 44px); }
+  .aud-panel h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 6px; }
+  .aud-sub { color: var(--muted); font-size: .95rem; line-height: 1.7; margin-bottom: 26px; }
+  .url-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 34px; }
+  .url-row input[type="url"] {
+    flex: 1 1 320px; padding: 15px 18px; background: var(--surface);
+    border: 1px solid var(--line); color: var(--bone); font-family: var(--sans);
+    font-size: 1rem; outline: none; transition: border-color .3s;
+  }
+  .url-row input[type="url"]:focus { border-color: var(--red); }
+  .q { padding: 22px 0; border-top: 1px solid var(--line); }
+  .q-num { font-family: var(--mono); font-size: .72rem; color: var(--red); letter-spacing: .1em; }
+  .q-text { font-family: var(--serif); font-size: clamp(1.15rem, 2vw, 1.35rem); font-weight: 400; margin: 8px 0 14px; line-height: 1.4; }
+  .q-hint { color: var(--muted); font-size: .87rem; margin-bottom: 14px; line-height: 1.6; }
+  .seg { display: inline-flex; border: 1px solid var(--line); }
+  .seg label { cursor: pointer; }
+  .seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg span {
+    display: block; padding: 10px 26px; font-family: var(--mono); font-size: .8rem;
+    text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+    transition: background .25s, color .25s;
+  }
+  .seg label:hover span { color: var(--bone); }
+  .seg input:checked + span { background: var(--red); color: var(--on-accent, #fff); }
+  .seg input:focus-visible + span { outline: 2px solid var(--red); outline-offset: 2px; }
+  .aud-actions { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .aud-note { font-family: var(--mono); font-size: .72rem; color: var(--muted); }
+
+  /* results */
+  .result { display: none; margin-top: 34px; border-top: 1px solid var(--line); padding-top: 34px; }
+  .result.on { display: block; }
+  .score-row { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .score-num { font-family: var(--serif); font-size: clamp(4rem, 12vw, 6rem); line-height: 1; font-weight: 400; }
+  .score-num small { font-family: var(--mono); font-size: .9rem; color: var(--muted); display: block; letter-spacing: .1em; margin-top: 8px; }
+  .grade { font-family: var(--mono); font-size: .8rem; text-transform: uppercase; letter-spacing: .14em; padding: 8px 16px; border: 1px solid var(--red); color: var(--red); }
+  .score-verdict { flex: 1 1 300px; color: var(--muted); line-height: 1.75; font-size: .98rem; }
+  .fix-list { list-style: none; margin: 28px 0 0; padding: 0; }
+  .fix-list li { display: flex; gap: 14px; padding: 15px 0; border-top: 1px solid var(--line-soft); align-items: baseline; }
+  .fix-list .w { font-family: var(--mono); font-size: .7rem; color: var(--red); white-space: nowrap; }
+  .fix-list .t { color: var(--bone); font-size: .97rem; line-height: 1.6; }
+  .fix-list .t b { color: var(--red); font-weight: 600; }
+  .first-fix { margin-top: 26px; padding: 22px; background: var(--surface-3); border-left: 3px solid var(--red); }
+  .first-fix .lbl { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); margin-bottom: 8px; }
+  .first-fix p { color: var(--bone); line-height: 1.7; font-size: 1rem; }
+  .psi { margin-top: 22px; font-family: var(--mono); font-size: .75rem; color: var(--muted); }
+
+  .cta-band { text-align: center; padding: 64px var(--pad); background: var(--surface-2); border-top: 1px solid var(--line); }
+  .cta-band h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; margin-bottom: 14px; }
+  .cta-band p { color: var(--muted); max-width: 620px; margin: 0 auto 26px; line-height: 1.7; }
+  .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<header class="site-header" id="site-header" role="banner">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;height:72px;">
+    <a href="../index.html" class="brand" aria-label="RV2 — Home">
+      <span class="brand-mark">RV<span>2</span></span>
+    </a>
+    <nav class="desk-nav" aria-label="Primary">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#capabilities">Capabilities</a>
+      <a href="../index.html#pricing">Pricing</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact" class="btn btn-header magnetic">Start a project <span class="btn-arrow">→</span></a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="aud-hero">
+    <div class="wrap">
+      <p class="eyebrow">Free tool · no signup</p>
+      <h1>How healthy is your <em>website</em>?</h1>
+      <p class="aud-lead">
+        Six questions that separate a site that earns enquiries from one that quietly loses them.
+        You get a score, every issue worth fixing, and the single change to make first —
+        then the numbers in your own words, ready to send.
+      </p>
+    </div>
+  </section>
+
+  <section class="aud-wrap">
+    <div class="wrap">
+      <div class="aud-panel">
+        <h2>Start with your site</h2>
+        <p class="aud-sub">Nothing is uploaded anywhere — the score is worked out in your browser and disappears when you close the tab.</p>
+
+        <div class="url-row">
+          <input type="url" id="site-url" placeholder="https://yourbusiness.com" inputmode="url" autocomplete="url" aria-label="Your website address">
+        </div>
+
+        <form id="audit-form" novalidate>
+
+          <div class="q" data-q="https" data-weight="20">
+            <span class="q-num">CHECK 01</span>
+            <p class="q-text">Does your site use HTTPS rather than HTTP?</p>
+            <p class="q-hint">The padlock in the address bar. Without it browsers warn visitors away before your page even loads.</p>
+            <div class="seg">
+              <label><input type="radio" name="https" value="yes"><span>Yes</span></label>
+              <label><input type="radio" name="https" value="no"><span>No</span></label>
+              <label><input type="radio" name="https" value="unsure"><span>Not sure</span></label>
+            </div>
+          </div>
+
+          <div class="q" data-q="phone" data-weight="20">
+            <span class="q-num">CHECK 02</span>
+            <p class="q-text">Does it work properly on a phone — no pinch-zoom, nothing cut off?</p>
+            <p class="q-hint">Open it on an actual mobile, not a resized desktop window.</p>
+            <div class="seg">
+              <label><input type="radio" name="phone" value="yes"><span>Yes</span></label>
+              <label><input type="radio" name="phone" value="no"><span>No</span></label>
+              <label><input type="radio" name="phone" value="unsure"><span>Not sure</span></label>
+            </div>
+          </div>
+
+          <div class="q" data-q="cta" data-weight="20">
+            <span class="q-num">CHECK 03</span>
+            <p class="q-text">Is there a clear next step above the fold — call, WhatsApp, or book?</p>
+            <p class="q-hint">A visitor should know what to do within three seconds of landing.</p>
+            <div class="seg">
+              <label><input type="radio" name="cta" value="yes"><span>Yes</span></label>
+              <label><input type="radio" name="cta" value="no"><span>No</span></label>
+              <label><input type="radio" name="cta" value="unsure"><span>Not sure</span></label>
+            </div>
+          </div>
+
+          <div class="q" data-q="prices" data-weight="15">
+            <span class="q-num">CHECK 04</span>
+            <p class="q-text">Can a visitor see your prices without emailing you first?</p>
+            <p class="q-hint">“Contact for pricing” loses the people who are ready to buy today.</p>
+            <div class="seg">
+              <label><input type="radio" name="prices" value="yes"><span>Yes</span></label>
+              <label><input type="radio" name="prices" value="no"><span>No</span></label>
+              <label><input type="radio" name="prices" value="unsure"><span>Not sure</span></label>
+            </div>
+          </div>
+
+          <div class="q" data-q="proof" data-weight="15">
+            <span class="q-num">CHECK 05</span>
+            <p class="q-text">Do you show reviews or testimonials from real people?</p>
+            <p class="q-hint">Names, faces or Google ratings — proof that others already chose you.</p>
+            <div class="seg">
+              <label><input type="radio" name="proof" value="yes"><span>Yes</span></label>
+              <label><input type="radio" name="proof" value="no"><span>No</span></label>
+              <label><input type="radio" name="proof" value="unsure"><span>Not sure</span></label>
+            </div>
+          </div>
+
+          <div class="q" data-q="find" data-weight="10">
+            <span class="q-num">CHECK 06</span>
+            <p class="q-text">If someone searches what you do plus your city, do you appear?</p>
+            <p class="q-hint">Try it on your phone in a private window: “tiffin service near me”, “salon in Malad”, and so on.</p>
+            <div class="seg">
+              <label><input type="radio" name="find" value="yes"><span>Yes</span></label>
+              <label><input type="radio" name="find" value="no"><span>No</span></label>
+              <label><input type="radio" name="find" value="unsure"><span>Not sure</span></label>
+            </div>
+          </div>
+
+          <div class="aud-actions">
+            <button type="submit" class="btn btn-red magnetic">Get my score <span class="btn-arrow">→</span></button>
+            <span class="aud-note" id="aud-status">Six questions · about 30 seconds</span>
+          </div>
+        </form>
+
+        <div class="result" id="result" aria-live="polite">
+          <div class="score-row">
+            <div class="score-num" id="score-num">—<small>OUT OF 100</small></div>
+            <div class="grade" id="score-grade">—</div>
+            <p class="score-verdict" id="score-verdict"></p>
+          </div>
+
+          <ul class="fix-list" id="fix-list"></ul>
+
+          <div class="first-fix" id="first-fix">
+            <div class="lbl">The one fix worth doing first</div>
+            <p id="first-fix-text"></p>
+          </div>
+
+          <p class="psi" id="psi-line"></p>
+
+          <div class="aud-actions">
+            <a class="btn btn-red magnetic" id="wa-report" href="#" target="_blank" rel="noopener">Send this to WhatsApp <span class="btn-arrow">→</span></a>
+            <a class="btn btn-ghost magnetic" href="../index.html#contact">Have me fix it</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Want the fixes done for you?</h2>
+      <p>Fixed quote before work starts, delivery in 5–10 days, 50% upfront and 50% when it is live. Hand-coded, no templates.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/919987279570?text=Hi%20RV2%2C%20I%20just%20ran%20the%20website%20audit%20and%20would%20like%20help%20fixing%20it." class="btn btn-red magnetic" target="_blank" rel="noopener">WhatsApp for a quote <span class="btn-arrow">→</span></a>
+        <a href="../web-design-mumbai/index.html" class="btn btn-ghost magnetic">See pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding-block:40px;">
+    <p style="color:var(--muted);font-family:var(--mono);font-size:.75rem;">RV2 — Animated websites from ₹10,000</p>
+    <p style="color:var(--muted);font-family:var(--mono);font-size:.75rem;">Mumbai, India</p>
+  </div>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/audit.js"></script>
+</body>
+</html>

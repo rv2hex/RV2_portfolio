@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://rv2hex.github.io/RV2_portfolio/</loc></url>
-  <url><loc>https://rv2hex.github.io/RV2_portfolio/work/casa-atelier/</loc></url>
-  <url><loc>https://rv2hex.github.io/RV2_portfolio/work/modul/</loc></url>
-  <url><loc>https://rv2hex.github.io/RV2_portfolio/work/furniture-now/</loc></url>
-  <url><loc>https://rv2hex.github.io/RV2_portfolio/case-study/casa-atelier/</loc></url>
-  <url><loc>https://rv2hex.github.io/RV2_portfolio/case-study/modul/</loc></url>
-  <url><loc>https://rv2hex.github.io/RV2_portfolio/case-study/furniture-now/</loc></url>
+  <url><loc>https://rv2hex.github.io/RV2_portfolio/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://rv2hex.github.io/RV2_portfolio/web-design-mumbai/</loc><lastmod>2026-11-15</lastmod><priority>0.9</priority></url>
+  <url><loc>https://rv2hex.github.io/RV2_portfolio/website-audit/</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://rv2hex.github.io/RV2_portfolio/work/casa-atelier/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://rv2hex.github.io/RV2_portfolio/work/modul/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://rv2hex.github.io/RV2_portfolio/work/furniture-now/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://rv2hex.github.io/RV2_portfolio/case-study/casa-atelier/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://rv2hex.github.io/RV2_portfolio/case-study/modul/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://rv2hex.github.io/RV2_portfolio/case-study/furniture-now/</loc><lastmod>2026-11-15</lastmod></url>
 </urlset>
