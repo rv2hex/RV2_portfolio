@@ -539,3 +539,31 @@ footer a.fl:hover { color: var(--gold); padding-left: 8px; }
     .team-card .photo { height: 230px; }
     section { padding: 64px 16px; }
 }
+
+/* ============================================================
+   PHONE READABILITY + TAP TARGETS  (<=900px)
+   This concept site carries its own stylesheet. Nothing a
+   visitor must read should fall below 11px on a handset, and
+   every control needs a thumb-sized hit area. Decorative
+   glyphs (checkmarks, marquee diamonds) keep their size.
+   ============================================================ */
+@media (max-width: 900px) {
+  .brand .b-tag,
+  .team-card .role-tag,
+  #drawer .nav-links a i,
+  #bottom-nav a { font-size: 11px; }
+
+  #drawer .nav-links a { min-height: 44px; }
+  #bottom-nav a { min-height: 44px; }
+
+  /* filter chips: 35px was under a comfortable thumb */
+  .chip { min-height: 40px; }
+
+  /* mouse-scroll affordance is desktop-only: on a phone it has no meaning
+     and it collides with the hero stats */
+  .scroll-hint { display: none; }
+
+  /* 10px testimonial dots: keep the dot, extend the tap area to 40px */
+  .t-dots button { position: relative; }
+  .t-dots button::after { content: ""; position: absolute; inset: -15px; }
+}

@@ -2688,3 +2688,64 @@ html.js .reveal[data-delay="3"] { transition-delay: 0.3s; }
   .hero-media > .hero-video-still { display: block !important; }
   #particles { display: none; }
 }
+
+/* ============================================================
+   PHONE READABILITY + TAP TARGETS  (<=900px)
+   This concept site carries its own stylesheet. Nothing a
+   visitor must read should fall below 11px on a handset, and
+   every control needs a thumb-sized hit area. Decorative
+   glyphs (marquee diamonds, image overlays) keep their size.
+   ============================================================ */
+@media (max-width: 900px) {
+  .b-tag,
+  .nav-cta,
+  .drawer-label,
+  .drawer-links a i,
+  .text-link,
+  .section-label,
+  .eyebrow,
+  .stat .stat-suffix,
+  .stat p,
+  .hero-tag .mono,
+  .hero-tag a,
+  .media-index,
+  .scroll-hint,
+  .collection-copy .mono,
+  .story-media-tag,
+  .story-stat .stat-suffix,
+  .story-stat p,
+  .service-num,
+  .service-card .card-link,
+  .rating span,
+  .t-person span,
+  .footer-social a,
+  .footer-col h4,
+  .footer-bottom,
+  .page-meta,
+  .value-card .value-num,
+  .stat-block .stat-suffix,
+  .stat-block p,
+  .process-step .step-num,
+  .quote-block cite,
+  .chip,
+  .product-count,
+  .product-cat,
+  .product-price,
+  .product-note,
+  .lb-cat,
+  .form-field label,
+  .contact-row span,
+  .desktop-nav a { font-size: 11px; }
+
+  .drawer-links a { min-height: 44px; }
+
+  /* mouse-scroll affordance is desktop-only */
+  .scroll-hint { display: none; }
+
+  /* filter chips: 36px was under a comfortable thumb */
+  .chip { min-height: 40px; }
+
+  /* 3px-tall testimonial bars: keep the bar, extend the tap area */
+  .t-dot { position: relative; }
+  .t-dot::after { content: ""; position: absolute; inset: -19px 0; }
+}

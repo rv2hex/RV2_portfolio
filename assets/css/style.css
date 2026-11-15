@@ -330,6 +330,16 @@ html { scrollbar-width: thin; scrollbar-color: #2c2c2c var(--ink); }
 }
 .btn-header:hover { background: var(--bone); color: var(--ink); }
 
+/* .desk-nav a (0,1,1) outranks .btn-header (0,1,0), which stripped the CTA of
+   its padding, its white text and added a stray underline. Re-assert with
+   higher specificity so the button renders as designed. */
+.desk-nav a.btn-header {
+  padding: 0.85em 1.15em;
+  color: var(--on-accent);
+}
+.desk-nav a.btn-header::after { content: none; }
+.desk-nav a.btn-header:hover { color: var(--ink); }
+
 /* ---------- Grain + cursor + progress ---------- */
 .grain {
   position: fixed;
@@ -1901,7 +1911,7 @@ body.is-loaded .hero-stage { opacity: 1; transform: none; }
 
 .step {
   position: relative;
-  padding: 30px 26px 44px;
+  padding: 30px 26px;
   border-right: 1px solid var(--line);
 }
 .step:last-child { border-right: 0; }
@@ -2482,6 +2492,10 @@ body.is-loaded .hero-stage { opacity: 1; transform: none; }
 .bento .bcard:nth-child(4) { --d: 0.07s; }
 .bento .bcard:nth-child(5) { --d: 0.14s; }
 .bento .bcard:nth-child(6) { --d: 0.21s; }
+
+.case-grid .case-card:nth-child(2) { --d: 0.07s; }
+.case-grid .case-card:nth-child(3) { --d: 0.14s; }
+.case-grid .case-card:nth-child(4) { --d: 0.21s; }
 
 .process-grid .step:nth-child(2) { --d: 0.08s; }
 .process-grid .step:nth-child(3) { --d: 0.16s; }
@@ -3120,16 +3134,16 @@ body.theme-open .theme-scrim { opacity: 1; visibility: visible; }
 .theme-panel {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 8600;
   display: flex;
   flex-direction: column;
   width: min(400px, 100vw);
   height: 100%;
-  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
   background: var(--ink-2);
-  box-shadow: -30px 0 80px rgba(0, 0, 0, 0.35);
-  transform: translateX(101%);
+  box-shadow: 30px 0 80px rgba(0, 0, 0, 0.35);
+  transform: translateX(-101%);
   visibility: hidden;
   transition: transform 0.55s var(--ease), visibility 0s 0.55s;
 }
@@ -3630,7 +3644,7 @@ body.theme-open .theme-panel {
 }
 
 @media (max-width: 768px) {
-  .theme-panel { width: 100%; border-left: 0; }
+  .theme-panel { width: 100%; border-right: 0; }
   .theme-panel-head { padding: 20px 18px 16px; }
   .theme-panel-body { padding: 18px 18px 34px; }
   .theme-fab { display: none; }
@@ -3770,4 +3784,108 @@ body.theme-open .theme-panel {
     font-size: 0.9rem;
     border-radius: 12px;
   }
+}
+
+/* ============================================================
+   PHONE READABILITY + TAP TARGETS  (max-width: 560px)
+   ------------------------------------------------------------
+   The 560px block further up deliberately SHRINKS copy:
+   .card-name p -> 0.42rem (6.7px), .hero-note/.project-cat/
+   .visual-caption -> 0.5rem (8px), and .mono is 0.62rem (9.9px)
+   everywhere. On a handset that is unreadable. This raises
+   everything a reader must read to a ~11px floor and gives
+   controls a >= 40px tap height.
+
+   Decorative miniatures (fake browser chrome, device frame,
+   theme-preview mockups) read as scaled-down screenshots, so
+   they keep their miniature type.
+   ============================================================ */
+@media (max-width: 560px) {
+
+  /* ---- readability floor ---- */
+  .mono { font-size: 11px; }
+
+  .hero-eyebrow,
+  .hero-note,
+  .project-cat,
+  .visual-caption,
+  .card-name p,
+  .section-label,
+  .stat-lbl,
+  .step-num,
+  .step-time,
+  .price-badge,
+  .price-flag,
+  .price-launch,
+  .menu-label,
+  .menu-loc,
+  .theme-hint,
+  .row-num { font-size: 11px; }
+
+  /* ---- buttons: readable label + ~41px tall tap target ---- */
+  .btn {
+    font-size: 11.5px;
+    padding: 1.2em 1.45em;
+  }
+  .hero-ctas .btn { font-size: 11.5px; padding: 1.2em 1.4em; }
+
+  /* ---- homepage content runs the first pass missed ---- */
+  .skill-group span,
+  .tags li,
+  .stack-list span,
+  .spec span,
+  .compare-row span:not(:first-child),
+  .compare-row-head span,
+  .theme-notes .mono,
+  .pages > .mono,
+  .about-links a,
+  .footer-nav a,
+  .footer-social a,
+  .contact-line .mono,
+  .contact-line i,
+  .card-chrome em,
+  .card-live,
+  .swatch em,
+  .swatch small,
+  .marquee span,
+  .currency-label .mono:first-child,
+  #currency-note.mono,
+  #modal-index,
+  .pb-sub,
+  .price-band-meta .mono,
+  .theme-live-card > .mono,
+  .theme-live-row .btn,
+  .form-row i,
+  .form-submit,
+  .skip-link,
+  .scroll-cue,
+  .addon b,
+  .to-top,
+  .page-chips button,
+  .menu nav a span { font-size: 11px; }
+
+  /* audit tool: the Yes/No/Not sure segments are the main control */
+  .seg span { padding: 14px 10px; white-space: nowrap; }
+
+  /* ---- icon controls: 40px minimum ---- */
+  .theme-toggle,
+  .burger { width: 40px; height: 40px; }
+
+  /* ---- theme panel + footer controls: thumb-sized ---- */
+  .page-chips button,
+  .seg button,
+  .preset-buttons button { min-height: 40px; padding-block: 10px; font-size: 11px; }
+  .swatches button { position: relative; }
+  .swatches button::after { content: ""; position: absolute; inset: -6px; }
+  .theme-close,
+  .modal-close { width: 40px; height: 40px; }
+  .to-top { display: inline-flex; align-items: center; min-height: 40px; }
+
+  /* ---- indicators that collapsed under the button reset ---- */
+  .stack-dot { padding: 12px 6px; font-size: 11px; }
+  [data-slide] { min-width: 40px; min-height: 40px; }
+
+  /* ---- device-frame chrome stays miniature ---- */
+  .panel-meta,
+  .panel-edge { font-size: 8px; }
 }
