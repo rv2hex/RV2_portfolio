@@ -2,12 +2,9 @@
    RV2 — interaction layer
    Custom-coded. No libraries.
    --------------------------------------------------------------------------
-   To point every "Fiverr" link at your gig, change FIVERR_URL below.
    ========================================================================== */
 (function () {
   "use strict";
-
-  var FIVERR_URL = "https://www.fiverr.com/rishi2v";
 
   var body = document.body;
   var rootEl = document.documentElement;
@@ -17,9 +14,6 @@
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
   var clamp = function (n, min, max) { return Math.max(min, Math.min(max, n)); };
-
-  /* ---------- External links ---------- */
-  $$("[data-fiverr]").forEach(function (a) { a.href = FIVERR_URL; });
 
   /* ---------- Preloader ---------- */
   var preloader = $("#preloader");
