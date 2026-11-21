@@ -81,7 +81,6 @@
   var cursor = $("#cursor");
   if (cursor && finePointer && !reduceMotion && !motionOff()) {
     body.classList.add("has-cursor");
-    var cursorLabel = $(".cursor-label", cursor);
     var cursorRing = $(".cursor-ring", cursor);
     var mouseX = window.innerWidth / 2;
     var mouseY = window.innerHeight / 2;
@@ -99,20 +98,11 @@
       cursor.classList.add("is-hidden");
     });
 
-    document.addEventListener("mousedown", function () {
-      cursor.classList.add("is-down");
-    });
-
-    document.addEventListener("mouseup", function () {
-      cursor.classList.remove("is-down");
-    });
-
     document.addEventListener("mouseover", function (e) {
-      var link = e.target.closest("a, button, [role='button'], .stack-card, .work-row");
-      var view = e.target.closest(".stack-card, .work-row, .preview-trigger, .page-chips a");
+      var link = e.target.closest(
+        "a, button, [role='button'], .stack-card, .work-row, .preview-trigger, .page-chips a, .bcard, .price-card, .theme-card"
+      );
       cursor.classList.toggle("is-link", !!link);
-      cursor.classList.toggle("is-view", !!view);
-      if (cursorLabel) cursorLabel.textContent = "View";
     });
 
     var cursorLoop = function () {

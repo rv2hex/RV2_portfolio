@@ -337,25 +337,20 @@ test.describe("portfolio interactions", () => {
     expect(saved.buttons).toBe("outline");
   });
 
-  test("cursor ring flips contrast with the theme", async ({ page }) => {
+  test("cursor uses the single accent ring and grows on links", async ({ page }) => {
     await blockExternal(page);
     await page.goto("/index.html", { waitUntil: "domcontentloaded" });
     await page.waitForTimeout(500);
-    const averageRgb = (value) => {
-      const channels = value.match(/\d+/g).slice(0, 3).map(Number);
-      return channels.reduce((sum, channel) => sum + channel, 0) / 3;
-    };
-    const lightRing = await page.locator(".cursor-ring").evaluate((el) => {
-      const style = getComputedStyle(el);
-      return { border: style.borderTopColor, blend: style.mixBlendMode };
-    });
-    expect(lightRing.blend).toBe("normal");
-    expect(averageRgb(lightRing.border)).toBeLessThan(100);
 
-    await page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark"));
-    await page.waitForTimeout(450);
-    const darkBorder = await page.locator(".cursor-ring").evaluate((el) => getComputedStyle(el).borderTopColor);
-    expect(averageRgb(darkBorder)).toBeGreaterThan(150);
+    await expect(page.locator(".cursor-label")).toHaveCount(0);
+    await expect(page.locator(".cursor-dot")).toHaveCSS("width", "8px");
+    await expect(page.locator(".cursor-ring")).toHaveCSS("width", "36px");
+    expect(await page.locator(".cursor-ring").evaluate((el) => getComputedStyle(el).boxShadow)).toBe("none");
+    expect(await page.locator(".cursor-ring").evaluate((el) => getComputedStyle(el).mixBlendMode)).toBe("normal");
+
+    await page.locator(".work-row").first().hover();
+    await expect(page.locator("#cursor")).toHaveClass(/is-link/);
+    await expect(page.locator(".cursor-ring")).toHaveCSS("width", "60px");
   });
 
   test("theme toggle, currency switch and preview modal work", async ({ page }) => {
