@@ -380,10 +380,7 @@ html { scrollbar-width: thin; scrollbar-color: #2c2c2c var(--ink); }
 .cursor-ring {
   width: 36px;
   height: 36px;
-  border: 2px solid var(--bone);
-  /* Background-coloured bands on both sides keep the themed border legible
-     when it crosses a red work row or a dark preview card. */
-  box-shadow: 0 0 0 2px var(--ink), inset 0 0 0 2px var(--ink);
+  border: 1.5px solid var(--bone);
   transform: translate(-50%, -50%);
   transition: width 0.35s var(--ease), height 0.35s var(--ease), border-color 0.35s var(--ease);
 }
