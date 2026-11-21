@@ -68,11 +68,16 @@
 
   /* ---------- Reveal on scroll ---------- */
   var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
-  if ("IntersectionObserver" in window) {
+
+  function revealItem(item) {
+    if (item && !item.classList.contains("is-in")) item.classList.add("is-in");
+  }
+
+  if (typeof window.IntersectionObserver === "function" && !reduceMotion) {
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
+          revealItem(entry.target);
           revealObserver.unobserve(entry.target);
         }
       });
@@ -80,16 +85,47 @@
     revealItems.forEach(function (item) {
       revealObserver.observe(item);
     });
+
+    // Process rows reveal as one set so every step shares the same state.
+    var revealGroups = Array.prototype.slice.call(document.querySelectorAll("[data-reveal-group]"));
+    if (revealGroups.length) {
+      var groupObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          Array.prototype.forEach.call(entry.target.querySelectorAll(".reveal"), function (item) {
+            revealObserver.unobserve(item);
+            revealItem(item);
+          });
+          groupObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+      revealGroups.forEach(function (group) {
+        groupObserver.observe(group);
+      });
+    }
+
+    // Safety net for fast scrolls, restored positions and missed observations.
+    var revealInView = function () {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      revealItems.forEach(function (item) {
+        if (item.classList.contains("is-in")) return;
+        var rect = item.getBoundingClientRect();
+        if (rect.top < vh && rect.bottom > 0) {
+          revealObserver.unobserve(item);
+          revealItem(item);
+        }
+      });
+    };
+    window.addEventListener("load", revealInView);
+    window.setTimeout(revealInView, 1200);
   } else {
-    revealItems.forEach(function (item) {
-      item.classList.add("in-view");
-    });
+    revealItems.forEach(revealItem);
   }
 
   /* ---------- Counters ---------- */
   var counters = Array.prototype.slice.call(document.querySelectorAll(".counter"));
   if (counters.length) {
-    if ("IntersectionObserver" in window) {
+    if (typeof window.IntersectionObserver === "function" && !reduceMotion) {
       var counterObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
@@ -135,7 +171,7 @@
     if (reduceMotion) {
       heroVideo.removeAttribute("autoplay");
       heroVideo.pause();
-    } else if ("IntersectionObserver" in window) {
+    } else if (typeof window.IntersectionObserver === "function") {
       var heroVideoObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -242,7 +278,7 @@
       card.classList.toggle("hide", !show);
       if (show) {
         visible += 1;
-        card.classList.add("in-view");
+        card.classList.add("is-in");
       }
     });
     if (productCount) {

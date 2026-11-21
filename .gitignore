@@ -16,3 +16,8 @@ yarn-error.log*
 
 # Local preview / logs
 *.log
+
+# Test output
+test-results/
+playwright-report/
+blob-report/

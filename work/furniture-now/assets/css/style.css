@@ -2527,7 +2527,7 @@ html.js .reveal {
   transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
 }
 
-html.js .reveal.in-view {
+html.js .reveal.is-in {
   opacity: 1;
   transform: translateY(0);
 }
@@ -2749,3 +2749,18 @@ html.js .reveal[data-delay="3"] { transition-delay: 0.3s; }
   .t-dot { position: relative; }
   .t-dot::after { content: ""; position: absolute; inset: -19px 0; }
 }
+
+/* ============ INSTAGRAM LINE (ABOUT) ============ */
+.about-insta {
+  margin-top: 18px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.about-insta a {
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.about-insta a:hover { color: var(--oak); border-color: var(--oak); }
+

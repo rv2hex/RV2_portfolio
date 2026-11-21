@@ -18,6 +18,28 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000/`.
 
+## Tests
+
+The site is static, so the regression suite uses Playwright against a local server:
+
+```bash
+npm install
+npx playwright install chromium
+npm test
+```
+
+The suite checks every page for broken local links/fragments, duplicate ids, reveal
+class consistency, scroll/reduced-motion/no-IntersectionObserver behaviour,
+grouped step-card reveals, the Furniture Now collection hash links, and the core
+portfolio interactions (theme, currency, preview modal, mobile menu).
+
+To run without downloading a browser, point `CHROMIUM_PATH` at an existing
+Chromium/Chrome binary:
+
+```bash
+CHROMIUM_PATH=/path/to/chrome npm test
+```
+
 ## Deploy to GitHub Pages
 
 1. Use the GitHub repository `rv2hex/RV2_portfolio`.

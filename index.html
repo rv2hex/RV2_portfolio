@@ -159,6 +159,7 @@
       </div>
       <div>
         <p class="mono">Elsewhere</p>
+        <a href="https://www.instagram.com/rv2designs/" target="_blank" rel="noopener">Instagram ↗</a>
         <a href="https://github.com/rv2hex" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
       <p class="mono menu-loc">Mumbai, India · <span class="js-clock">--:--</span> IST</p>
@@ -245,7 +246,7 @@
     </div>
 
     <div class="stack-ui">
-      <a href="#intro" class="scroll-cue"><span class="cue-line"></span> Scroll to explore</a>
+      <a href="#work" class="scroll-cue"><span class="cue-line"></span> Scroll to highlights</a>
       <div class="stack-dots" id="stack-dots" role="tablist" aria-label="Featured sites">
         <button class="stack-dot is-active" data-go="0" role="tab" aria-selected="true" aria-label="Casa Atelier"><span></span>01</button>
         <button class="stack-dot" data-go="1" role="tab" aria-selected="false" aria-label="MODUL"><span></span>02</button>
@@ -256,23 +257,26 @@
   </div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Residential interiors</span><i>✦</i>
-    <span>Modular kitchens</span><i>✦</i>
-    <span>Furniture retail</span><i>✦</i>
-    <span>WhatsApp-ready</span><i>✦</i>
-    <span>Mobile-first</span><i>✦</i>
-    <span>Custom-coded</span><i>✦</i>
-    <span>Residential interiors</span><i>✦</i>
-    <span>Modular kitchens</span><i>✦</i>
-    <span>Furniture retail</span><i>✦</i>
-    <span>WhatsApp-ready</span><i>✦</i>
-    <span>Mobile-first</span><i>✦</i>
-    <span>Custom-coded</span><i>✦</i>
+<!-- ============ VELOCITY BAND ============ -->
+<section class="velocity-band" aria-label="Selected disciplines">
+  <div class="wrap velocity-head">
+    <span class="mono">Selected disciplines</span>
+    <span class="velocity-rule" aria-hidden="true"></span>
+    <span class="mono">Concept work &middot; 2026</span>
   </div>
-</div>
+  <div class="velocity-row" data-dir="1">
+    <div class="velocity-track">
+      <div class="velocity-set">
+        <span>Residential interiors</span><i aria-hidden="true"></i>
+        <span>Modular kitchens</span><i aria-hidden="true"></i>
+        <span>Furniture retail</span><i aria-hidden="true"></i>
+        <span>WhatsApp-ready</span><i aria-hidden="true"></i>
+        <span>Mobile-first</span><i aria-hidden="true"></i>
+        <span>Custom-coded</span><i aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ INTRO ============ -->
 <section class="section intro" id="intro">
@@ -287,7 +291,7 @@
       </div>
     </div>
 
-    <div class="stats">
+    <div class="stats" data-reveal-group>
       <div class="stat reveal"><span class="stat-num" data-count="3" data-pad="2">00</span><span class="stat-lbl">Concept sites</span></div>
       <div class="stat reveal"><span class="stat-num" data-count="16" data-pad="2">00</span><span class="stat-lbl">Pages designed</span></div>
       <div class="stat reveal"><span class="stat-num" data-count="3" data-pad="2">00</span><span class="stat-lbl">Industries</span></div>
@@ -310,21 +314,21 @@
     </div>
 
     <div class="work-index" id="work-index">
-      <a href="#project-casa" class="work-row" data-peek="assets/previews/casa-atelier-top.jpg">
+      <a href="#project-casa" class="work-row reveal" data-delay="0" data-peek="assets/previews/casa-atelier-top.jpg">
         <span class="mono row-num">01</span>
         <h3>Casa Atelier</h3>
         <span class="row-cat">Residential interiors</span>
         <span class="row-pages">5 pages</span>
         <span class="row-arrow" aria-hidden="true">↗</span>
       </a>
-      <a href="#project-modul" class="work-row" data-peek="assets/previews/modul-top.jpg">
+      <a href="#project-modul" class="work-row reveal" data-delay="1" data-peek="assets/previews/modul-top.jpg">
         <span class="mono row-num">02</span>
         <h3>MODUL</h3>
         <span class="row-cat">Modular kitchens</span>
         <span class="row-pages">6 pages</span>
         <span class="row-arrow" aria-hidden="true">↗</span>
       </a>
-      <a href="#project-furniture" class="work-row" data-peek="assets/previews/furniture-now-top.jpg?v=20261102">
+      <a href="#project-furniture" class="work-row reveal" data-delay="2" data-peek="assets/previews/furniture-now-top.jpg?v=20261102">
         <span class="mono row-num">03</span>
         <h3>Furniture Now!</h3>
         <span class="row-cat">Furniture retail</span>
@@ -392,11 +396,11 @@
           <div class="pages">
             <p class="mono">Browse pages</p>
             <div class="page-chips">
-              <button data-page="index.html">Home</button>
-              <button data-page="about.html">The Studio</button>
-              <button data-page="designers.html">Our Work</button>
-              <button data-page="pricing.html">Pricing</button>
-              <button data-page="contact.html">Contact</button>
+              <a data-page="index.html" href="work/casa-atelier/index.html">Home</a>
+              <a data-page="about.html" href="work/casa-atelier/about.html">The Studio</a>
+              <a data-page="designers.html" href="work/casa-atelier/designers.html">Our Work</a>
+              <a data-page="pricing.html" href="work/casa-atelier/pricing.html">Pricing</a>
+              <a data-page="contact.html" href="work/casa-atelier/contact.html">Contact</a>
             </div>
           </div>
 
@@ -466,12 +470,12 @@
           <div class="pages">
             <p class="mono">Browse pages</p>
             <div class="page-chips">
-              <button data-page="index.html">Home</button>
-              <button data-page="about.html">The Studio</button>
-              <button data-page="design.html">Design Studio</button>
-              <button data-page="catalog.html">Catalog</button>
-              <button data-page="pricing.html">Pricing</button>
-              <button data-page="contact.html">Contact</button>
+              <a data-page="index.html" href="work/modul/index.html">Home</a>
+              <a data-page="about.html" href="work/modul/about.html">The Studio</a>
+              <a data-page="design.html" href="work/modul/design.html">Design Studio</a>
+              <a data-page="catalog.html" href="work/modul/catalog.html">Catalog</a>
+              <a data-page="pricing.html" href="work/modul/pricing.html">Pricing</a>
+              <a data-page="contact.html" href="work/modul/contact.html">Contact</a>
             </div>
           </div>
 
@@ -541,11 +545,11 @@
           <div class="pages">
             <p class="mono">Browse pages</p>
             <div class="page-chips">
-              <button data-page="index.html">Home</button>
-              <button data-page="about.html">About</button>
-              <button data-page="products.html">Products</button>
-              <button data-page="services.html">Services</button>
-              <button data-page="contact.html">Contact</button>
+              <a data-page="index.html" href="work/furniture-now/index.html">Home</a>
+              <a data-page="about.html" href="work/furniture-now/about.html">About</a>
+              <a data-page="products.html" href="work/furniture-now/products.html">Products</a>
+              <a data-page="services.html" href="work/furniture-now/services.html">Services</a>
+              <a data-page="contact.html" href="work/furniture-now/contact.html">Contact</a>
             </div>
           </div>
 
@@ -741,26 +745,26 @@
       <p class="reveal">No black boxes and no month-long silences. You see the direction before the build, and the build before it goes live.</p>
     </div>
 
-    <div class="process-grid">
+    <div class="process-grid" data-reveal-group>
       <article class="step reveal">
         <span class="step-num mono">01</span>
         <h3>Brief</h3>
         <p>A call, a short questionnaire, and a look at your customers, your offer and your competition.</p>
         <span class="step-time mono">1 day</span>
       </article>
-      <article class="step reveal">
+      <article class="step reveal" data-delay="1">
         <span class="step-num mono">02</span>
         <h3>Direction</h3>
         <p>A visual direction, page map and content plan you can react to before a line of code is written.</p>
         <span class="step-time mono">1–2 days</span>
       </article>
-      <article class="step reveal">
+      <article class="step reveal" data-delay="2">
         <span class="step-num mono">03</span>
         <h3>Build</h3>
         <p>Custom-coded, animated and responsive. Reviewed on real devices, then refined with your feedback.</p>
         <span class="step-time mono">2–6 days</span>
       </article>
-      <article class="step reveal">
+      <article class="step reveal" data-delay="3">
         <span class="step-num mono">04</span>
         <h3>Launch</h3>
         <p>Deployed, connected to your domain and WhatsApp, and handed over with a walkthrough.</p>
@@ -939,6 +943,7 @@
         </div>
 
         <div class="about-links reveal">
+          <a href="https://www.instagram.com/rv2designs/" target="_blank" rel="noopener">Instagram <span>↗</span></a>
           <a href="https://github.com/rv2hex" target="_blank" rel="noopener">GitHub <span>↗</span></a>
           <a href="mailto:rv2xx699@gmail.com">Email <span>↗</span></a>
           <a href="https://wa.me/919987279570?text=Hi%20Rishi%2C%20I%27d%20like%20to%20talk%20about%20a%20website." target="_blank" rel="noopener">WhatsApp <span>↗</span></a>
@@ -971,6 +976,7 @@
       <div class="contact-details reveal">
         <a href="mailto:rv2xx699@gmail.com" class="contact-line"><span class="mono">Email</span><b>rv2xx699@gmail.com</b><i>↗</i></a>
         <a href="https://wa.me/919987279570?text=Hi%20Rishi%2C%20I%27d%20like%20to%20talk%20about%20a%20website." target="_blank" rel="noopener" class="contact-line"><span class="mono">WhatsApp</span><b>+91 99872 79570</b><i>↗</i></a>
+        <a href="https://www.instagram.com/rv2designs/" target="_blank" rel="noopener" class="contact-line"><span class="mono">Instagram</span><b>@rv2designs</b><i>↗</i></a>
         <a href="https://github.com/rv2hex" target="_blank" rel="noopener" class="contact-line"><span class="mono">GitHub</span><b>github.com/rv2hex</b><i>↗</i></a>
         <div class="contact-line contact-line-static"><span class="mono">Studio</span><b>Kandivali West, Mumbai</b><i class="static-clock"><span class="js-clock">--:--</span> IST</i></div>
       </div>
@@ -1004,6 +1010,7 @@
         <a href="website-audit/">Free website audit</a>
       </nav>
       <div class="footer-social">
+        <a href="https://www.instagram.com/rv2designs/" target="_blank" rel="noopener">Instagram ↗</a>
         <a href="https://github.com/rv2hex" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="mailto:rv2xx699@gmail.com">Email ↗</a>
         <a href="https://wa.me/919987279570" target="_blank" rel="noopener">WhatsApp ↗</a>

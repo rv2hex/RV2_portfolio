@@ -1,0 +1,13 @@
+{
+  "name": "rv2-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio and concept sites for RV2",
+  "scripts": {
+    "serve": "python3 -m http.server 8787 --bind 127.0.0.1",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0"
+  }
+}

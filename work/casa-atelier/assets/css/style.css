@@ -180,10 +180,13 @@ section { padding: 80px 20px; position: relative; }
 .sec-sub { color: var(--brown-500); max-width: 640px; margin: 0 auto; font-weight: 400; }
 
 html.js .reveal { opacity: 0; transform: translateY(40px); transition: opacity .8s ease, transform .8s ease; }
-html.js .reveal.in-view { opacity: 1; transform: translateY(0); }
+html.js .reveal.is-in { opacity: 1; transform: translateY(0); }
 html.js .reveal[data-delay="1"] { transition-delay: .12s; }
 html.js .reveal[data-delay="2"] { transition-delay: .24s; }
 html.js .reveal[data-delay="3"] { transition-delay: .36s; }
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+}
 
 .eyebrow {
     display: inline-flex; align-items: center; gap: 10px;
@@ -566,4 +569,26 @@ footer a.fl:hover { color: var(--gold); padding-left: 8px; }
   /* 10px testimonial dots: keep the dot, extend the tap area to 40px */
   .t-dots button { position: relative; }
   .t-dots button::after { content: ""; position: absolute; inset: -15px; }
+}
+
+/* ============ INSTAGRAM LINE (ABOUT) ============ */
+.about-insta {
+    margin-top: 20px;
+    font-size: .82rem;
+    letter-spacing: .01em;
+    color: var(--brown-500);
+}
+.about-insta span { margin-right: 6px; }
+.about-insta a {
+    color: var(--brown-800);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    transition: .3s ease;
+}
+.about-insta a:hover { color: var(--gold); }
+
+/* The about body's paragraph colour must not wash out the Instagram label. */
+.about-text .about-insta {
+    color: var(--brown-600);
+    opacity: 1;
 }

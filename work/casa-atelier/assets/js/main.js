@@ -1,6 +1,8 @@
 (function () {
     'use strict';
 
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     /* ---- Loader ---- */
     var loader = document.getElementById('loader');
     if (loader) {
@@ -92,29 +94,72 @@
     }
 
     /* ---- Reveal on scroll ---- */
-    var revealObs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); }
-        });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
+    var revealItems = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+    function revealItem(el) {
+        if (el && !el.classList.contains('is-in')) el.classList.add('is-in');
+    }
+    if (typeof window.IntersectionObserver === 'function' && !reduceMotion) {
+        var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) { revealItem(e.target); revealObs.unobserve(e.target); }
+            });
+        }, { threshold: 0.12 });
+        revealItems.forEach(function (el) { revealObs.observe(el); });
+
+        // Process rows reveal as one set so every step shares the same state.
+        var revealGroups = Array.prototype.slice.call(document.querySelectorAll('[data-reveal-group]'));
+        if (revealGroups.length) {
+            var groupObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    Array.prototype.forEach.call(entry.target.querySelectorAll('.reveal'), function (el) {
+                        revealObs.unobserve(el);
+                        revealItem(el);
+                    });
+                    groupObs.unobserve(entry.target);
+                });
+            }, { threshold: 0.12 });
+            revealGroups.forEach(function (group) { groupObs.observe(group); });
+        }
+
+        // Safety net for fast scrolls, restored positions and missed observations.
+        var revealInView = function () {
+            var vh = window.innerHeight || document.documentElement.clientHeight;
+            revealItems.forEach(function (el) {
+                if (el.classList.contains('is-in')) return;
+                var rect = el.getBoundingClientRect();
+                if (rect.top < vh && rect.bottom > 0) { revealObs.unobserve(el); revealItem(el); }
+            });
+        };
+        window.addEventListener('load', revealInView);
+        window.setTimeout(revealInView, 1200);
+    } else {
+        revealItems.forEach(revealItem);
+    }
 
     /* ---- Counters ---- */
-    var counterObs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-            if (!e.isIntersecting) return;
-            var el = e.target, target = parseInt(el.dataset.target, 10), start = null, dur = 1600;
-            function step(ts) {
-                if (!start) start = ts;
-                var pr = Math.min((ts - start) / dur, 1);
-                el.textContent = Math.floor(pr * target).toLocaleString('en-IN');
-                if (pr < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-            counterObs.unobserve(el);
+    var counterItems = Array.prototype.slice.call(document.querySelectorAll('.counter'));
+    if (typeof window.IntersectionObserver === 'function' && !reduceMotion) {
+        var counterObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                var el = e.target, target = parseInt(el.dataset.target, 10), start = null, dur = 1600;
+                function step(ts) {
+                    if (!start) start = ts;
+                    var pr = Math.min((ts - start) / dur, 1);
+                    el.textContent = Math.floor(pr * target).toLocaleString('en-IN');
+                    if (pr < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+                counterObs.unobserve(el);
+            });
+        }, { threshold: 0.5 });
+        counterItems.forEach(function (c) { counterObs.observe(c); });
+    } else {
+        counterItems.forEach(function (el) {
+            el.textContent = (parseInt(el.dataset.target, 10) || 0).toLocaleString('en-IN');
         });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.counter').forEach(function (c) { counterObs.observe(c); });
+    }
 
     /* ---- Typewriter (home hero) ---- */
     var tw = document.getElementById('typewriter');
