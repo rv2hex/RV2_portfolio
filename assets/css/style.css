@@ -380,8 +380,10 @@ html { scrollbar-width: thin; scrollbar-color: #2c2c2c var(--ink); }
 .cursor-ring {
   width: 36px;
   height: 36px;
-  border: 1.5px solid #fff;
-  mix-blend-mode: difference;
+  border: 2px solid var(--bone);
+  /* Background-coloured bands on both sides keep the themed border legible
+     when it crosses a red work row or a dark preview card. */
+  box-shadow: 0 0 0 2px var(--ink), inset 0 0 0 2px var(--ink);
   transform: translate(-50%, -50%);
   transition: width 0.35s var(--ease), height 0.35s var(--ease), border-color 0.35s var(--ease);
 }
@@ -395,8 +397,8 @@ html { scrollbar-width: thin; scrollbar-color: #2c2c2c var(--ink); }
   font-size: 0.55rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #fff;
-  mix-blend-mode: difference;
+  color: var(--bone);
+  text-shadow: 0 0 8px var(--ink);
   opacity: 0;
   transition: opacity 0.25s var(--ease), transform 0.35s var(--ease);
   white-space: nowrap;
@@ -409,12 +411,73 @@ html { scrollbar-width: thin; scrollbar-color: #2c2c2c var(--ink); }
 #cursor.is-hidden { opacity: 0; }
 
 /* ---------- Theme wave ---------- */
+/* Animate the surfaces and text that actually carry the theme. A universal
+   selector repainted every decorative node and dropped frames. */
 html.is-theme-wiping,
-html.is-theme-wiping * {
-  transition-property: color, background-color, border-color, fill, stroke, box-shadow !important;
-  /* Type recolours first; surfaces catch up underneath so text stays legible. */
-  transition-duration: 0.8s, 1.35s, 0.8s, 0.8s, 0.8s, 0.8s !important;
+html.is-theme-wiping body,
+html.is-theme-wiping main,
+html.is-theme-wiping section,
+html.is-theme-wiping header,
+html.is-theme-wiping footer,
+html.is-theme-wiping .site-header,
+html.is-theme-wiping .site-footer,
+html.is-theme-wiping .project,
+html.is-theme-wiping .work-row,
+html.is-theme-wiping .card-chrome,
+html.is-theme-wiping .card-foot,
+html.is-theme-wiping .bcard,
+html.is-theme-wiping .price-card,
+html.is-theme-wiping .step,
+html.is-theme-wiping .theme-card,
+html.is-theme-wiping .theme-panel,
+html.is-theme-wiping .menu,
+html.is-theme-wiping .modal,
+html.is-theme-wiping .contact-line,
+html.is-theme-wiping .btn,
+html.is-theme-wiping button,
+html.is-theme-wiping input,
+html.is-theme-wiping textarea,
+html.is-theme-wiping select,
+html.is-theme-wiping .hero-stage,
+html.is-theme-wiping .device,
+html.is-theme-wiping .device-bar,
+html.is-theme-wiping .device-screen,
+html.is-theme-wiping .theme-lab,
+html.is-theme-wiping .theme-preview,
+html.is-theme-wiping .work-index,
+html.is-theme-wiping .project-visual,
+html.is-theme-wiping .project-info,
+html.is-theme-wiping .about-panel,
+html.is-theme-wiping .contact,
+html.is-theme-wiping .case-card,
+html.is-theme-wiping .case-section,
+html.is-theme-wiping .result,
+html.is-theme-wiping .aud-panel,
+html.is-theme-wiping .q,
+html.is-theme-wiping .seg,
+html.is-theme-wiping .first-fix,
+html.is-theme-wiping .cta-band {
+  transition-property: color, background-color, border-color !important;
+  transition-duration: 0.8s, 1s, 0.8s !important;
   transition-timing-function: cubic-bezier(0.33, 0, 0.2, 1) !important;
+  transition-delay: var(--wave-delay, 0ms) !important;
+}
+
+/* :where() keeps this below the surface rules, so a .btn link still animates
+   its background and border instead of being reduced to text colour. */
+html.is-theme-wiping :where(h1, h2, h3, h4, h5, h6, p, a, span, li, label, strong, em, b, i, small, blockquote, figcaption, dt, dd, td, th) {
+  transition-property: color !important;
+  transition-duration: 0.8s !important;
+  transition-timing-function: cubic-bezier(0.33, 0, 0.2, 1) !important;
+  transition-delay: var(--wave-delay, 0ms) !important;
+}
+
+/* The full-screen grain blend and a blurred fixed header are expensive while
+   every surface underneath is repainting. Drop them for the 2s wave. */
+html.is-theme-wiping .grain { opacity: 0 !important; }
+html.is-theme-wiping .site-header.is-scrolled {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
 }
 
 .theme-ripple {
@@ -430,14 +493,13 @@ html.is-theme-wiping * {
   fill: none;
   stroke: rgba(var(--accent-rgb), 0.5);
   stroke-width: 1;
-  filter: blur(0.4px);
 }
 .theme-ripple .ripple-glow {
+  /* A wide, faint stroke reads as a soft glow without an expensive blur filter. */
   fill: none;
   stroke: rgba(var(--accent-rgb), 0.4);
-  stroke-width: 72;
-  opacity: 0.12;
-  filter: blur(22px);
+  stroke-width: 48;
+  opacity: 0.08;
 }
 
 @media (hover: none), (pointer: coarse) {

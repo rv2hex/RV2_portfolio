@@ -24,6 +24,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+(function () {
+  try {
+    var saved = JSON.parse(localStorage.getItem("rv2-theme-v2") || "null");
+    if (!saved) return;
+    var root = document.documentElement;
+    if (saved.theme) root.setAttribute("data-theme", saved.theme);
+    if (saved.accent) root.setAttribute("data-accent", saved.accent);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta && saved.theme) meta.setAttribute("content", saved.theme === "dark" ? "#070707" : "#f5efe6");
+  } catch (e) {}
+})();
+</script>
 <link rel="stylesheet" href="../assets/css/style.css">
 
 <script type="application/ld+json">

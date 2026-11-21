@@ -1048,7 +1048,19 @@
   var themeState = readTheme();
 
   function saveTheme() {
-    try { localStorage.setItem("rv2-theme-v2", JSON.stringify(themeState)); } catch (e) {}
+    try {
+      // Secondary pages have no theme studio. Save only the mode + accent there
+      // so toggling the theme cannot wipe the font/corner settings chosen on the
+      // main page.
+      var next = themeState;
+      if (!themePanel) {
+        var stored = JSON.parse(localStorage.getItem("rv2-theme-v2") || "null");
+        if (stored && typeof stored === "object") {
+          next = Object.assign({}, stored, { theme: themeState.theme, accent: themeState.accent });
+        }
+      }
+      localStorage.setItem("rv2-theme-v2", JSON.stringify(next));
+    } catch (e) {}
   }
 
   function showToast(message) {
@@ -1149,7 +1161,8 @@
   }
 
   var themeWaveTimer = null;
-  var themeWaveEls = [];
+  var themeWaveFrame = 0;
+  var themeWaveGroups = [];
   var themeRippleEl = null;
 
   function clearThemeWave() {
@@ -1157,27 +1170,41 @@
       window.clearTimeout(themeWaveTimer);
       themeWaveTimer = null;
     }
+    if (themeWaveFrame) {
+      window.cancelAnimationFrame(themeWaveFrame);
+      themeWaveFrame = 0;
+    }
     rootEl.classList.remove("is-theme-wiping");
-    themeWaveEls.forEach(function (el) { el.style.transitionDelay = ""; });
-    themeWaveEls = [];
+    themeWaveGroups.forEach(function (el) { el.style.removeProperty("--wave-delay"); });
+    themeWaveGroups = [];
     if (themeRippleEl && themeRippleEl.parentNode) {
       themeRippleEl.parentNode.removeChild(themeRippleEl);
     }
     themeRippleEl = null;
   }
 
-  function collectWaveElements() {
-    var list = [];
-    var vh = window.innerHeight;
-    var nodes = document.body.getElementsByTagName("*");
-    for (var i = 0; i < nodes.length; i++) {
-      var el = nodes[i];
-      var rect = el.getBoundingClientRect();
-      if (!rect.width && !rect.height) continue;
-      if (rect.bottom < -160 || rect.top > vh + 160) continue;
-      list.push(el);
-    }
-    return list;
+  function collectWaveGroups() {
+    // Set one inherited delay per visual block instead of an inline delay on
+    // every node. Descendants pick the nearest --wave-delay up automatically.
+    return $$([
+      "main > section",
+      ".site-header",
+      ".hero-copy",
+      ".hero-aside",
+      ".hero-stage",
+      ".intro .wrap",
+      ".work .wrap",
+      ".work-head",
+      ".work-index",
+      ".project",
+      ".capabilities .wrap",
+      ".themes .wrap",
+      ".process .wrap",
+      ".pricing .wrap",
+      ".about .wrap",
+      ".contact .wrap",
+      ".site-footer .wrap"
+    ].join(","));
   }
 
   function spawnThemeRipple(point) {
@@ -1233,25 +1260,32 @@
   function runThemeWave(origin, next, persist) {
     clearThemeWave();
     var point = themeOriginPoint(origin);
-    var maxDelay = 420;
+    var maxDelay = 360;
     var maxDist = Math.hypot(window.innerWidth, window.innerHeight) || 1;
 
-    themeWaveEls = collectWaveElements();
-    rootEl.classList.add("is-theme-wiping");
-    themeWaveEls.forEach(function (el) {
+    themeWaveGroups = collectWaveGroups();
+    // Read every rectangle before touching styles, then write the delays.
+    var plan = themeWaveGroups.map(function (el) {
       var rect = el.getBoundingClientRect();
       var cx = rect.left + rect.width / 2;
       var cy = rect.top + rect.height / 2;
       var dist = Math.hypot(cx - point.x, cy - point.y);
-      var delay = Math.min(maxDelay, Math.round((dist / maxDist) * maxDelay));
-      el.style.transitionDelay = delay + "ms";
+      return { el: el, delay: Math.min(maxDelay, Math.round((dist / maxDist) * maxDelay)) };
+    });
+    rootEl.classList.add("is-theme-wiping");
+    plan.forEach(function (item) {
+      item.el.style.setProperty("--wave-delay", item.delay + "ms");
     });
 
-    // Let the wave rule and per-element delays settle before the palette flips.
-    void rootEl.offsetWidth;
-    commitTheme(next, persist);
-    spawnThemeRipple(point);
-    themeWaveTimer = window.setTimeout(clearThemeWave, 2050);
+    // Paint the transition rule and delay variables first, then flip the
+    // palette on the next frame. The click stays responsive instead of
+    // forcing a full-page style and layout pass inside the event handler.
+    themeWaveFrame = window.requestAnimationFrame(function () {
+      themeWaveFrame = 0;
+      commitTheme(next, persist);
+      spawnThemeRipple(point);
+      themeWaveTimer = window.setTimeout(clearThemeWave, 1900);
+    });
   }
 
   function applyTheme(next, persist, origin) {

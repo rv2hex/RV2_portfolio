@@ -297,6 +297,67 @@ test.describe("Furniture Now collection links", () => {
 });
 
 test.describe("portfolio interactions", () => {
+  test("saved theme carries into the audit, Mumbai and case-study pages", async ({ page }) => {
+    await blockExternal(page);
+    await page.goto("/index.html", { waitUntil: "domcontentloaded" });
+    await page.evaluate(() => {
+      localStorage.setItem(
+        "rv2-theme-v2",
+        JSON.stringify({
+          theme: "dark",
+          accent: "violet",
+          display: "playfair",
+          body: "inter",
+          corners: "sharp",
+          buttons: "outline",
+          motion: "full"
+        })
+      );
+    });
+
+    for (const url of ["/website-audit/", "/web-design-mumbai/", "/case-study/casa-atelier/"]) {
+      await page.goto(url, { waitUntil: "domcontentloaded" });
+      await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+      await expect(page.locator("html")).toHaveAttribute("data-accent", "violet");
+    }
+
+    // A secondary page has no theme studio, so toggling there must not wipe
+    // the font/corner settings saved on the main page.
+    await page.goto("/website-audit/", { waitUntil: "domcontentloaded" });
+    await page.click("#theme-toggle");
+    await expect
+      .poll(() => page.evaluate(() => document.documentElement.getAttribute("data-theme")))
+      .toBe("light");
+    const saved = await page.evaluate(() => JSON.parse(localStorage.getItem("rv2-theme-v2")));
+    expect(saved.theme).toBe("light");
+    expect(saved.accent).toBe("violet");
+    expect(saved.display).toBe("playfair");
+    expect(saved.body).toBe("inter");
+    expect(saved.corners).toBe("sharp");
+    expect(saved.buttons).toBe("outline");
+  });
+
+  test("cursor ring flips contrast with the theme", async ({ page }) => {
+    await blockExternal(page);
+    await page.goto("/index.html", { waitUntil: "domcontentloaded" });
+    await page.waitForTimeout(500);
+    const averageRgb = (value) => {
+      const channels = value.match(/\d+/g).slice(0, 3).map(Number);
+      return channels.reduce((sum, channel) => sum + channel, 0) / 3;
+    };
+    const lightRing = await page.locator(".cursor-ring").evaluate((el) => {
+      const style = getComputedStyle(el);
+      return { border: style.borderTopColor, blend: style.mixBlendMode };
+    });
+    expect(lightRing.blend).toBe("normal");
+    expect(averageRgb(lightRing.border)).toBeLessThan(100);
+
+    await page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark"));
+    await page.waitForTimeout(450);
+    const darkBorder = await page.locator(".cursor-ring").evaluate((el) => getComputedStyle(el).borderTopColor);
+    expect(averageRgb(darkBorder)).toBeGreaterThan(150);
+  });
+
   test("theme toggle, currency switch and preview modal work", async ({ page }) => {
     const pageErrors = [];
     page.on("pageerror", (error) => pageErrors.push(String(error.message || error)));
